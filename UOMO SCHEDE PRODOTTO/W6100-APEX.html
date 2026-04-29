@@ -197,12 +197,45 @@
     .footer-grid{display:grid;grid-template-columns:140px repeat(4,1fr);gap:28px}
     .footer-logo{width:80px;height:auto}
     .footer-title{font-size:14px;font-weight:700;color:#222;margin:0 0 14px;text-transform:uppercase}
-    .footer-list{list-style:none;padding:0;margin:0;margin:0}
+    .footer-list{list-style:none;padding:0;margin:0}
     .footer-list li{margin:0 0 8px;line-height:1.35}
     .footer-list a{color:#666}
     .footer-contact{font-size:12px;color:#555}
     .footer-contact .strong{font-weight:600}
     .footer-bottom{border-top:1px solid #9d9d9d;margin-top:24px;padding-top:18px;text-align:center;font-size:12px;color:#666}
+
+    .accordion{border-top:1px solid var(--line)}
+    .acc-item{border-bottom:1px solid var(--line)}
+    .acc-head{display:flex;align-items:center;justify-content:space-between;padding:23px 0 19px;cursor:pointer}
+    .acc-title{font-size:13px;font-weight:800;letter-spacing:0.24em;text-transform:uppercase}
+    .acc-icon{font-size:24px;font-weight:300;line-height:1;margin-left:12px}
+    .acc-body{padding:0 0 18px}
+    .description{font-size:15px;line-height:1.68;color:#373737;max-width:390px}
+
+    .tech-grid{padding-top:8px}
+    .metric-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:60px;row-gap:22px;margin-bottom:30px}
+    .metric .label{font-size:14px;margin-bottom:12px;color:#111}
+    .bars{display:flex;gap:12px;align-items:center}
+    .bars span{display:block;height:4px;width:32px;background:#e0e0e0}
+    .bars .on{background:#111}
+    .temp{margin-top:4px}
+    .temp-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+    .temp-title{font-size:14px;color:#111}
+    .temp-chip{height:24px;padding:0 12px;border-radius:14px;background:#ededed;font-size:12px;display:flex;align-items:center;color:#555}
+    .temp-line{height:4px;background:#e0e0e0;position:relative}
+    .temp-line::before{content:'';position:absolute;left:12%;right:30%;top:0;bottom:0;background:#111}
+    .temp-range{display:flex;align-items:center;justify-content:space-between;margin-top:10px;color:#555;font-size:12px}
+
+    @media (max-width: 1200px){
+      body{min-width:0}
+      .page{grid-template-columns:1fr}
+      .sidebar{position:relative;min-height:auto;border-left:0}
+      .gallery{grid-template-columns:1fr}
+      .media,.media.short,.media.tall{min-height:520px}
+      .breadcrumbs__inner{padding-left:20px;padding-right:20px}
+      .category-grid{grid-template-columns:1fr 1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
   </style>
 </head>
 <body class="bg-white text-neutral-900">
@@ -223,20 +256,20 @@
           </a>
           <a href="uomo-en.html" class="block px-4 py-2 hover:bg-gray-100 flex items-center space-x-2 text-black">
             <img src="images/BANDIERE/english.jpg" alt="English" class="w-5 h-3.5 object-cover rounded-sm">
-              <span>English</span>
+            <span>English</span>
           </a>
           <a href="uomo-de.html" class="block px-4 py-2 hover:bg-gray-100 flex items-center space-x-2 text-black">
             <img src="images/BANDIERE/Deutsch.jpg" alt="Deutsch" class="w-5 h-3.5 object-cover rounded-sm">
-              <span>Deutsch</span>
+            <span>Deutsch</span>
           </a>
           <a href="uomo-fr.html" class="block px-4 py-2 hover:bg-gray-100 flex items-center space-x-2 text-black">
             <img src="images/BANDIERE/Français.jpg" alt="Français" class="w-5 h-3.5 object-cover rounded-sm">
-              <span>Français</span>
-            </a>
+            <span>Français</span>
+          </a>
           <a href="uomo-es.html" class="block px-4 py-2 hover:bg-gray-100 flex items-center space-x-2 text-black">
             <img src="images/BANDIERE/Español.jpg" alt="Español" class="w-5 h-3.5 object-cover rounded-sm">
-              <span>Español</span>
-            </a>
+            <span>Español</span>
+          </a>
         </div>
       </div>
     </div>
@@ -341,11 +374,11 @@
               </div>
               <div class="metric">
                 <div class="label">Traspirabilità</div>
-                <div class="bars"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div>
+                <div class="bars"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span></div>
               </div>
               <div class="metric">
                 <div class="label">Elasticità</div>
-                <div class="bars"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div>
+                <div class="bars"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span></div>
               </div>
             </div>
             <div class="temp">
@@ -489,28 +522,14 @@
             <li>custom@bicycle-line.com</li>
           </ul>
         </div>
+      </div>
 
-        <div class="footer-bottom"></div>
+      <div class="footer-bottom"></div>
     </div>
   </footer>
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const mobileBtn = document.getElementById('mobile-menu-btn');
-      if (mobileBtn) {
-        mobileBtn.addEventListener('click', function() {
-          const menu = document.getElementById('mobile-menu');
-          if (!menu) return;
-          if (menu.classList.contains('hidden')) {
-            menu.classList.remove('hidden');
-            menu.classList.add('block');
-          } else {
-            menu.classList.remove('block');
-            menu.classList.add('hidden');
-          }
-        });
-      }
-
       const accHeads = document.querySelectorAll('.acc-head');
       accHeads.forEach(head => {
         const accIcon = head.querySelector('.acc-icon');
@@ -527,7 +546,7 @@
               accIcon.textContent = '+';
             }
           });
-        });
+        }
       });
 
       document.querySelectorAll('.acc-item .acc-body').forEach(body => {
@@ -560,12 +579,9 @@
             sizeGuidePopup.classList.add('hidden');
           }
         });
-        });
       }
     });
-  </script>
 
-  <script>
     function toggleLanguageMenu(button) {
       const dropdown = document.getElementById('language-dropdown');
       dropdown.classList.toggle('hidden');

@@ -260,15 +260,15 @@
           </a>
           <a href="uomo-de.html" class="block px-4 py-2 hover:bg-gray-100 flex items-center space-x-2 text-black">
             <img src="images/BANDIERE/Deutsch.jpg" alt="Deutsch" class="w-5 h-3.5 object-cover rounded-sm">
-              <span>Deutsch</span>
+            <span>Deutsch</span>
           </a>
           <a href="uomo-fr.html" class="block px-4 py-2 hover:bg-gray-100 flex items-center space-x-2 text-black">
             <img src="images/BANDIERE/Français.jpg" alt="Français" class="w-5 h-3.5 object-cover rounded-sm">
-              <span>Français</span>
+            <span>Français</span>
           </a>
           <a href="uomo-es.html" class="block px-4 py-2 hover:bg-gray-100 flex items-center space-x-2 text-black">
             <img src="images/BANDIERE/Español.jpg" alt="Español" class="w-5 h-3.5 object-cover rounded-sm">
-              <span>Español</span>
+            <span>Español</span>
           </a>
         </div>
       </div>
@@ -524,7 +524,67 @@
       </div>
 
       <div class="footer-bottom"></div>
-    </div>});
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const accHeads = document.querySelectorAll('.acc-head');
+      accHeads.forEach(head => {
+        const accIcon = head.querySelector('.acc-icon');
+        if (accIcon) {
+          head.addEventListener('click', function() {
+            const accItem = this.parentElement;
+            const accBody = accItem.querySelector('.acc-body');
+
+            if (accBody.style.display === 'none' || accBody.style.display === '') {
+              accBody.style.display = 'block';
+              accIcon.textContent = '';
+            } else {
+              accBody.style.display = 'none';
+              accIcon.textContent = '+';
+            }
+          });
+        }
+      });
+
+      document.querySelectorAll('.acc-item .acc-body').forEach(body => {
+        const head = body.previousElementSibling;
+        const hasIcon = head && head.querySelector('.acc-icon');
+        if (hasIcon) {
+          body.style.display = 'none';
+        }
+      });
+
+      const sizeGuideBtn = document.getElementById('size-guide-btn');
+      const sizeGuidePopup = document.getElementById('size-guide-popup');
+      const closePopupBtn = document.getElementById('close-popup');
+
+      if (sizeGuideBtn && sizeGuidePopup) {
+        sizeGuideBtn.addEventListener('click', function() {
+          sizeGuidePopup.classList.remove('hidden');
+        });
+      }
+
+      if (closePopupBtn && sizeGuidePopup) {
+        closePopupBtn.addEventListener('click', function() {
+          sizeGuidePopup.classList.add('hidden');
+        });
+      }
+
+      if (sizeGuidePopup) {
+        sizeGuidePopup.addEventListener('click', function(e) {
+          if (e.target === sizeGuidePopup) {
+            sizeGuidePopup.classList.add('hidden');
+          }
+        });
+      }
+    });
+
+    function toggleLanguageMenu(button) {
+      const dropdown = document.getElementById('language-dropdown');
+      dropdown.classList.toggle('hidden');
+    }
   </script>
 </body>
 </html>
