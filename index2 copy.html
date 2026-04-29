@@ -42,8 +42,8 @@
     /* ─── ANNOUNCEMENT BAR ─── */
     .topbar {
       height: var(--topbar-h);
-      background: var(--white);
-      color: var(--black);
+      background: var(--black);
+      color: var(--white);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -56,7 +56,7 @@
     }
 
     .topbar a {
-      color: var(--black);
+      color: var(--white);
       text-decoration: underline;
       text-underline-offset: 2px;
     }
@@ -76,8 +76,8 @@
       top: 0;
       z-index: 100;
       height: var(--nav-h);
-      background: var(--black);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: var(--white);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
       display: grid;
       grid-template-columns: 200px 1fr 200px;
       align-items: center;
@@ -104,7 +104,7 @@
       font-weight: 600;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--grey-300);
+      color: var(--grey-700);
       transition: color 0.2s;
       padding: 4px 0;
       position: relative;
@@ -117,11 +117,11 @@
       left: 0;
       width: 0;
       height: 1px;
-      background: var(--white);
+      background: var(--black);
       transition: width 0.25s ease;
     }
 
-    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover { color: var(--black); }
     .nav-links a:hover::after { width: 100%; }
 
     .nav-actions {
@@ -140,14 +140,14 @@
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: var(--grey-300);
+      color: var(--grey-700);
       cursor: pointer;
       transition: color 0.2s;
       background: none;
       border: none;
     }
 
-    .lang-btn:hover { color: var(--white); }
+    .lang-btn:hover { color: var(--black); }
 
     .lang-btn img {
       width: 18px;
@@ -811,8 +811,8 @@
       flex-shrink: 0;
     }
 
-    .faq-item.open .faq-plus { transform: rotate(45deg); color: var(--white); }
-    .faq-item.open .faq-q { color: var(--white); }
+    .faq-item.open .faq-plus { transform: rotate(45deg); color: var(--black); }
+    .faq-item.open .faq-q { color: var(--black); }
 
     .faq-ans {
       display: none;
@@ -913,7 +913,7 @@
       display: block;
       width: 22px;
       height: 1px;
-      background: var(--white);
+      background: var(--black);
       transition: all 0.3s;
     }
 
