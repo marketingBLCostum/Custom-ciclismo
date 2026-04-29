@@ -86,7 +86,7 @@
     }
 
     .nav-logo img {
-      height: 76px;
+      height: 56px;
       width: auto;
     }
 
@@ -344,19 +344,19 @@
       line-height: 0.92;
       letter-spacing: -0.02em;
       text-transform: uppercase;
-      color: var(--white);
+      color: var(--black);
     }
 
     .section-body {
       font-size: 15px;
       font-weight: 400;
-      color: var(--grey-300);
+      color: var(--black);
       line-height: 1.7;
       max-width: 560px;
     }
 
     /* ─── COME FUNZIONA ─── */
-    .process-section { background: var(--grey-800); }
+    .process-section { background: var(--white); }
 
     .process-header {
       display: flex;
@@ -373,13 +373,13 @@
 
     .process-card {
       padding: 40px 32px 40px 0;
-      border-left: 1px solid rgba(255,255,255,0.08);
+      border-left: 1px solid rgba(0,0,0,0.08);
       padding-left: 32px;
       position: relative;
       transition: border-color 0.3s;
     }
 
-    .process-card:hover { border-left-color: rgba(255,255,255,0.35); }
+    .process-card:hover { border-left-color: rgba(0,0,0,0.35); }
 
     .process-num {
       font-family: 'Barlow Condensed', sans-serif;
@@ -396,13 +396,13 @@
       font-weight: 800;
       letter-spacing: -0.01em;
       text-transform: uppercase;
-      color: var(--white);
+      color: var(--black);
       margin-bottom: 14px;
     }
 
     .process-card p {
       font-size: 14px;
-      color: var(--grey-300);
+      color: var(--grey-700);
       line-height: 1.65;
     }
 
@@ -552,19 +552,19 @@
     }
 
     /* ─── VALUES ─── */
-    .values-section { background: var(--black); }
+    .values-section { background: var(--white); }
 
     .values-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 0;
-      border-top: 1px solid rgba(255,255,255,0.1);
+      border-top: 1px solid rgba(0,0,0,0.1);
     }
 
     .value-card {
       padding: 40px;
-      border-right: 1px solid rgba(255,255,255,0.1);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      border-right: 1px solid rgba(0,0,0,0.1);
+      border-bottom: 1px solid rgba(0,0,0,0.1);
     }
 
     .value-card:nth-child(3n) { border-right: none; }
@@ -582,13 +582,13 @@
       font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--white);
+      color: var(--black);
       margin-bottom: 12px;
     }
 
     .value-card p {
       font-size: 14px;
-      color: var(--grey-300);
+      color: var(--grey-700);
       line-height: 1.65;
     }
 
@@ -759,7 +759,7 @@
     #error-msg { color: #ff9696; border-color: #6d2323; background: #1e0e0e; }
 
     /* ─── FAQ ─── */
-    .faq-section { background: var(--grey-800); }
+    .faq-section { background: var(--white); }
 
     .faq-header {
       display: flex;
@@ -769,7 +769,7 @@
     }
 
     .faq-item {
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
     }
 
     .faq-btn {
@@ -782,7 +782,7 @@
       gap: 24px;
       text-align: left;
       cursor: pointer;
-      color: var(--white);
+      color: var(--black);
     }
 
     .faq-num {
@@ -800,7 +800,7 @@
       font-weight: 600;
       letter-spacing: -0.01em;
       flex: 1;
-      color: var(--white);
+      color: var(--black);
     }
 
     .faq-plus {
@@ -818,7 +818,7 @@
       display: none;
       padding: 0 0 24px 52px;
       font-size: 14px;
-      color: var(--grey-300);
+      color: var(--grey-700);
       line-height: 1.75;
       max-width: 800px;
     }
@@ -1001,7 +1001,7 @@
 <!-- NAV -->
 <nav class="nav">
   <div class="nav-logo">
-    <a href="#"><img src="images/logo bianco.png" alt="Bicycle Line"></a>
+    <a href="#"><img src="images/logodfs.png" alt="Bicycle Line"></a>
   </div>
 
   <ul class="nav-links">
@@ -1114,7 +1114,7 @@
 </section>
 
 <!-- CATEGORY GRID: UOMO / DONNA / RAGAZZI -->
-<section class="section-sm">
+<section class="section-sm" style="background: var(--white);">
   <div class="cat-grid">
     <a href="uomo.html" class="cat-card fade-up">
       <img src="images/uomo.png" alt="Uomo">
@@ -1160,7 +1160,7 @@
   <div class="wrap">
     <div class="fade-up" style="margin-bottom:56px;">
       <p class="section-label">Perché BL</p>
-      <h2 class="section-title" style="max-width:600px;">Cosa ci rende<br>diversi</h2>
+      <h2 class="section-title" style="max-width:600px; color: var(--black);">Cosa ci rende<br>diversi</h2>
     </div>
     <div class="values-grid fade-up">
       <div class="value-card">
@@ -1203,7 +1203,7 @@
     <div class="fade-up" style="margin-bottom:48px; display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:20px;">
       <div>
         <p class="section-label">Testimonianze</p>
-        <h2 class="section-title">Fidati<br>di loro</h2>
+        <h2 class="section-title" style="color: var(--white);">Fidati<br>di loro</h2>
       </div>
       <a href="https://www.feedaty.com/recensioni/bicycle-line" target="_blank" class="btn btn-outline">Leggi su Feedaty →</a>
     </div>
@@ -1307,7 +1307,7 @@
     <div class="faq-header fade-up">
       <div>
         <p class="section-label">Domande Frequenti</p>
-        <h2 class="section-title">FAQ</h2>
+        <h2 class="section-title" style="color: var(--black);">FAQ</h2>
       </div>
       <p class="section-body" style="max-width:400px;">Risposte rapide sulle quantità minime, i tempi e il processo d'ordine.</p>
     </div>
