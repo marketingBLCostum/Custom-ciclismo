@@ -275,37 +275,31 @@
 
     .lang-dropdown {
       position: absolute;
-      top: 100%;
-      left: 0;
-      min-width: 100%;
+      top: calc(100% + 8px);
+      right: 20px;
       background: var(--white);
-      border: 1px solid var(--black);
-      border-radius: 4px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(-10px);
-      transition: all 0.3s ease;
+      color: var(--black);
+      min-width: 140px;
+      border: 1px solid var(--grey-100);
+      z-index: 200;
+      display: none;
     }
 
-    .lang-dropdown.open {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
+    .lang-dropdown.open { display: block; }
 
     .lang-dropdown a {
       display: flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 12px;
-      font-size: 12px;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: 500;
       color: var(--black);
-      text-decoration: none;
-      transition: background 0.2s ease;
+      transition: background 0.15s;
     }
 
     .lang-dropdown a:hover { background: var(--grey-100); }
+    .lang-dropdown img { width: 18px; height: 12px; object-fit: cover; border-radius: 2px; }
 
     .hamburger {
       display: none;
@@ -475,37 +469,31 @@
 
     .lang-dropdown {
       position: absolute;
-      top: 100%;
-      left: 0;
-      min-width: 100%;
+      top: calc(100% + 8px);
+      right: 20px;
       background: var(--white);
-      border: 1px solid var(--black);
-      border-radius: 4px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(-10px);
-      transition: all 0.3s ease;
+      color: var(--black);
+      min-width: 140px;
+      border: 1px solid var(--grey-100);
+      z-index: 200;
+      display: none;
     }
 
-    .lang-dropdown.open {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
+    .lang-dropdown.open { display: block; }
 
     .lang-dropdown a {
       display: flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 12px;
-      font-size: 12px;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: 500;
       color: var(--black);
-      text-decoration: none;
-      transition: background 0.2s ease;
+      transition: background 0.15s;
     }
 
     .lang-dropdown a:hover { background: var(--grey-100); }
+    .lang-dropdown img { width: 18px; height: 12px; object-fit: cover; border-radius: 2px; }
 
     .hamburger {
       display: none;
@@ -583,7 +571,7 @@
 <!-- NAV -->
 <nav class="nav">
   <div class="nav-logo">
-    <a href="../index2.html"><img src="../images/logodfs.png" alt="Bicycle Line"></a>
+    <a href="../index2 copy.html"><img src="../images/logodfs.png" alt="Bicycle Line"></a>
   </div>
 
   <ul class="nav-links">
@@ -604,11 +592,11 @@
         <i class="fas fa-chevron-down" style="font-size:9px; opacity:0.6;"></i>
       </button>
       <div class="lang-dropdown" id="lang-dropdown">
-        <a href="../index2.html"><img src="../images/BANDIERE/italia.jpg" alt="IT"> Italiano</a>
-        <a href="../index-en.html"><img src="../images/BANDIERE/english.jpg" alt="EN"> English</a>
-        <a href="../index-de.html"><img src="../images/BANDIERE/Deutsch.jpg" alt="DE"> Deutsch</a>
-        <a href="../index-fr.html"><img src="../images/BANDIERE/Français.jpg" alt="FR"> Français</a>
-        <a href="../index-es.html"><img src="../images/BANDIERE/Español.jpg" alt="ES"> Español</a>
+        <a href="../index2 copy.html"><img src="../images/BANDIERE/italia.jpg" alt="IT"> Italiano</a>
+        <a href="../index-en copy.html"><img src="../images/BANDIERE/english.jpg" alt="EN"> English</a>
+        <a href="../index-de copy.html"><img src="../images/BANDIERE/Deutsch.jpg" alt="DE"> Deutsch</a>
+        <a href="../index-fr copy.html"><img src="../images/BANDIERE/Français.jpg" alt="FR"> Français</a>
+        <a href="../index-es copy.html"><img src="../images/BANDIERE/Español.jpg" alt="ES"> Español</a>
       </div>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -638,7 +626,7 @@
 
   <div class="breadcrumbs">
     <div class="breadcrumbs__inner">
-      <a href="../index2.html" class="dim hover:underline">HOME</a>
+      <a href="../index2 copy.html" class="dim hover:underline">HOME</a>
       <span class="sep">></span>
       <a href="../uomo.html" class="dim hover:underline">CICLISMO UOMO</a>
       <span class="sep">></span>
@@ -795,7 +783,7 @@
         <p class="promo-copy"></p>
         <div class="promo-links">
           <a href="../uomo.html" class="promo-btn">Scopri altri prodotti <span class="arrow">></span></a>
-          <a href="../index2.html#contatti" class="promo-btn">Voglio maggiori informazioni <span class="arrow">></span></a>
+          <a href="../index2 copy.html#contatti" class="promo-btn">Voglio maggiori informazioni <span class="arrow">></span></a>
         </div>
       </div>
     </section>
