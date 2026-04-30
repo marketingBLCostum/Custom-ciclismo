@@ -1002,37 +1002,31 @@
 
     .lang-dropdown {
       position: absolute;
-      top: 100%;
-      left: 0;
-      min-width: 100%;
+      top: calc(100% + 8px);
+      right: 20px;
       background: var(--white);
-      border: 1px solid var(--black);
-      border-radius: 4px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(-10px);
-      transition: all 0.3s ease;
+      color: var(--black);
+      min-width: 140px;
+      border: 1px solid var(--grey-100);
+      z-index: 200;
+      display: none;
     }
 
-    .lang-dropdown.open {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
+    .lang-dropdown.open { display: block; }
 
     .lang-dropdown a {
       display: flex;
       align-items: center;
       gap: 8px;
-      padding: 8px 12px;
-      font-size: 12px;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: 500;
       color: var(--black);
-      text-decoration: none;
-      transition: background 0.2s ease;
+      transition: background 0.15s;
     }
 
     .lang-dropdown a:hover { background: var(--grey-100); }
+    .lang-dropdown img { width: 18px; height: 12px; object-fit: cover; border-radius: 2px; }
 
     .hamburger {
       display: none;
