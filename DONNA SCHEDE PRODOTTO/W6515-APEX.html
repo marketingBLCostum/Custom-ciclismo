@@ -431,14 +431,7 @@
 
 <div class="page">
 
-    <div class="ui-nav-center">
-      <a href="../index2.html#come-funziona">Come Funziona</a>
-      <a href="../uomo.html">Uomo</a>
-      <a href="../donna.html">Donna</a>
-      <a href="../ragazzi.html">Ragazzi</a>
-      <a href="../index2.html#faq">FAQ</a>
-      <a href="../index2.html#contatti">Contattaci</a>
-    </div>
+   
 
     <div class="ui-nav-right"></div>
   </div>
@@ -599,6 +592,8 @@
   </div>
 
   <script>
+// DOM loaded - initialize event listeners
+document.addEventListener('DOMContentLoaded', function() {
 // Language toggle
 const langToggle = document.getElementById('lang-toggle');
 const langDropdown = document.getElementById('lang-dropdown');
@@ -624,12 +619,13 @@ hamburger.addEventListener('click', () => {
 mobileClose.addEventListener('click', () => {
   mobileNav.classList.remove('open');
 });
+});
 
 function toggleLanguageMenu(button) {
   const dropdown = document.getElementById('language-dropdown');
   dropdown.classList.toggle('hidden');
 }
+
 </script>
 </body>
 </html>
-
