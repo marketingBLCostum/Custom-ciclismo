@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/png" href="../images/logodfs.png" />
+  <title>W2632 - Scaldacollo - Bicycle Line</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --white: #ffffff;
+      --off-white: #f4f4f2;
+      --grey-100: #e8e8e6;
+      --grey-300: #b0b0aa;
+      --grey-500: #6e6e68;
+      --grey-700: #2e2e2a;
+      --grey-800: #1c1c18;
+      --accent: #ffffff;
+      --nav-h: 80px;
+      --topbar-h: 36px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img, video { display: block; }
+
+    /* ─── ANNOUNCEMENT BAR ─── */
+    .topbar {
+      height: var(--topbar-h);
+      background: var(--black);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      gap: 20px;
+    }
+
+    .topbar a {
+      color: var(--white);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .topbar-right {
+      position: absolute;
+      right: 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 12px;
+    }
+
+    /* ─── NAV ─── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--nav-h);
+      background: var(--white);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      display: grid;
+      grid-template-columns: 200px 1fr 200px;
+      align-items: center;
+      padding: 0 32px;
+      transition: background 0.3s ease;
+    }
+
+    .nav-logo img {
+      height: 56px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--grey-700);
+      transition: color 0.2s;
+      padding: 4px 0;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--black);
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover { color: var(--black); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-actions {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .lang-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .lang-dropdown {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 20px;
+      background: var(--white);
+      color: var(--black);
+      min-width: 140px;
+      border: 1px solid var(--grey-100);
+      z-index: 200;
+      display: none;
+    }
+
+    .lang-dropdown.open { display: block; }
+
+    .lang-dropdown a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--black);
+      transition: background 0.15s;
+    }
+
+    .lang-dropdown a:hover { background: var(--grey-100); }
+    .lang-dropdown img { width: 18px; height: 12px; object-fit: cover; border-radius: 2px; }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 1px;
+      background: var(--black);
+      transition: all 0.3s;
+    }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--black);
+      z-index: 200;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    .mobile-nav.open { display: flex; }
+
+    .mobile-nav a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 36px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    .mobile-close {
+      position: absolute;
+      top: 20px;
+      right: 28px;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      :root { --nav-h: 56px; --topbar-h: 32px; }
+      .nav { grid-template-columns: 120px 1fr auto; padding: 0 20px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .topbar { font-size: 11px; padding: 0 16px; }
+      .topbar-right { display: none; }
+    }
+
+    /* ─── PRODUCT PAGE ─── */
+    .page {
+      min-height: 100vh;
+      background: var(--black);
+    }
+
+    .product-hero {
+      padding: 120px 0 80px;
+      text-align: center;
+    }
+
+    .product-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 48px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+      line-height: 1.1;
+    }
+
+    .product-subtitle {
+      font-size: 18px;
+      color: var(--grey-500);
+      margin-bottom: 48px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      margin-bottom: 80px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .spec-card {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 32px;
+      text-align: center;
+    }
+
+    .spec-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--black);
+      margin-bottom: 16px;
+    }
+
+    .spec-value {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--grey-700);
+      margin-bottom: 8px;
+    }
+
+    .spec-range {
+      font-size: 14px;
+      color: var(--grey-500);
+    }
+
+    .description {
+      max-width: 800px;
+      margin: 0 auto 80px;
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--grey-500);
+    }
+
+    .features-list {
+      max-width: 800px;
+      margin: 0 auto 80px;
+    }
+
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .feature-icon {
+      color: var(--accent);
+      font-size: 18px;
+    }
+
+    .feature-text {
+      flex: 1;
+      font-size: 15px;
+      line-height: 1.5;
+      color: var(--grey-500);
+    }
+
+    .cta-section {
+      text-align: center;
+      padding: 80px 0;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 16px 32px;
+      background: var(--white);
+      color: var(--black);
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .cta-button:hover {
+      background: var(--grey-100);
+    }
+
+    .breadcrumbs {
+      height: 42px;
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .breadcrumbs__inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 88px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .breadcrumbs .dim {
+      color: #5f5f5f;
+      font-weight: 400;
+    }
+
+    .breadcrumbs .sep {
+      color: #a0a0a0;
+    }
+
+    .breadcrumbs .current {
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="topbar" style="position:relative;">
+  <span>Ordini personalizzati da <strong>10 pezzi</strong> — Produzione 100% Italiana</span>
+  <div class="topbar-right">
+    <span style="opacity:0.5;">|</span>
+    <a href="#contatti">Richiedi preventivo →</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">
+    <a href="../index2.html"><img src="../images/logodfs.png" alt="Bicycle Line"></a>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="../index2 copy.html#come-funziona">Come Funziona</a></li>
+    <li><a href="../uomo.html">Uomo</a></li>
+    <li><a href="../donna.html">Donna</a></li>
+    <li><a href="../accessori.html">Accessori</a></li>
+    <li><a href="../ragazzi.html">Ragazzi</a></li>
+    <li><a href="../index2 copy.html#faq">FAQ</a></li>
+    <li><a href="../index2 copy.html#contatti">Contatti</a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <div class="lang-wrap">
+      <button class="lang-btn" id="lang-toggle">
+        <img src="../images/BANDIERE/italia.jpg" alt="IT">
+        <span>IT</span>
+        <i class="fas fa-chevron-down" style="font-size:9px; opacity:0.6;"></i>
+      </button>
+      <div class="lang-dropdown" id="lang-dropdown">
+        <a href="../index2.html"><img src="../images/BANDIERE/italia.jpg" alt="IT"> Italiano</a>
+        <a href="../index-en.html"><img src="../images/BANDIERE/english.jpg" alt="EN"> English</a>
+        <a href="../index-de.html"><img src="../images/BANDIERE/Deutsch.jpg" alt="DE"> Deutsch</a>
+        <a href="../index-fr.html"><img src="../images/BANDIERE/Français.jpg" alt="FR"> Français</a>
+        <a href="../index-es.html"><img src="../images/BANDIERE/Español.jpg" alt="ES"> Español</a>
+      </div>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobile-nav">
+  <button class="mobile-close" id="mobile-close">✕</button>
+  <a href="../index2 copy.html#come-funziona">Come Funziona</a>
+  <a href="../uomo.html">Uomo</a>
+  <a href="../donna.html">Donna</a>
+  <a href="../accessori.html">Accessori</a>
+  <a href="../ragazzi.html">Ragazzi</a>
+  <a href="../index2 copy.html#faq">FAQ</a>
+  <a href="../index2 copy.html#contatti">Contatti</a>
+</div>
+
+<div class="page">
+
+  <div class="breadcrumbs">
+    <div class="breadcrumbs__inner">
+      <a href="../index2.html" class="dim hover:underline">HOME</a>
+      <span class="sep">></span>
+      <a href="../accessori.html" class="dim hover:underline">ACCESSORI</a>
+      <span class="sep">></span>
+      <span class="current">W2632 - SCALDACOLLO</span>
+    </div>
+  </div>
+
+  <div class="product-hero">
+    <h1 class="product-title">W2632 - Scaldacollo</h1>
+    <p class="product-subtitle">Scaldacollo realizzato in tessuto leggero, confortevole ed elastico con finitura a taglio vivo</p>
+  </div>
+
+  <div class="specs-grid">
+    <div class="spec-card">
+      <div class="spec-title">Vestibilità</div>
+      <div class="spec-value">4 TACCHE PIENE</div>
+      <div class="spec-range">Super elastico e confortevole</div>
+    </div>
+    
+    <div class="spec-card">
+      <div class="spec-title">Traspirabilità</div>
+      <div class="spec-value">5 TACCHE PIENE</div>
+      <div class="spec-range">Molto traspirante</div>
+    </div>
+    
+    <div class="spec-card">
+      <div class="spec-title">Elasticità</div>
+      <div class="spec-value">5 TACCHE PIENE</div>
+      <div class="spec-range">Massima flessibilità</div>
+    </div>
+    
+    <div class="spec-card">
+      <div class="spec-title">Temperatura</div>
+      <div class="spec-value">-4 / +12 °C</div>
+      <div class="spec-range">Ideale per freddo intenso</div>
+    </div>
+    
+    <div class="spec-card">
+      <div class="spec-title">Taglie</div>
+      <div class="spec-value">TAGLIA UNICA</div>
+      <div class="spec-range">Adattabile universale</div>
+    </div>
+  </div>
+
+  <div class="description">
+    <p>Scaldacollo realizzato in tessuto leggero, confortevole ed elastico con finitura a taglio vivo per una migliore regolazione. Ottima vestibilità e diverse possibilità di utilizzo: scaldacollo, bandana, maschera facciale o sottocasco.</p>
+  </div>
+
+  <div class="features-list">
+    <div class="feature-item">
+      <div class="feature-icon">•</div>
+      <div class="feature-text">Super elastico e confortevole</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">•</div>
+      <div class="feature-text">Per ulteriore protezione termica</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">•</div>
+      <div class="feature-text">Molto traspirante</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">•</div>
+      <div class="feature-text">Multiuso</div>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">•</div>
+      <div class="feature-text">Personalizzazione con tecnica di sublimazione digitale</div>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <a href="#contatti" class="cta-button">Richiedi informazioni</a>
+  </div>
+
+</div>
+
+<script>
+  // Language toggle
+  const langToggle = document.getElementById('lang-toggle');
+  const langDropdown = document.getElementById('lang-dropdown');
+  const mobileNav = document.getElementById('mobile-nav');
+  const hamburger = document.getElementById('hamburger');
+  const mobileClose = document.getElementById('mobile-close');
+
+  langToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    langDropdown.classList.toggle('open');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!langToggle.contains(e.target) && !langDropdown.contains(e.target)) {
+      langDropdown.classList.remove('open');
+    }
+  });
+
+  // Mobile navigation
+  hamburger.addEventListener('click', () => {
+    mobileNav.classList.add('open');
+  });
+
+  mobileClose.addEventListener('click', () => {
+    mobileNav.classList.remove('open');
+  });
+</script>
+
+</body>
+</html>
