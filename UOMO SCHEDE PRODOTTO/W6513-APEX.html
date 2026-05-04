@@ -687,6 +687,38 @@ function toggleLanguageMenu(button) {
   const dropdown = document.getElementById('language-dropdown');
   dropdown.classList.toggle('hidden');
 }
+
+// Accordion functionality for CARATTERISTICHE PRINCIPALI
+document.addEventListener('DOMContentLoaded', function() {
+  const accHeads = document.querySelectorAll('.acc-head');
+  
+  accHeads.forEach(accHead => {
+    accHead.addEventListener('click', function() {
+      const accItem = this.parentElement;
+      const accBody = accItem.querySelector('.acc-body');
+      const accIcon = this.querySelector('.acc-icon');
+      
+      // Toggle accordion body
+      if (accBody.style.display === 'none') {
+        accBody.style.display = 'block';
+        accIcon.textContent = '-';
+      } else {
+        accBody.style.display = 'none';
+        accIcon.textContent = '+';
+      }
+    });
+  });
+  
+  // Set initial state (closed)
+  const accItems = document.querySelectorAll('.acc-item');
+  accItems.forEach(accItem => {
+    const accBody = accItem.querySelector('.acc-body');
+    const accIcon = accItem.querySelector('.acc-icon');
+    if (accIcon && accIcon.textContent === '+') {
+      accBody.style.display = 'none';
+    }
+  });
+});
 </script>
 </body>
 </html>
