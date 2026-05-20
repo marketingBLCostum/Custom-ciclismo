@@ -1,0 +1,712 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="../images/logodfs.png" />
+  <title>BL - W6100 APEX</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root{
+      --black: #0a0a0a;
+      --white: #ffffff;
+      --off-white: #f4f4f2;
+      --grey-100: #e8e8e6;
+      --grey-300: #b0b0aa;
+      --grey-500: #6e6e68;
+      --grey-700: #2e2e2a;
+      --grey-800: #1c1c18;
+      --accent: #ffffff;
+      --nav-h: 80px;
+      --topbar-h: 36px;
+      :root{
+      --bg:#ffffff;
+      --surface:#f2f2f2;
+      --panel:#ffffff;
+      --text:#111111;
+      --muted:#666666;
+      --line:#e2e2e2;
+      --line-2:#d9d9d9;
+      --chip:#efefef;
+      --black:#000000;
+      --ink:#0b0b0b;
+      --soft:#f4f5f7;
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;height:100%}
+    body{min-width:1440px}
+    img{display:block;max-width:100%}
+    a{text-decoration:none;color:inherit}
+    button{font:inherit}
+    .container-w{max-width:1200px}
+    .link-underline{text-decoration:underline;text-underline-offset:3px}
+    .hairline{border-color:#ededed}
+    
+
+    .breadcrumbs{height:42px;border-bottom:1px solid var(--line);background:#fff}
+    .breadcrumbs__inner{max-width:1440px;margin:0 auto;padding:0 88px;height:100%;display:flex;align-items:center;gap:8px;font-size:13px;text-transform:uppercase}
+    .breadcrumbs .dim{color:#5f5f5f;font-weight:400}
+    .breadcrumbs .sep{color:#a0a0a0}
+    .breadcrumbs .current{font-weight:700}
+
+    .page{
+      max-width:1440px;
+      margin:0 auto;
+      display:grid;
+      grid-template-columns: 906px 1fr;
+      align-items:start;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      column-gap:4px;
+      row-gap:10px;
+      background:#ffffff;
+      padding-right:0;
+      align-content:start;
+    }
+    .media{
+      background:#efefef;
+      min-height:582px;
+      overflow:hidden;
+      position:relative;
+    }
+    .media.short{min-height:578px}
+    .media.tall{min-height:654px}
+    .media img{width:100%;height:100%;object-fit:cover}
+    .media.contain img{object-fit:contain}
+    .media.pad-a img{padding:24px 82px 54px}
+    .media.pad-b img{padding:24px 88px 54px}
+    .media.pad-c img{padding:84px 20px 98px}
+    .blank{background:#efefef}
+
+    .sidebar{
+      background:#fff;
+      min-height:100vh;
+      border-left:1px solid var(--line);
+      padding:24px 22px 70px 22px;
+      position:sticky;
+      top:0;
+      align-self:start;
+    }
+    .eyebrow{font-size:13px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;margin:3px 0 8px}
+    .product-title{font-size:24px;line-height:1.1;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;margin:0 0 28px}
+
+    .option-block{margin:10px 0 26px}
+    .option-label{font-size:16px;font-weight:700;margin-bottom:12px}
+    .option-label span{font-weight:400;margin-left:8px;color:#333}
+    .size-line{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+    .size-value{font-size:16px;font-weight:400;color:#333}
+    .guide{height:24px;padding:0 10px;border-radius:16px;background:var(--chip);display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:500;color:#222}
+    .sizes{display:flex;gap:18px;align-items:center;margin-top:2px}
+    .size{min-width:34px;height:40px;padding:0 10px;border:1px solid transparent;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:400;background:transparent;font-family:'Inter',sans-serif}
+    .size.active{background:#000;color:#fff;border-radius:2px}
+    .post-content{max-width:1440px;margin:0 auto;background:#fff}
+    .promo-section{padding:66px 24px 80px;background:#fff}
+    .promo-inner{max-width:1440px;margin:0 auto;text-align:center}
+    .promo-copy{max-width:760px;margin:0 auto;font-size:12px;line-height:1.7;color:#666}
+    .promo-links{margin-top:30px;display:flex;flex-direction:column;align-items:center;gap:12px}
+    .promo-btn{width:100%;max-width:448px;height:46px;border:1px solid #a8a8a8;display:flex;align-items:center;justify-content:center;padding:0 16px;font-size:12px;color:#222;background:#fff;position:relative}
+    .promo-btn .arrow{position:absolute;right:16px;font-size:18px;line-height:1;color:#444}
+    .category-section{margin-top:56px;background:#fff}
+    .category-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+    .category-tile{position:relative;height:600px;overflow:hidden;background:#ddd}
+    .category-tile img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+    .category-tile:hover img{transform:scale(1.03)}
+    .category-overlay{position:absolute;inset:0;background:rgba(0,0,0,.10)}
+    .category-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding-bottom:40px;color:#fff}
+    .category-title{font-size:18px;font-weight:500}
+    .category-cta{margin-top:16px;border:1px solid rgba(255,255,255,.8);padding:10px 16px;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+    .site-footer{background:#fff;padding:34px 0 26px;color:#5a5a5a;font-size:14px}
+    .footer-inner{max-width:1440px;margin:0 auto;padding:0 24px}
+    .footer-grid{display:grid;grid-template-columns:140px repeat(4,1fr);gap:28px}
+    .footer-logo{width:80px;height:auto}
+    .footer-title{font-size:14px;font-weight:700;color:#222;margin:0 0 14px;text-transform:uppercase}
+    .footer-list{list-style:none;padding:0;margin:0}
+    .footer-list li{margin:0 0 8px;line-height:1.35}
+    .footer-list a{color:#666}
+    .footer-contact{font-size:12px;color:#555}
+    .footer-contact .strong{font-weight:600}
+    .footer-bottom{border-top:1px solid #9d9d9d;margin-top:24px;padding-top:18px;text-align:center;font-size:12px;color:#666}
+
+    .accordion{border-top:1px solid var(--line)}
+    .acc-item{border-bottom:1px solid var(--line)}
+    .acc-head{display:flex;align-items:center;justify-content:space-between;padding:23px 0 19px;cursor:pointer}
+    .acc-title{font-size:13px;font-weight:800;letter-spacing:0.24em;text-transform:uppercase}
+    .acc-icon{font-size:24px;font-weight:300;line-height:1;margin-left:12px}
+    .acc-body{padding:0 0 18px}
+    .description{font-size:15px;line-height:1.68;color:#373737;max-width:390px}
+
+    .tech-grid{padding-top:8px}
+    .metric-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:60px;row-gap:22px;margin-bottom:30px}
+    .metric .label{font-size:14px;margin-bottom:12px;color:#111}
+    .bars{display:flex;gap:12px;align-items:center}
+    .bars span{display:block;height:4px;width:32px;background:#e0e0e0}
+    .bars .on{background:#111}
+    .temp{margin-top:4px}
+    .temp-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+    .temp-title{font-size:14px;color:#111}
+    .temp-chip{height:24px;padding:0 12px;border-radius:14px;background:#ededed;font-size:12px;display:flex;align-items:center;color:#555}
+    .temp-line{height:4px;background:#e0e0e0;position:relative}
+    .temp-line::before{content:'';position:absolute;left:12%;right:30%;top:0;bottom:0;background:#111}
+    .temp-range{display:flex;align-items:center;justify-content:space-between;margin-top:10px;color:#555;font-size:12px}
+
+    @media (max-width: 1200px){
+      body{min-width:0}
+      .page{grid-template-columns:1fr}
+      .sidebar{position:relative;min-height:auto;border-left:0}
+      .gallery{grid-template-columns:1fr}
+      .media,.media.short,.media.tall{min-height:520px}
+      .breadcrumbs__inner{padding-left:20px;padding-right:20px}
+      .category-grid{grid-template-columns:1fr 1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+    }
+  
+    /* ─── ANNOUNCEMENT BAR ─── */
+    .topbar {
+      height: var(--topbar-h);
+      background: var(--black);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      gap: 20px;
+    }
+
+    .topbar a {
+      color: var(--white);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .topbar-right {
+      position: absolute;
+      right: 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 12px;
+    }
+
+    /* ─── NAV ─── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--nav-h);
+      background: var(--white);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      display: grid;
+      grid-template-columns: 200px 1fr 200px;
+      align-items: center;
+      padding: 0 32px;
+      transition: background 0.3s ease;
+    }
+
+    .nav-logo img {
+      height: 56px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--grey-700);
+      transition: color 0.2s;
+      padding: 4px 0;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--black);
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover { color: var(--black); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-actions {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .lang-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .lang-dropdown {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 20px;
+      background: var(--white);
+      color: var(--black);
+      min-width: 140px;
+      border: 1px solid var(--grey-100);
+      z-index: 200;
+      display: none;
+    }
+
+    .lang-dropdown.open { display: block; }
+
+    .lang-dropdown a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--black);
+      transition: background 0.15s;
+    }
+
+    .lang-dropdown a:hover { background: var(--grey-100); }
+    .lang-dropdown img { width: 18px; height: 12px; object-fit: cover; border-radius: 2px; }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 1px;
+      background: var(--black);
+      transition: all 0.3s;
+    }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--black);
+      z-index: 200;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    .mobile-nav.open { display: flex; }
+
+    .mobile-nav a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 36px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    .mobile-close {
+      position: absolute;
+      top: 20px;
+      right: 28px;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      :root { --nav-h: 56px; --topbar-h: 32px; }
+      .nav { grid-template-columns: 120px 1fr auto; padding: 0 20px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .topbar { font-size: 11px; padding: 0 16px; }
+      .topbar-right { display: none; }
+    }
+  }</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="topbar" style="position:relative;">
+  <span>Commandes personnalisées à partir de <strong>10 pièces</strong> — Production 100 % italienne</span>
+  <div class="topbar-right">
+    <span style="opacity:0.5;">|</span>
+    <a href="#contatti">Demander un devis →</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">
+    <a href="https://www.bicycle-line.com/it/" target="_blank"><img src="../images/logodfs.png" alt="Bicycle Line"></a>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="../index.html#come-funziona">Comment ça marche</a></li>
+    <li><a href="../uomo.html">Homme</a></li>
+    <li><a href="../donna.html">Femme</a></li>
+    <li><a href="../accessori.html">Accessoires</a></li>
+    <li><a href="../ragazzi.html">Enfants</a></li>
+    <li><a href="../index.html#faq">FAQ</a></li>
+    <li><a href="../index.html#contatti">Contact</a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <div class="lang-wrap">
+      <button class="lang-btn" id="lang-toggle">
+        <img src="../images/BANDIERE/Français.jpg" alt="FR">
+        <span>FR</span>
+        <i class="fas fa-chevron-down" style="font-size:9px; opacity:0.6;"></i>
+      </button>
+      <div class="lang-dropdown" id="lang-dropdown">
+        <a href="../index2.html"><img src="../images/BANDIERE/italia.jpg" alt="IT"> Italien</a>
+        <a href="../index-en.html"><img src="../images/BANDIERE/english.jpg" alt="EN"> Anglais</a>
+        <a href="../index-de.html"><img src="../images/BANDIERE/Allemand.jpg" alt="DE"> Allemand</a>
+        <a href="../index-fr.html"><img src="../images/BANDIERE/Français.jpg" alt="FR"> Français</a>
+        <a href="../index-es.html"><img src="../images/BANDIERE/Espagnol.jpg" alt="ES"> Espagnol</a>
+      </div>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Hommeu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobile-nav">
+  <button class="mobile-close" id="mobile-close">✕</button>
+  <a href="../index.html#come-funziona">Comment ça marche</a>
+  <a href="../uomo.html">Homme</a>
+  <a href="../donna.html">Femme</a>
+  <a href="../accessori.html">Accessoires</a>
+  <a href="../ragazzi.html">Enfants</a>
+  <a href="../index.html#faq">FAQ</a>
+  <a href="../index.html#contatti">Contact</a>
+</div>
+
+<div class="page">
+
+    
+
+    <div class="ui-nav-right"></div>
+  </div>
+
+  <div class="breadcrumbs">
+    <div class="breadcrumbs__inner">
+      <a href="../index.html" class="dim hover:underline">ACCUEIL</a>
+      <span class="sep">></span>
+      <a href="../uomo.html" class="dim hover:underline">CYCLISME HOMME</a>
+      <span class="sep">></span>
+      <span class="current">W6100 APEX</span>
+    </div>
+  </div>
+
+  <main class="page">
+    <section class="gallery">
+      <figure class="media tall">
+        <img src="../images/UOMO/W6100-APEX/1.png" alt="W6100 APEX vue de face">
+      </figure>
+      <figure class="media tall">
+        <img src="../images/UOMO/W6100/2.png" alt="W6100 APEX vue arrière">
+      </figure>
+      <figure class="media tall">
+        <img src="../images/UOMO/W6100/3.png" alt="W6100 APEX vue détaillée">
+      </figure>
+      <figure class="media tall">
+        <img src="../images/UOMO/W6100/4.png" alt="W6100 APEX vue latérale">
+      </figure>
+      <figure class="media tall">
+        <img src="../images/UOMO/W6100/5.png" alt="W6100 APEX vue détaillée 2">
+      </figure>
+      <figure class="media tall">
+        <img src="../images/UOMO/W6100/6.png" alt="W6100 APEX vue en action">
+      </figure>
+    </section>
+
+    <aside class="sidebar">
+      <div class="eyebrow">APEX</div>
+      <h1 class="product-title">W6100 APEX</h1>
+      <div class="mt-2 text-sm text-gray-600">Disponible pour Homme</div>
+
+      <div class="option-block"></div>
+
+      <div class="option-block">
+        <div class="size-line">
+          <div class="option-label" style="margin:0">Taille :</div>
+          <div class="guide" id="size-guide-btn" style="cursor: pointer;">GUIDE DES TAILLES</div>
+        </div>
+        <div class="sizes">
+          <button class="size">S</button>
+          <button class="size">M</button>
+          <button class="size">L</button>
+          <button class="size">XL</button>
+          <button class="size">XXL</button>
+          <button class="size">3XL</button>
+        </div>
+      </div>
+
+      <div class="accordion">
+        <div class="acc-item">
+          <div class="acc-head">
+            <div class="acc-title">Description</div>
+          </div>
+          <div class="acc-body">
+            <div class="description">
+              Nouvelle veste coupe-vent pliable Apex, conçue pour vous protéger pendant vos sorties à vélo. Réalisée dans un tissu ultra léger de 100 g/m², elle assure une respirabilité optimale et un bon contrôle de la température pendant l’effort. Le traitement déperlant DWR offre une résistance supplémentaire à l’eau. Découvrez ses caractéristiques exceptionnelles : en bas, une bande élastique avec éléments réfléchissants offre une meilleure visibilité même sous la pluie ; le zip frontal YKK® séparable à double curseur facilite l’accès aux poches du maillot ; les poignets à coupe franche et le col bien fermé permettent de vous protéger de l’air froid.
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <div class="acc-head">
+            <div class="acc-title">Caractéristiques techniques</div>
+          </div>
+          <div class="acc-body tech-grid">
+            <div class="metric-grid">
+              <div class="metric">
+                <div class="label">Coupe</div>
+                <div class="bars"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span></div>
+              </div>
+              <div class="metric">
+                <div class="label">Respirabilité</div>
+                <div class="bars"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span></div>
+              </div>
+              <div class="metric">
+                <div class="label">Élasticité</div>
+                <div class="bars"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span></div>
+              </div>
+            </div>
+            <div class="temp">
+              <div class="temp-head">
+                <div class="temp-title">Température</div>
+                <div class="temp-chip">+6 / +18 °C</div>
+              </div>
+              <div class="temp-line"></div>
+              <div class="temp-range">+6°C<span style="margin:0 8px;">—</span>+18°C</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="acc-item">
+          <div class="acc-head">
+            <div class="acc-title">CARACTÉRISTIQUES PRINCIPALES</div>
+            <div class="acc-icon">+</div>
+          </div>
+          <div class="acc-body">
+            <div class="description">
+              <ul style="list-style-type: none; padding: 0; margin: 0;">
+                <li style="margin-bottom: 8px;">• Tissu 100 g/m² respirant, coupe-vent et imperméable</li>
+                <li style="margin-bottom: 8px;">• Bande élastique réfléchissante avec silicone interne en bas pour une excellente adhérence et un grand confort</li>
+                <li style="margin-bottom: 8px;">• Zip YKK® séparable à double curseur pour un accès facile aux poches du maillot</li>
+                <li style="margin-bottom: 8px;">• Les poignets à coupe franche aident à bloquer l’air froid et la pluie et facilitent l’enfilage de la veste</li>
+                <li style="margin-bottom: 8px;">• Col avec bord supérieur élastique pour mieux épouser le cou et bloquer l’air froid</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+              </div>
+    </aside>
+  </main>
+
+  <!-- Size Guide Popup -->
+  <div id="size-guide-popup" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center">
+    <div class="bg-white rounded-lg max-w-4xl max-h-[90vh] overflow-auto relative">
+      <button id="close-popup" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl font-bold z-10">
+        ×
+      </button>
+
+      <div class="p-8">
+        <h2 class="text-2xl font-bold mb-6 text-center">GUIDE DES TAILLES</h2>
+
+        <div class="flex justify-center mb-6">
+          <img id="size-guide-image" src="" alt="Guide des tailles" class="max-w-full h-auto">
+        </div>
+
+        <div class="text-center text-sm text-gray-600">
+          <p>Cliquez sur le « X » en haut à droite pour fermer</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="post-content">
+    <section class="promo-section">
+      <div class="promo-inner">
+        <p class="promo-copy"></p>
+        <div class="promo-links">
+          <a href="../uomo.html" class="promo-btn">Découvrir d’autres produits <span class="arrow">></span></a>
+          <a href="../index.html#contatti" class="promo-btn">Je souhaite plus d’informations <span class="priority:1"></span></a>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div>
+          <a href="https://www.bicycle-line.com/it/" target="_blank"><img src="images/logodfs.png" alt="Bicycle Line Logo" class="footer-logo"></a>
+        </div>
+
+        <div>
+          <h3 class="footer-title">BICYCLE LINE</h3>
+          <ul class="footer-list">
+            <li><a href="https://www.bicycle-line.com/it/content/4-brand">Marque</a></li>
+            <li><a href="https://www.bicycle-line.com/it/content/6-storia">Histoire</a></li>
+            <li><a href="https://www.bicycle-line.com/it/content/9-sostenibilita">Durabilité</a></li>
+            <li><a href="https://www.bicycle-line.com/it/contact">Contactez-nous</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-title">BOUTIQUE</h3>
+          <ul class="footer-list">
+            <li><a href="https://www.bicycle-line.com/it/947-uomo">Homme</a></li>
+            <li><a href="https://www.bicycle-line.com/it/948-donna">Femme</a></li>
+            <li><a href="https://www.bicycle-line.com/it/949-cat-bambino">Enfants</a></li>
+            <li><a href="https://www.bicycle-line.com/it/1109-offerte">Offres</a></li>
+            <li><a href="https://www.bicycle-line.com/it/content/23-shop">Guide d’achat en ligne</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-title">LIENS UTILES</h3>
+          <ul class="footer-list">
+            <li><a href="https://www.bicycle-line.com/it/content/1-spedizione">Livraison</a></li>
+            <li><a href="https://www.bicycle-line.com/it/content/5-pagamento">Paiement</a></li>
+            <li><a href="https://www.bicycle-line.com/it/content/18-faq">FAQ</a></li>
+            <li><a href="https://www.bicycle-line.com/it/content/12-guida-alle-taglie">Guide des tailles</a></li>
+            <li><a href="https://www.bicycle-line.com/it/content/14-garanzia">Utilisation du produit et garantie</a></li>
+            <li><a href="https://www.bicycle-line.com/it/content/13-resi">Retours</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="footer-title">MENTIONS LÉGALES</h3>
+          <ul class="footer-list">
+            <li><a href="https://www.bicycle-line.com/it/content/15-privacy-policy">Politique de confidentialité</a></li>
+            <li><a href="https://www.bicycle-line.com/it/content/16-cookie-policy">Politique relative aux cookies</a></li>
+            <li><a href="https://www.bicycle-line.com/it/content/17-termini-e-condizioni">Conditions générales</a></li>
+          </ul>
+
+          <h3 class="footer-title" style="margin-top:18px;">CONTACT</h3>
+          <ul class="footer-list footer-contact">
+            <li class="strong">Bicycle Line - TVA 02027450267</li>
+            <li>Via Ferrara, 2-4 31030 Dosson di Casier</li>
+            <li>Trévise - Italie</li>
+            <li>+39 042 490156</li>
+            <li>custom@bicycle-line.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom"></div>
+    </div>
+  </footer>
+
+  <script>
+// Language toggle
+const langToggle = document.getElementById('lang-toggle');
+const langDropdown = document.getElementById('lang-dropdown');
+const mobileNav = document.getElementById('mobile-nav');
+const hamburger = document.getElementById('hamburger');
+const mobileClose = document.getElementById('mobile-close');
+
+langToggle.addEventListener('click', () => {
+  langDropdown.classList.toggle('open');
+});
+
+document.addEventListener('click', (e) => {
+  if (!langToggle.contains(e.target) && !langDropdown.contains(e.target)) {
+    langDropdown.classList.remove('open');
+  }
+});
+
+// Mobile navigation
+hamburger.addEventListener('click', () => {
+  mobileNav.classList.add('open');
+});
+
+mobileClose.addEventListener('click', () => {
+  mobileNav.classList.remove('open');
+});
+
+function toggleLanguageHommeu(button) {
+  const dropdown = document.getElementById('language-dropdown');
+  dropdown.classList.toggle('hidden');
+}
+
+// Accordion functionality for CARATTERISTICHE PRINCIPALI
+document.addEventListener('DOMContentLoaded', function() {
+  const accHeads = document.querySelectorAll('.acc-head');
+  
+  accHeads.forEach(accHead => {
+    accHead.addEventListener('click', function() {
+      const accItem = this.parentElement;
+      const accBody = accItem.querySelector('.acc-body');
+      const accIcon = this.querySelector('.acc-icon');
+      
+      // Toggle accordion body
+      if (accBody.style.display === 'none') {
+        accBody.style.display = 'block';
+        accIcon.textContent = '-';
+      } else {
+        accBody.style.display = 'none';
+        accIcon.textContent = '+';
+      }
+    });
+  });
+  
+  // Set initial state (closed)
+  const accItems = document.querySelectorAll('.acc-item');
+  accItems.forEach(accItem => {
+    const accBody = accItem.querySelector('.acc-body');
+    const accIcon = accItem.querySelector('.acc-icon');
+    if (accIcon && accIcon.textContent === '+') {
+      accBody.style.display = 'none';
+    }
+  });
+});
+</script>
+</body>
+</html>
