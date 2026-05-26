@@ -262,29 +262,42 @@ a{text-decoration:none;color:inherit}
       gap: 20px;
     }
 
-    .lang-btn {
+    
+    .lang-wrap { position: relative; }
+
+.lang-btn {
       display: flex;
       align-items: center;
       gap: 6px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: var(--black);
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 12px;
       font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
       cursor: pointer;
-      transition: all 0.2s ease;
+      appearance: none;
+      -webkit-appearance: none;
     }
 
-    .lang-dropdown {
+    
+    .lang-btn img { width: 18px; height: 12px; object-fit: cover; border-radius: 1px; }
+
+.lang-dropdown {
       position: absolute;
       top: calc(100% + 8px);
-      right: 20px;
+      right: 0;
       background: var(--white);
       color: var(--black);
-      min-width: 140px;
-      border: 1px solid var(--grey-100);
+      width: 140px;
+      border: 1px solid #e0e0e0;
       z-index: 200;
       display: none;
+      padding: 0;
+      box-shadow: none;
     }
 
     .lang-dropdown.open { display: block; }
@@ -293,15 +306,19 @@ a{text-decoration:none;color:inherit}
       display: flex;
       align-items: center;
       gap: 8px;
+      min-height: 40px;
       padding: 10px 14px;
       font-size: 13px;
       font-weight: 500;
+      line-height: 1;
       color: var(--black);
+      background: var(--white);
+      white-space: nowrap;
       transition: background 0.15s;
     }
 
-    .lang-dropdown a:hover { background: var(--grey-100); }
-    .lang-dropdown img { width: 18px; height: 12px; object-fit: cover; border-radius: 2px; }
+    .lang-dropdown a:hover, .lang-dropdown a[aria-current="true"] { background: #e6e6e6; }
+    .lang-dropdown img { width: 18px; height: 12px; object-fit: cover; border-radius: 1px; flex: 0 0 auto; }
 
     .hamburger {
       display: none;
@@ -477,11 +494,11 @@ a{text-decoration:none;color:inherit}
         <i class="fas fa-chevron-down" style="font-size:9px; opacity:0.6;"></i>
       </button>
       <div class="lang-dropdown" id="lang-dropdown">
-        <a href="./W6510-APEX.html"><img src="../images/BANDIERE/italia.jpg" alt="IT"> Italiano</a>
-        <a href="../INGLESE/UOMO EN/W6510-APEX_EN.html"><img src="../images/BANDIERE/english.jpg" alt="EN"> Inglese</a>
-        <a href="../TEDESCO/UOMO DE/W6510-APEX_DE.html"><img src="../images/BANDIERE/Deutsch.jpg" alt="DE"> Tedesco</a>
-        <a href="../FRANCESE/UOMO FR/W6510-APEX_FR.html"><img src="../images/BANDIERE/Français.jpg" alt="FR"> Francese</a>
-        <a href="../SPAGNOLO/UOMO ES/W6510-APEX_ES.html"><img src="../images/BANDIERE/Español.jpg" alt="ES"> Spagnolo</a>
+        <a href="./W6510-APEX.html" aria-current="true"><img src="../images/BANDIERE/italia.jpg" alt="IT"> Italiano</a>
+        <a href="../INGLESE/UOMO EN/W6510-APEX_EN.html"><img src="../images/BANDIERE/english.jpg" alt="EN"> English</a>
+        <a href="../TEDESCO/UOMO DE/W6510-APEX_DE.html"><img src="../images/BANDIERE/Deutsch.jpg" alt="DE"> Deutsch</a>
+        <a href="../FRANCESE/UOMO FR/W6510-APEX_FR.html"><img src="../images/BANDIERE/Français.jpg" alt="FR"> Français</a>
+        <a href="../SPAGNOLO/UOMO ES/W6510-APEX_ES.html"><img src="../images/BANDIERE/Español.jpg" alt="ES"> Español</a>
       </div>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Menu">
