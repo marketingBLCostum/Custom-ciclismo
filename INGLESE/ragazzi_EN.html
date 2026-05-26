@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="./images/logodfs.png" />
+  <link rel="icon" type="image/png" href="../images/logodfs.png" />
   <title>Kids’ Catalog</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
@@ -1088,7 +1087,83 @@
       .topbar { font-size: 11px; padding: 0 16px; }
       .topbar-right { display: none; }
     }
-  </style>
+  
+    /* Local replacements for the small Tailwind utility subset used by these static pages. */
+    .fixed{position:fixed}.absolute{position:absolute}.inset-0{inset:0}.top-4{top:1rem}.right-4{right:1rem}.z-50{z-index:50}.hidden{display:none!important}.flex{display:flex}.grid{display:grid}.items-center{align-items:center}.justify-center{justify-content:center}.mx-auto{margin-left:auto;margin-right:auto}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mb-12{margin-bottom:3rem}.mt-8{margin-top:2rem}.p-8{padding:2rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-12{padding-top:3rem;padding-bottom:3rem}.w-20{width:5rem}.w-full{width:100%}.max-w-7xl{max-width:80rem}.max-w-4xl{max-width:56rem}.max-w-full{max-width:100%}.max-h-\[90vh\]{max-height:90vh}.h-auto{height:auto}.overflow-y-auto{overflow-y:auto}.rounded-lg{border-radius:.5rem}.bg-white{background:#fff}.bg-gray-50{background:#f9fafb}.bg-black{background:#000}.bg-opacity-50{--tw-bg-opacity:.5;background-color:rgba(0,0,0,var(--tw-bg-opacity))}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-sm{font-size:.875rem;line-height:1.25rem}.font-bold{font-weight:700}.text-gray-400{color:#9ca3af}.text-gray-500{color:#6b7280}.text-gray-600{color:#4b5563}.text-gray-700{color:#374151}.text-gray-900{color:#111827}.leading-relaxed{line-height:1.625}.space-x-4>:not([hidden])~:not([hidden]){margin-left:1rem}.space-y-3>:not([hidden])~:not([hidden]){margin-top:.75rem}.gap-8{gap:2rem}.border-t{border-top:1px solid #e5e7eb}.border-gray-200{border-color:#e5e7eb}.pt-8{padding-top:2rem}.transition{transition:all .15s ease}.hover\:text-gray-700:hover{color:#374151}.hover\:text-gray-900:hover{color:#111827}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.size-guide-fallback{margin:0 auto 18px;max-width:520px;text-align:center;color:#4b5563;line-height:1.6}@media(min-width:768px){.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(min-width:1024px){.lg\:grid-cols-5{grid-template-columns:repeat(5,minmax(0,1fr))}.lg\:px-8{padding-left:2rem;padding-right:2rem}}
+  
+
+/* Footer coerente con la home */
+.footer-index-clone {
+  background: #050505;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 70px 0 32px;
+  color: #ffffff;
+}
+.footer-index-clone .wrap {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.footer-index-clone .footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1.2fr;
+  gap: 48px;
+  margin-bottom: 54px;
+}
+.footer-index-clone .footer-logo img {
+  height: 100px;
+  margin-bottom: 20px;
+}
+.footer-index-clone .footer-tagline {
+  font-size: 13px;
+  color: #8a8a8a;
+  line-height: 1.7;
+}
+.footer-index-clone .footer-col h4 {
+  font-family: 'Barlow Condensed', Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: #ffffff;
+  margin: 0 0 18px;
+}
+.footer-index-clone .footer-col a,
+.footer-index-clone .footer-col li {
+  display: block;
+  font-size: 13px;
+  color: #8a8a8a;
+  margin-bottom: 10px;
+  line-height: 1.45;
+  text-decoration: none;
+  list-style: none;
+}
+.footer-index-clone .footer-col a:hover { color: #ffffff; }
+.footer-index-clone .footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.footer-index-clone .footer-bottom p {
+  font-size: 12px;
+  color: #666666;
+  margin: 0;
+}
+@media (max-width: 1024px) {
+  .footer-index-clone .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .footer-index-clone .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-index-clone .footer-bottom { flex-direction: column; }
+}
+@media (max-width: 480px) {
+  .footer-index-clone .wrap { padding: 0 20px; }
+  .footer-index-clone .footer-grid { grid-template-columns: 1fr; }
+}
+
+</style>
 </head>
 <body>
 
@@ -1104,32 +1179,32 @@
 <!-- NAV -->
 <nav class="nav">
   <div class="nav-logo">
-    <a href="https://www.bicycle-line.com/it/" target="_blank"><img src="images/logodfs.png" alt="Bicycle Line"></a>
+    <a href="https://www.bicycle-line.com/it/" target="_blank"><img src="../images/logodfs.png" alt="Bicycle Line"></a>
   </div>
 
   <ul class="nav-links">
-    <li><a href="index.html#come-funziona">How It Works</a></li>
-    <li><a href="uomo.html">Men</a></li>
-    <li><a href="donna.html">Women</a></li>
-    <li><a href="accessori.html">Accessories</a></li>
-    <li><a href="ragazzi.html">Kids</a></li>
-    <li><a href="index.html#faq">FAQ</a></li>
-    <li><a href="index.html#contatti">Contacts</a></li>
+    <li><a href="./index.html#come-funziona">How It Works</a></li>
+    <li><a href="./uomo_EN.html">Men</a></li>
+    <li><a href="./donna_EN.html">Women</a></li>
+    <li><a href="./accessori_EN.html">Accessories</a></li>
+    <li><a href="./ragazzi_EN.html">Kids</a></li>
+    <li><a href="./index.html#faq">FAQ</a></li>
+    <li><a href="./index.html#contatti">Contacts</a></li>
   </ul>
 
   <div class="nav-actions">
     <div class="lang-wrap">
       <button class="lang-btn" id="lang-toggle">
-        <img src="images/BANDIERE/english.jpg" alt="EN">
+        <img src="../images/BANDIERE/english.jpg" alt="EN">
         <span>EN</span>
         <i class="fas fa-chevron-down" style="font-size:9px; opacity:0.6;"></i>
       </button>
       <div class="lang-dropdown" id="lang-dropdown">
-        <a href="index2.html"><img src="images/BANDIERE/italia.jpg" alt="IT"> Italian</a>
-        <a href="index-en.html"><img src="images/BANDIERE/english.jpg" alt="EN"> English</a>
-        <a href="index-de.html"><img src="images/BANDIERE/German.jpg" alt="DE"> German</a>
-        <a href="index-fr.html"><img src="images/BANDIERE/French.jpg" alt="FR"> French</a>
-        <a href="index-es.html"><img src="images/BANDIERE/Spanish.jpg" alt="ES"> Spanish</a>
+        <a href="../ragazzi.html"><img src="../images/BANDIERE/italia.jpg" alt="IT"> Italian</a>
+        <a href="./ragazzi_EN.html"><img src="../images/BANDIERE/english.jpg" alt="EN"> English</a>
+        <a href="../TEDESCO/ragazzi_DE.html"><img src="../images/BANDIERE/Deutsch.jpg" alt="DE"> German</a>
+        <a href="../FRANCESE/ragazzi_FR.html"><img src="../images/BANDIERE/Français.jpg" alt="FR"> French</a>
+        <a href="../SPAGNOLO/ragazzi_ES.html"><img src="../images/BANDIERE/Español.jpg" alt="ES"> Spanish</a>
       </div>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -1141,20 +1216,20 @@
 <!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobile-nav">
   <button class="mobile-close" id="mobile-close">✕</button>
-  <a href="index.html#come-funziona">How It Works</a>
-  <a href="uomo.html">Men</a>
-  <a href="donna.html">Women</a>
-  <a href="accessori.html">Accessories</a>
-  <a href="ragazzi.html">Kids</a>
-  <a href="index.html#faq">FAQ</a>
-  <a href="index.html#contatti">Contacts</a>
+  <a href="./index.html#come-funziona">How It Works</a>
+  <a href="./uomo_EN.html">Men</a>
+  <a href="./donna_EN.html">Women</a>
+  <a href="./accessori_EN.html">Accessories</a>
+  <a href="./ragazzi_EN.html">Kids</a>
+  <a href="./index.html#faq">FAQ</a>
+  <a href="./index.html#contatti">Contacts</a>
 </div>
 
 <div class="page">
 
   <div class="breadcrumbs">
     <div class="breadcrumbs__inner">
-      <a href="index.html" class="dim hover:underline">HOME</a>
+      <a href="./uomo_EN.html" class="dim hover:underline">HOME</a>
       <span class="sep">></span>
       <span class="current">KIDS’ CYCLING</span>
     </div>
@@ -1165,144 +1240,144 @@
           <div class="products-grid">
             <article class="card">
               <div class="card-image">
-                                <a href="RAGAZZI SCHEDE PRODOTTO/W6303-DRAFT.html" class="product-photo">
-                  <img src="images/RAGAZZI/W6303 DRAFT.png" alt="W6303 DRAFT" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                                <a href="./RAGAZZI EN/W6303-DRAFT-EN.html" class="product-photo">
+                  <img src="../images/RAGAZZI/W6303 DRAFT.png" alt="W6303 DRAFT" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/RAGAZZI/W6303/1.png" alt="W6303 DRAFT Preview">
+                  <img src="../images/RAGAZZI/W6303/1.png" alt="W6303 DRAFT Preview">
                 </div>
               </div>
-                                          <a href="RAGAZZI SCHEDE PRODOTTO/W6303-DRAFT.html" class="product-name"><strong>W6303 DRAFT</strong></a>
+                                          <a href="./RAGAZZI EN/W6303-DRAFT-EN.html" class="product-name"><strong>W6303 DRAFT</strong></a>
               <div class="product-subtitle">Full-zip short-sleeve jersey - kids</div>
                                         </article>
 
             <article class="card">
               <div class="card-image third">
-                                <a href="RAGAZZI SCHEDE PRODOTTO/W2200-ECHELON.html" class="product-photo">
-                  <img src="images/RAGAZZI/W2200 ECHELON.png" alt="W2200 ECHELON" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                                <a href="./RAGAZZI EN/W2200-ECHELON-EN.html" class="product-photo">
+                  <img src="../images/RAGAZZI/W2200 ECHELON.png" alt="W2200 ECHELON" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/RAGAZZI/W2200/1.png" alt="W2200 ECHELON Preview">
+                  <img src="../images/RAGAZZI/W2200/1.png" alt="W2200 ECHELON Preview">
                 </div>
               </div>
-                                          <a href="RAGAZZI SCHEDE PRODOTTO/W2200-ECHELON.html" class="product-name"><strong>W2200 ECHELON</strong></a>
+                                          <a href="./RAGAZZI EN/W2200-ECHELON-EN.html" class="product-name"><strong>W2200 ECHELON</strong></a>
               <div class="product-subtitle">Full-zip short-sleeve jersey - kids</div>
                                         </article>
 
             <article class="card">
               <div class="card-image">
-                                <a href="RAGAZZI SCHEDE PRODOTTO/W2201.html" class="product-photo">
-                  <img src="images/RAGAZZI/W2201 - Maglia manica lunga da bambino.png" alt="W2201" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                                <a href="./RAGAZZI EN/W2201-EN.html" class="product-photo">
+                  <img src="../images/RAGAZZI/W2201 - Maglia manica lunga da bambino.png" alt="W2201" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/RAGAZZI/W2201/1.png" alt="W2201 Preview">
+                  <img src="../images/RAGAZZI/W2201/1.png" alt="W2201 Preview">
                 </div>
               </div>
-                                          <a href="RAGAZZI SCHEDE PRODOTTO/W2201.html" class="product-name"><strong>W2201</strong></a>
+                                          <a href="./RAGAZZI EN/W2201-EN.html" class="product-name"><strong>W2201</strong></a>
               <div class="product-subtitle">Long-sleeve jersey - kids</div>
                                         </article>
 
             <article class="card">
               <div class="card-image">
-                                <a href="RAGAZZI SCHEDE PRODOTTO/W2202.html" class="product-photo">
-                  <img src="images/RAGAZZI/W2202 - Salopette da bambino.png" alt="W2202" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                                <a href="./RAGAZZI EN/W2202-EN.html" class="product-photo">
+                  <img src="../images/RAGAZZI/W2202 - Salopette da bambino.png" alt="W2202" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/RAGAZZI/W2202/1.png" alt="W2202 Preview">
+                  <img src="../images/RAGAZZI/W2202/1.png" alt="W2202 Preview">
                 </div>
               </div>
-                                          <a href="RAGAZZI SCHEDE PRODOTTO/W2202.html" class="product-name"><strong>W2202</strong></a>
+                                          <a href="./RAGAZZI EN/W2202-EN.html" class="product-name"><strong>W2202</strong></a>
               <div class="product-subtitle">Bib shorts - kids</div>
                                         </article>
 
             <article class="card">
               <div class="card-image third">
-                                <a href="RAGAZZI SCHEDE PRODOTTO/W2219.html" class="product-photo">
-                  <img src="images/RAGAZZI/W2219 - Pantaloncini senza bretelle da bambino.png" alt="W2219" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                                <a href="./RAGAZZI EN/W2219-EN.html" class="product-photo">
+                  <img src="../images/RAGAZZI/W2219 - Pantaloncini senza bretelle da bambino.png" alt="W2219" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/RAGAZZI/W2219/1.png" alt="W2219 Preview">
+                  <img src="../images/RAGAZZI/W2219/1.png" alt="W2219 Preview">
                 </div>
               </div>
-                                          <a href="RAGAZZI SCHEDE PRODOTTO/W2219.html" class="product-name"><strong>W2219</strong></a>
+                                          <a href="./RAGAZZI EN/W2219-EN.html" class="product-name"><strong>W2219</strong></a>
               <div class="product-subtitle">Shorts without bib straps - kids</div>
                                         </article>
 
             <article class="card">
               <div class="card-image">
-                                <a href="RAGAZZI SCHEDE PRODOTTO/W2212.html" class="product-photo">
-                  <img src="images/RAGAZZI/W2212 - Calzamaglia con bretelle da bambino.png" alt="W2212" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                                <a href="./RAGAZZI EN/W2212-EN.html" class="product-photo">
+                  <img src="../images/RAGAZZI/W2212 - Calzamaglia con bretelle da bambino.png" alt="W2212" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/RAGAZZI/W2212/1.png" alt="W2212 Preview">
+                  <img src="../images/RAGAZZI/W2212/1.png" alt="W2212 Preview">
                 </div>
               </div>
-                                          <a href="RAGAZZI SCHEDE PRODOTTO/W2212.html" class="product-name"><strong>W2212</strong></a>
+                                          <a href="./RAGAZZI EN/W2212-EN.html" class="product-name"><strong>W2212</strong></a>
               <div class="product-subtitle">Bib tights - kids</div>
                                         </article>
 
             <article class="card">
               <div class="card-image">
-                                <a href="RAGAZZI SCHEDE PRODOTTO/W2218.html" class="product-photo">
-                  <img src="images/RAGAZZI/W2218 - Calzamaglia senza bretelle da bambino.png" alt="W2218" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                                <a href="./RAGAZZI EN/W2218-EN.html" class="product-photo">
+                  <img src="../images/RAGAZZI/W2218 - Calzamaglia senza bretelle da bambino.png" alt="W2218" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/RAGAZZI/W2218/1.png" alt="W2218 Preview">
+                  <img src="../images/RAGAZZI/W2218/1.png" alt="W2218 Preview">
                 </div>
               </div>
-                                          <a href="RAGAZZI SCHEDE PRODOTTO/W2218.html" class="product-name"><strong>W2218</strong></a>
+                                          <a href="./RAGAZZI EN/W2218-EN.html" class="product-name"><strong>W2218</strong></a>
               <div class="product-subtitle">Tights without bib straps - kids</div>
                                         </article>
 
             <article class="card">
               <div class="card-image third">
-                                <a href="RAGAZZI SCHEDE PRODOTTO/W2210.html" class="product-photo">
-                  <img src="images/RAGAZZI/W2210 - Giubbino da bambino.png" alt="W2210" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                                <a href="./RAGAZZI EN/W2210-EN.html" class="product-photo">
+                  <img src="../images/RAGAZZI/W2210 - Giubbino da bambino.png" alt="W2210" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/RAGAZZI/W2210/1.png" alt="W2210 Preview">
+                  <img src="../images/RAGAZZI/W2210/1.png" alt="W2210 Preview">
                 </div>
               </div>
-                                          <a href="RAGAZZI SCHEDE PRODOTTO/W2210.html" class="product-name"><strong>W2210</strong></a>
+                                          <a href="./RAGAZZI EN/W2210-EN.html" class="product-name"><strong>W2210</strong></a>
               <div class="product-subtitle">Jacket - kids</div>
                                         </article>
 
             <article class="card">
               <div class="card-image">
-                                <a href="RAGAZZI SCHEDE PRODOTTO/W2204.html" class="product-photo">
-                  <img src="images/RAGAZZI/W2204 - Gilet antivento da bambino.png" alt="W2204" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                                <a href="./RAGAZZI EN/W2204-EN.html" class="product-photo">
+                  <img src="../images/RAGAZZI/W2204 - Gilet antivento da bambino.png" alt="W2204" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/RAGAZZI/W2204/1.png" alt="W2204 Preview">
+                  <img src="../images/RAGAZZI/W2204/1.png" alt="W2204 Preview">
                 </div>
               </div>
-                                          <a href="RAGAZZI SCHEDE PRODOTTO/W2204.html" class="product-name"><strong>W2204</strong></a>
+                                          <a href="./RAGAZZI EN/W2204-EN.html" class="product-name"><strong>W2204</strong></a>
               <div class="product-subtitle">Windproof vest - kids</div>
                                         </article>
 
             <article class="card">
               <div class="card-image">
-                                <a href="RAGAZZI SCHEDE PRODOTTO/W2216.html" class="product-photo">
-                  <img src="images/RAGAZZI/W2216 - Body manica corta da bambino.png" alt="W2216" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                                <a href="./RAGAZZI EN/W2216-EN.html" class="product-photo">
+                  <img src="../images/RAGAZZI/W2216 - Body manica corta da bambino.png" alt="W2216" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/RAGAZZI/W2216/1.png" alt="W2216 Preview">
+                  <img src="../images/RAGAZZI/W2216/1.png" alt="W2216 Preview">
                 </div>
               </div>
-                                          <a href="RAGAZZI SCHEDE PRODOTTO/W2216.html" class="product-name"><strong>W2216</strong></a>
+                                          <a href="./RAGAZZI EN/W2216-EN.html" class="product-name"><strong>W2216</strong></a>
               <div class="product-subtitle">Short-sleeve skinsuit - kids</div>
                                         </article>
 
             <article class="card">
               <div class="card-image third">
-                                <a href="RAGAZZI SCHEDE PRODOTTO/W2217.html" class="product-photo">
-                  <img src="images/RAGAZZI/W2217 - Body manica lunga da bambino.png" alt="W2217" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                                <a href="./RAGAZZI EN/W2217-EN.html" class="product-photo">
+                  <img src="../images/RAGAZZI/W2217 - Body manica lunga da bambino.png" alt="W2217" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/RAGAZZI/W2217/1.png" alt="W2217 Preview">
+                  <img src="../images/RAGAZZI/W2217/1.png" alt="W2217 Preview">
                 </div>
               </div>
-                                          <a href="RAGAZZI SCHEDE PRODOTTO/W2217.html" class="product-name"><strong>W2217</strong></a>
+                                          <a href="./RAGAZZI EN/W2217-EN.html" class="product-name"><strong>W2217</strong></a>
               <div class="product-subtitle">Long-sleeve skinsuit - kids</div>
                                         </article>
 
@@ -1345,75 +1420,58 @@ function toggleLanguageMenu(button) {
 }
 </script>
 
-       <footer class="bg-white py-8 text-gray-700 text-sm">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
-                <!-- Logo -->
-                <div class="col-span-1">
-                    <a href="https://www.bicycle-line.com/it/" target="_blank"><img src="images/logodfs.png" alt="Bicycle Line Logo" class="w-20 h-auto"></a>
-                </div>
-
-                <!-- BICYCLE LINE -->
-                <div class="col-span-1">
-                    <h3 class="font-bold text-gray-900 mb-3">BICYCLE LINE</h3>
-                    <ul class="space-y-1">
-                        <li><a href="https://www.bicycle-line.com/it/content/4-brand" class="hover:text-gray-900 transition">Brand</a></li>
-                        <li><a href="https://www.bicycle-line.com/it/content/6-storia" class="hover:text-gray-900 transition">History</a></li>
-                        <li><a href="https://www.bicycle-line.com/it/content/9-sostenibilita" class="hover:text-gray-900 transition">Sustainability</a></li>
-                        <li><a href="https://www.bicycle-line.com/it/contact" class="hover:text-gray-900 transition">Contact us</a></li>
-                    </ul>
-                </div>
-
-                <!-- SHOP -->
-                <div class="col-span-1">
-                    <h3 class="font-bold text-gray-900 mb-3">SHOP</h3>
-                    <ul class="space-y-1">
-                        <li><a href="https://www.bicycle-line.com/it/947-uomo" class="hover:text-gray-900 transition">Men</a></li>
-                        <li><a href="https://www.bicycle-line.com/it/948-donna" class="hover:text-gray-900 transition">Women</a></li>
-                        <li><a href="https://www.bicycle-line.com/it/949-cat-bambino" class="hover:text-gray-900 transition">Kids</a></li>
-                        <li><a href="https://www.bicycle-line.com/it/1109-offerte" class="hover:text-gray-900 transition">Offers</a></li>
-                        <li><a href="https://www.bicycle-line.com/it/content/23-shop" class="hover:text-gray-900 transition">Online shopping guide</a></li>
-                    </ul>
-                </div>
-
-                <!-- USEFUL LINKS -->
-                <div class="col-span-1">
-                    <h3 class="font-bold text-gray-900 mb-3">USEFUL LINKS</h3>
-                    <ul class="space-y-1">
-                        <li><a href="https://www.bicycle-line.com/it/content/1-spedizione" class="hover:text-gray-900 transition">Shipping</a></li>
-                        <li><a href="https://www.bicycle-line.com/it/content/5-pagamento" class="hover:text-gray-900 transition">Payment</a></li>
-                        <li><a href="https://www.bicycle-line.com/it/content/18-faq" class="hover:text-gray-900 transition">FAQ</a></li>
-                        <li><a href="https://www.bicycle-line.com/it/content/12-guida-alle-taglie" class="hover:text-gray-900 transition">Size guide</a></li>
-                        <li><a href="https://www.bicycle-line.com/it/content/14-garanzia" class="hover:text-gray-900 transition">Product use and warranty</a></li>
-                        <li><a href="https://www.bicycle-line.com/it/content/13-resi" class="hover:text-gray-900 transition">Returns</a></li>
-                    </ul>
-                </div>
-
-                <!-- LEGAL NOTES + CONTACT US -->
-                <div class="col-span-1">
-                    <h3 class="font-bold text-gray-900 mb-3">LEGAL NOTES</h3>
-                    <ul class="space-y-1">
-                        <li><a href="https://www.bicycle-line.com/it/content/15-privacy-policy" class="hover:text-gray-900 transition">Privacy Policy</a></li>
-                        <li><a href="https://www.bicycle-line.com/it/content/16-cookie-policy" class="hover:text-gray-900 transition">Cookie policy</a></li>
-                        <li><a href="https://www.bicycle-line.com/it/content/17-termini-e-condizioni" class="hover:text-gray-900 transition">Terms and conditions</a></li>
-                    </ul>
-
-                    <h3 class="font-bold text-gray-900 mb-3 mt-4">CONTACT US</h3>
-                    <ul class="space-y-1 text-xs">
-                        <li class="font-semibold">Bicycle Line - VAT 02027450267</li>
-                        <li>Via Ferrara, 2-4 31030 Dosson di Casier</li>
-                        <li>Treviso - Italy</li>
-                        <li>+39 0422 490156</li>
-                        <li>custom@bicycle-line.com</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Bottom Bar -->
-            <div class="border-t border-gray-300 mt-6 pt-4 text-center text-xs text-gray-500">
-            </div>
+       <!-- FOOTER -->
+<footer class="footer footer-index-clone">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <a href="https://www.bicycle-line.com/en/" target="_blank">
+            <img src="../images/logo bianco.png" alt="Bicycle Line">
+          </a>
         </div>
-    </footer>
+        <p class="footer-tagline">Custom technical cycling apparel.<br>Italian production since 1987.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Bicycle Line</h4>
+        <a href="https://www.bicycle-line.com/en/content/4-brand">Brand</a>
+        <a href="https://www.bicycle-line.com/en/content/6-history">History</a>
+        <a href="https://www.bicycle-line.com/en/content/9-sustainability">Sustainability</a>
+        <a href="https://www.bicycle-line.com/en/contact">Contact us</a>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="https://www.bicycle-line.com/en/947-men">Men</a>
+        <a href="https://www.bicycle-line.com/en/948-women">Women</a>
+        <a href="https://www.bicycle-line.com/en/949-kids">Kids</a>
+        <a href="https://www.bicycle-line.com/en/1109-offers">Offers</a>
+      </div>
+      <div class="footer-col">
+        <h4>Useful Links</h4>
+        <a href="https://www.bicycle-line.com/en/content/1-shipping">Shipping</a>
+        <a href="https://www.bicycle-line.com/en/content/18-faq">FAQ</a>
+        <a href="https://www.bicycle-line.com/en/content/12-size-chart">Size guide</a>
+        <a href="https://www.bicycle-line.com/en/content/13-returns">Returns</a>
+      </div>
+      <div class="footer-col">
+        <h4>Legal Notes</h4>
+        <a href="https://www.bicycle-line.com/en/content/15-privacy-policy">Privacy Policy</a>
+        <a href="https://www.bicycle-line.com/en/content/16-cookie-policy">Cookie Policy</a>
+        <a href="https://www.bicycle-line.com/en/content/17-terms-and-conditions">Terms and conditions</a>
+        <div style="margin-top:24px;">
+          <h4>Contacts</h4>
+          <li>Via Ferrara 2-4, 31030 Dosson TV</li>
+          <li>+39 0422 490156</li>
+          <li>custom@bicycle-line.com</li>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Bicycle Line Srl — VAT 02027450267</p>
+      <p>Dosson di Casier, Treviso — Italy</p>
+    </div>
+  </div>
+</footer>
                 </div>
             </div>
 

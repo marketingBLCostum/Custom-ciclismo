@@ -3,9 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="../images/logodfs.png" />
+  <link rel="icon" type="image/png" href="../../images/logodfs.png" />
   <title>BL - W6008 ECHELON</title>
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -41,7 +40,9 @@
     html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;height:100%}
     body{min-width:1440px}
     img{display:block;max-width:100%}
-    a{text-decoration:none;color:inherit}
+    
+    figure{margin:0}
+a{text-decoration:none;color:inherit}
     button{font:inherit}
     .container-w{max-width:1200px}
     .link-underline{text-decoration:underline;text-underline-offset:3px}
@@ -72,6 +73,7 @@
       align-content:start;
     }
     .media{
+      margin:0;
       background:#efefef;
       min-height:582px;
       overflow:hidden;
@@ -361,7 +363,84 @@
       .topbar { font-size: 11px; padding: 0 16px; }
       .topbar-right { display: none; }
     }
-  }</style>
+  }
+    /* Local replacements for the small Tailwind utility subset used by these static pages. */
+    .fixed{position:fixed}.absolute{position:absolute}.inset-0{inset:0}.top-4{top:1rem}.right-4{right:1rem}.z-50{z-index:50}.hidden{display:none!important}.flex{display:flex}.grid{display:grid}.items-center{align-items:center}.justify-center{justify-content:center}.mx-auto{margin-left:auto;margin-right:auto}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mb-12{margin-bottom:3rem}.mt-8{margin-top:2rem}.p-8{padding:2rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-12{padding-top:3rem;padding-bottom:3rem}.w-20{width:5rem}.w-full{width:100%}.max-w-7xl{max-width:80rem}.max-w-4xl{max-width:56rem}.max-w-full{max-width:100%}.max-h-\[90vh\]{max-height:90vh}.h-auto{height:auto}.overflow-y-auto{overflow-y:auto}.rounded-lg{border-radius:.5rem}.bg-white{background:#fff}.bg-gray-50{background:#f9fafb}.bg-black{background:#000}.bg-opacity-50{--tw-bg-opacity:.5;background-color:rgba(0,0,0,var(--tw-bg-opacity))}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-sm{font-size:.875rem;line-height:1.25rem}.font-bold{font-weight:700}.text-gray-400{color:#9ca3af}.text-gray-500{color:#6b7280}.text-gray-600{color:#4b5563}.text-gray-700{color:#374151}.text-gray-900{color:#111827}.leading-relaxed{line-height:1.625}.space-x-4>:not([hidden])~:not([hidden]){margin-left:1rem}.space-y-3>:not([hidden])~:not([hidden]){margin-top:.75rem}.gap-8{gap:2rem}.border-t{border-top:1px solid #e5e7eb}.border-gray-200{border-color:#e5e7eb}.pt-8{padding-top:2rem}.transition{transition:all .15s ease}.hover\:text-gray-700:hover{color:#374151}.hover\:text-gray-900:hover{color:#111827}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.size-guide-fallback{margin:0 auto 18px;max-width:520px;text-align:center;color:#4b5563;line-height:1.6}@media(min-width:768px){.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(min-width:1024px){.lg\:grid-cols-5{grid-template-columns:repeat(5,minmax(0,1fr))}.lg\:px-8{padding-left:2rem;padding-right:2rem}}
+  
+
+/* Footer coerente con la home */
+.footer-index-clone {
+  background: #050505;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 70px 0 32px;
+  color: #ffffff;
+}
+.footer-index-clone .wrap {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.footer-index-clone .footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1.2fr;
+  gap: 48px;
+  margin-bottom: 54px;
+}
+.footer-index-clone .footer-logo img {
+  height: 100px;
+  margin-bottom: 20px;
+}
+.footer-index-clone .footer-tagline {
+  font-size: 13px;
+  color: #8a8a8a;
+  line-height: 1.7;
+}
+.footer-index-clone .footer-col h4 {
+  font-family: 'Barlow Condensed', Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: #ffffff;
+  margin: 0 0 18px;
+}
+.footer-index-clone .footer-col a,
+.footer-index-clone .footer-col li {
+  display: block;
+  font-size: 13px;
+  color: #8a8a8a;
+  margin-bottom: 10px;
+  line-height: 1.45;
+  text-decoration: none;
+  list-style: none;
+}
+.footer-index-clone .footer-col a:hover { color: #ffffff; }
+.footer-index-clone .footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.footer-index-clone .footer-bottom p {
+  font-size: 12px;
+  color: #666666;
+  margin: 0;
+}
+@media (max-width: 1024px) {
+  .footer-index-clone .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .footer-index-clone .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-index-clone .footer-bottom { flex-direction: column; }
+}
+@media (max-width: 480px) {
+  .footer-index-clone .wrap { padding: 0 20px; }
+  .footer-index-clone .footer-grid { grid-template-columns: 1fr; }
+}
+
+
+</style>
 </head>
 <body>
 
@@ -377,32 +456,32 @@
 <!-- NAV -->
 <nav class="nav">
   <div class="nav-logo">
-    <a href="https://www.bicycle-line.com/it/" target="_blank"><img src="../images/logodfs.png" alt="Bicycle Line"></a>
+    <a href="https://www.bicycle-line.com/it/" target="_blank"><img src="../../images/logodfs.png" alt="Bicycle Line"></a>
   </div>
 
   <ul class="nav-links">
     <li><a href="../index.html#come-funziona">Comment ça marche</a></li>
-    <li><a href="../uomo.html">Homme</a></li>
-    <li><a href="../donna.html">Femme</a></li>
-    <li><a href="../accessori.html">Accessoires</a></li>
-    <li><a href="../ragazzi.html">Enfants</a></li>
+    <li><a href="../uomo_FR.html">Homme</a></li>
+    <li><a href="../donna_FR.html">Femme</a></li>
+    <li><a href="../accessori_FR.html">Accessoires</a></li>
+    <li><a href="../ragazzi_FR.html">Enfants</a></li>
     <li><a href="../index.html#faq">FAQ</a></li>
-    <li><a href="../index.html#contatti">Contact</a></li>
+    <li><a href="../index.html#contatti">Contacts</a></li>
   </ul>
 
   <div class="nav-actions">
     <div class="lang-wrap">
       <button class="lang-btn" id="lang-toggle">
-        <img src="../images/BANDIERE/Français.jpg" alt="FR">
+        <img src="../../images/BANDIERE/Français.jpg" alt="FR">
         <span>FR</span>
         <i class="fas fa-chevron-down" style="font-size:9px; opacity:0.6;"></i>
       </button>
       <div class="lang-dropdown" id="lang-dropdown">
-        <a href="../index2.html"><img src="../images/BANDIERE/italia.jpg" alt="IT"> Italien</a>
-        <a href="../index-en.html"><img src="../images/BANDIERE/english.jpg" alt="EN"> Anglais</a>
-        <a href="../index-de.html"><img src="../images/BANDIERE/Allemand.jpg" alt="DE"> Allemand</a>
-        <a href="../index-fr.html"><img src="../images/BANDIERE/Français.jpg" alt="FR"> Français</a>
-        <a href="../index-es.html"><img src="../images/BANDIERE/Espagnol.jpg" alt="ES"> Espagnol</a>
+        <a href="../../UOMO SCHEDE PRODOTTO/W6008-ECHELON.html"><img src="../../images/BANDIERE/italia.jpg" alt="IT"> Italien</a>
+        <a href="../../INGLESE/UOMO EN/W6008-ECHELON_EN.html"><img src="../../images/BANDIERE/english.jpg" alt="EN"> Anglais</a>
+        <a href="../../TEDESCO/UOMO DE/W6008-ECHELON_DE.html"><img src="../../images/BANDIERE/Deutsch.jpg" alt="DE"> Allemand</a>
+        <a href="./W6008-ECHELON_FR.html"><img src="../../images/BANDIERE/Français.jpg" alt="FR"> Français</a>
+        <a href="../../SPAGNOLO/UOMO ES/W6008-ECHELON_ES.html"><img src="../../images/BANDIERE/Español.jpg" alt="ES"> Espagnol</a>
       </div>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Hommeu">
@@ -415,12 +494,12 @@
 <div class="mobile-nav" id="mobile-nav">
   <button class="mobile-close" id="mobile-close">✕</button>
   <a href="../index.html#come-funziona">Comment ça marche</a>
-  <a href="../uomo.html">Homme</a>
-  <a href="../donna.html">Femme</a>
-  <a href="../accessori.html">Accessoires</a>
-  <a href="../ragazzi.html">Enfants</a>
+  <a href="../uomo_FR.html">Homme</a>
+  <a href="../donna_FR.html">Femme</a>
+  <a href="../accessori_FR.html">Accessoires</a>
+  <a href="../ragazzi_FR.html">Enfants</a>
   <a href="../index.html#faq">FAQ</a>
-  <a href="../index.html#contatti">Contact</a>
+  <a href="../index.html#contatti">Contacts</a>
 </div>
 
 <div class="page">
@@ -432,33 +511,33 @@
 
   <div class="breadcrumbs">
     <div class="breadcrumbs__inner">
-      <a href="../index.html" class="dim hover:underline">ACCUEIL</a>
+      <a href="../uomo_FR.html" class="dim hover:underline">HOME</a>
       <span class="sep">></span>
-      <a href="../uomo.html" class="dim hover:underline">CYCLISME HOMME</a>
+      <a href="../uomo_FR.html" class="dim hover:underline">CYCLISME HOMME</a>
       <span class="sep">></span>
-      <span class="current">W6008 ECHELON</span>
+      <span class="current">W6008-ECHELON</span>
     </div>
   </div>
 
   <main class="page">
     <section class="gallery">
       <figure class="media tall">
-        <img src="../images/UOMO/W6008-ECHELON/1.png" alt="W6008 ECHELON vue de face">
+        <img src="../../images/UOMO/W6008/1.png" alt="W6008 ECHELON 1">
       </figure>
       <figure class="media tall">
-        <img src="../images/UOMO/W6008/2.png" alt="W6008 ECHELON vue arrière">
+        <img src="../../images/UOMO/W6008/2.png" alt="W6008 ECHELON 2">
       </figure>
       <figure class="media tall">
-        <img src="../images/UOMO/W6008/3.png" alt="W6008 ECHELON vue détaillée">
+        <img src="../../images/UOMO/W6008/3.png" alt="W6008 ECHELON 3">
       </figure>
       <figure class="media tall">
-        <img src="../images/UOMO/W6008/4.png" alt="W6008 ECHELON vue latérale">
+        <img src="../../images/UOMO/W6008/4.png" alt="W6008 ECHELON 4">
       </figure>
       <figure class="media tall">
-        <img src="../images/UOMO/W6008/5.png" alt="W6008 ECHELON vue détaillée 2">
+        <img src="../../images/UOMO/W6008/5.png" alt="W6008 ECHELON 5">
       </figure>
       <figure class="media tall">
-        <img src="../images/UOMO/W6008/6.png" alt="W6008 ECHELON vue en action">
+        <img src="../../images/UOMO/W6008/6.png" alt="W6008 ECHELON 6">
       </figure>
     </section>
 
@@ -572,7 +651,8 @@
         <h2 class="text-2xl font-bold mb-6 text-center">GUIDE DES TAILLES</h2>
 
         <div class="flex justify-center mb-6">
-          <img id="size-guide-image" src="" alt="Guide des tailles" class="max-w-full h-auto">
+          <p class="size-guide-fallback">Le guide des tailles local n’est pas disponible. Ouvrez le guide officiel Bicycle Line.</p>
+          <a class="promo-btn" href="https://www.bicycle-line.com/it/content/12-guida-alle-taglie" target="_blank" rel="noopener">Ouvrir le guide des tailles <span class="arrow">→</span></a>
         </div>
 
         <div class="text-center text-sm text-gray-600">
@@ -587,75 +667,65 @@
       <div class="promo-inner">
         <p class="promo-copy"></p>
         <div class="promo-links">
-          <a href="../uomo.html" class="promo-btn">Découvrir d’autres produits <span class="arrow">></span></a>
+          <a href="../uomo_FR.html" class="promo-btn">Découvrir d’autres produits <span class="arrow">></span></a>
           <a href="../index.html#contatti" class="promo-btn">Je souhaite plus d’informations <span class="priority:1"></span></a>
         </div>
       </div>
     </section>
   </section>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <div class="footer-grid">
-        <div>
-          <a href="https://www.bicycle-line.com/it/" target="_blank"><img src="../images/logodfs.png" alt="Bicycle Line Logo" class="footer-logo"></a>
+  <!-- FOOTER -->
+<footer class="footer footer-index-clone">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <a href="https://www.bicycle-line.com/fr/" target="_blank">
+            <img src="../../images/logo bianco.png" alt="Bicycle Line">
+          </a>
         </div>
-
-        <div>
-          <h3 class="footer-title">BICYCLE LINE</h3>
-          <ul class="footer-list">
-            <li><a href="https://www.bicycle-line.com/it/content/4-brand">Marque</a></li>
-            <li><a href="https://www.bicycle-line.com/it/content/6-storia">Histoire</a></li>
-            <li><a href="https://www.bicycle-line.com/it/content/9-sostenibilita">Durabilité</a></li>
-            <li><a href="https://www.bicycle-line.com/it/contact">Contactez-nous</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 class="footer-title">BOUTIQUE</h3>
-          <ul class="footer-list">
-            <li><a href="https://www.bicycle-line.com/it/947-uomo">Homme</a></li>
-            <li><a href="https://www.bicycle-line.com/it/948-donna">Femme</a></li>
-            <li><a href="https://www.bicycle-line.com/it/949-cat-bambino">Enfants</a></li>
-            <li><a href="https://www.bicycle-line.com/it/1109-offerte">Offres</a></li>
-            <li><a href="https://www.bicycle-line.com/it/content/23-shop">Guide d’achat en ligne</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 class="footer-title">LIENS UTILES</h3>
-          <ul class="footer-list">
-            <li><a href="https://www.bicycle-line.com/it/content/1-spedizione">Livraison</a></li>
-            <li><a href="https://www.bicycle-line.com/it/content/5-pagamento">Paiement</a></li>
-            <li><a href="https://www.bicycle-line.com/it/content/18-faq">FAQ</a></li>
-            <li><a href="https://www.bicycle-line.com/it/content/12-guida-alle-taglie">Guide des tailles</a></li>
-            <li><a href="https://www.bicycle-line.com/it/content/14-garanzia">Utilisation du produit et garantie</a></li>
-            <li><a href="https://www.bicycle-line.com/it/content/13-resi">Retours</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 class="footer-title">MENTIONS LÉGALES</h3>
-          <ul class="footer-list">
-            <li><a href="https://www.bicycle-line.com/it/content/15-privacy-policy">Politique de confidentialité</a></li>
-            <li><a href="https://www.bicycle-line.com/it/content/16-cookie-policy">Politique relative aux cookies</a></li>
-            <li><a href="https://www.bicycle-line.com/it/content/17-termini-e-condizioni">Conditions générales</a></li>
-          </ul>
-
-          <h3 class="footer-title" style="margin-top:18px;">CONTACT</h3>
-          <ul class="footer-list footer-contact">
-            <li class="strong">Bicycle Line - TVA 02027450267</li>
-            <li>Via Ferrara, 2-4 31030 Dosson di Casier</li>
-            <li>Trévise - Italie</li>
-            <li>+39 0422 490156</li>
-            <li>custom@bicycle-line.com</li>
-          </ul>
+        <p class="footer-tagline">Vêtements techniques de cyclisme personnalisés.<br>Production italienne depuis 1987.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Bicycle Line</h4>
+        <a href="https://www.bicycle-line.com/fr/content/4-marque">Marque</a>
+        <a href="https://www.bicycle-line.com/fr/content/6-histoire">Histoire</a>
+        <a href="https://www.bicycle-line.com/fr/content/9-durabilite">Durabilité</a>
+        <a href="https://www.bicycle-line.com/fr/contact">Contactez-nous</a>
+      </div>
+      <div class="footer-col">
+        <h4>Boutique</h4>
+        <a href="https://www.bicycle-line.com/fr/947-homme">Homme</a>
+        <a href="https://www.bicycle-line.com/fr/948-femme">Femme</a>
+        <a href="https://www.bicycle-line.com/fr/949-cat-enfant">Enfant</a>
+        <a href="https://www.bicycle-line.com/fr/1109-soldes">Offres</a>
+      </div>
+      <div class="footer-col">
+        <h4>Liens Utiles</h4>
+        <a href="https://www.bicycle-line.com/fr/content/1-livraison">Livraison</a>
+        <a href="https://www.bicycle-line.com/fr/content/18-faq">FAQ</a>
+        <a href="https://www.bicycle-line.com/fr/content/12-guide-des-tailles">Guide des tailles</a>
+        <a href="https://www.bicycle-line.com/fr/content/13-retours">Retours</a>
+      </div>
+      <div class="footer-col">
+        <h4>Mentions Légales</h4>
+        <a href="https://www.bicycle-line.com/fr/content/15-politique-de-confidentialite">Politique de confidentialité</a>
+        <a href="https://www.bicycle-line.com/fr/content/16-politique-relative-aux-cookies">Politique relative aux cookies</a>
+        <a href="https://www.bicycle-line.com/fr/content/17-conditions-generales">Conditions générales</a>
+        <div style="margin-top:24px;">
+          <h4>Contacts</h4>
+          <li>Via Ferrara 2-4, 31030 Dosson TV</li>
+          <li>+39 0422 490156</li>
+          <li>custom@bicycle-line.com</li>
         </div>
       </div>
-
-      <div class="footer-bottom"></div>
     </div>
-  </footer>
+    <div class="footer-bottom">
+      <p>© 2025 Bicycle Line Srl — VAT 02027450267</p>
+      <p>Dosson di Casier, Trévise — Italie</p>
+    </div>
+  </div>
+</footer>
 
   <script>
 // Language toggle

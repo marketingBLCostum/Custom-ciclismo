@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/png" href="./images/logodfs.png" />
+  <link rel="icon" type="image/png" href="../images/logodfs.png" />
   <title>Katalog Herren</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
@@ -1089,7 +1088,83 @@
       .topbar { font-size: 11px; padding: 0 16px; }
       .topbar-right { display: none; }
     }
-  </style>
+  
+    /* Local replacements for the small Tailwind utility subset used by these static pages. */
+    .fixed{position:fixed}.absolute{position:absolute}.inset-0{inset:0}.top-4{top:1rem}.right-4{right:1rem}.z-50{z-index:50}.hidden{display:none!important}.flex{display:flex}.grid{display:grid}.items-center{align-items:center}.justify-center{justify-content:center}.mx-auto{margin-left:auto;margin-right:auto}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mb-12{margin-bottom:3rem}.mt-8{margin-top:2rem}.p-8{padding:2rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-12{padding-top:3rem;padding-bottom:3rem}.w-20{width:5rem}.w-full{width:100%}.max-w-7xl{max-width:80rem}.max-w-4xl{max-width:56rem}.max-w-full{max-width:100%}.max-h-\[90vh\]{max-height:90vh}.h-auto{height:auto}.overflow-y-auto{overflow-y:auto}.rounded-lg{border-radius:.5rem}.bg-white{background:#fff}.bg-gray-50{background:#f9fafb}.bg-black{background:#000}.bg-opacity-50{--tw-bg-opacity:.5;background-color:rgba(0,0,0,var(--tw-bg-opacity))}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-sm{font-size:.875rem;line-height:1.25rem}.font-bold{font-weight:700}.text-gray-400{color:#9ca3af}.text-gray-500{color:#6b7280}.text-gray-600{color:#4b5563}.text-gray-700{color:#374151}.text-gray-900{color:#111827}.leading-relaxed{line-height:1.625}.space-x-4>:not([hidden])~:not([hidden]){margin-left:1rem}.space-y-3>:not([hidden])~:not([hidden]){margin-top:.75rem}.gap-8{gap:2rem}.border-t{border-top:1px solid #e5e7eb}.border-gray-200{border-color:#e5e7eb}.pt-8{padding-top:2rem}.transition{transition:all .15s ease}.hover\:text-gray-700:hover{color:#374151}.hover\:text-gray-900:hover{color:#111827}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.size-guide-fallback{margin:0 auto 18px;max-width:520px;text-align:center;color:#4b5563;line-height:1.6}@media(min-width:768px){.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(min-width:1024px){.lg\:grid-cols-5{grid-template-columns:repeat(5,minmax(0,1fr))}.lg\:px-8{padding-left:2rem;padding-right:2rem}}
+  
+
+/* Footer coerente con la home */
+.footer-index-clone {
+  background: #050505;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 70px 0 32px;
+  color: #ffffff;
+}
+.footer-index-clone .wrap {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.footer-index-clone .footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1.2fr;
+  gap: 48px;
+  margin-bottom: 54px;
+}
+.footer-index-clone .footer-logo img {
+  height: 100px;
+  margin-bottom: 20px;
+}
+.footer-index-clone .footer-tagline {
+  font-size: 13px;
+  color: #8a8a8a;
+  line-height: 1.7;
+}
+.footer-index-clone .footer-col h4 {
+  font-family: 'Barlow Condensed', Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: #ffffff;
+  margin: 0 0 18px;
+}
+.footer-index-clone .footer-col a,
+.footer-index-clone .footer-col li {
+  display: block;
+  font-size: 13px;
+  color: #8a8a8a;
+  margin-bottom: 10px;
+  line-height: 1.45;
+  text-decoration: none;
+  list-style: none;
+}
+.footer-index-clone .footer-col a:hover { color: #ffffff; }
+.footer-index-clone .footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.footer-index-clone .footer-bottom p {
+  font-size: 12px;
+  color: #666666;
+  margin: 0;
+}
+@media (max-width: 1024px) {
+  .footer-index-clone .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .footer-index-clone .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-index-clone .footer-bottom { flex-direction: column; }
+}
+@media (max-width: 480px) {
+  .footer-index-clone .wrap { padding: 0 20px; }
+  .footer-index-clone .footer-grid { grid-template-columns: 1fr; }
+}
+
+</style>
 </head>
 <body>
 
@@ -1105,32 +1180,32 @@
 <!-- NAV -->
 <nav class="nav">
   <div class="nav-logo">
-    <a href="https://www.bicycle-line.com/it/" target="_blank"><img src="images/logodfs.png" alt="Bicycle Line"></a>
+    <a href="https://www.bicycle-line.com/it/" target="_blank"><img src="../images/logodfs.png" alt="Bicycle Line"></a>
   </div>
 
   <ul class="nav-links">
-    <li><a href="index.html#come-funziona">So funktioniert es</a></li>
-    <li><a href="uomo.html">Herren</a></li>
-    <li><a href="donna.html">Damen</a></li>
-    <li><a href="accessori.html">Zubehör</a></li>
-    <li><a href="ragazzi.html">Kinder</a></li>
-    <li><a href="index.html#faq">FAQ</a></li>
-    <li><a href="index.html#contatti">Kontakt</a></li>
+    <li><a href="./index.html#come-funziona">So funktioniert es</a></li>
+    <li><a href="./uomo_DE.html">Herren</a></li>
+    <li><a href="./donna_DE.html">Damen</a></li>
+    <li><a href="./accessori_DE.html">Zubehör</a></li>
+    <li><a href="./ragazzi_DE.html">Kinder</a></li>
+    <li><a href="./index.html#faq">FAQ</a></li>
+    <li><a href="./index.html#contatti">Kontakt</a></li>
   </ul>
 
   <div class="nav-actions">
     <div class="lang-wrap">
       <button class="lang-btn" id="lang-toggle">
-        <img src="images/BANDIERE/Deutsch.jpg" alt="DE">
+        <img src="../images/BANDIERE/Deutsch.jpg" alt="DE">
         <span>DE</span>
         <i class="fas fa-chevron-down" style="font-size:9px; opacity:0.6;"></i>
       </button>
       <div class="lang-dropdown" id="lang-dropdown">
-        <a href="index2.html"><img src="images/BANDIERE/italia.jpg" alt="IT"> Italienisch</a>
-        <a href="index-en.html"><img src="images/BANDIERE/english.jpg" alt="EN"> Englisch</a>
-        <a href="index-de.html"><img src="images/BANDIERE/Deutsch.jpg" alt="DE"> Deutsch</a>
-        <a href="index-fr.html"><img src="images/BANDIERE/Französisch.jpg" alt="FR"> Französisch</a>
-        <a href="index-es.html"><img src="images/BANDIERE/Spanisch.jpg" alt="ES"> Spanisch</a>
+        <a href="../uomo.html"><img src="../images/BANDIERE/italia.jpg" alt="IT"> Italienisch</a>
+        <a href="../INGLESE/uomo_EN.html"><img src="../images/BANDIERE/english.jpg" alt="EN"> Englisch</a>
+        <a href="./uomo_DE.html"><img src="../images/BANDIERE/Deutsch.jpg" alt="DE"> Deutsch</a>
+        <a href="../FRANCESE/uomo_FR.html"><img src="../images/BANDIERE/Français.jpg" alt="FR"> Französisch</a>
+        <a href="../SPAGNOLO/uomo_ES.html"><img src="../images/BANDIERE/Español.jpg" alt="ES"> Spanisch</a>
       </div>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -1142,20 +1217,20 @@
 <!-- MOBILE NAVIGATION -->
 <div class="mobile-nav" id="mobile-nav">
   <button class="mobile-close" id="mobile-close">✕</button>
-  <a href="index.html#come-funziona">So funktioniert es</a>
-  <a href="uomo.html">Herren</a>
-  <a href="donna.html">Damen</a>
-  <a href="accessori.html">Zubehör</a>
-  <a href="ragazzi.html">Kinder</a>
-  <a href="index.html#faq">FAQ</a>
-  <a href="index.html#contatti">Kontaktieren Sie uns</a>
+  <a href="./index.html#come-funziona">So funktioniert es</a>
+  <a href="./uomo_DE.html">Herren</a>
+  <a href="./donna_DE.html">Damen</a>
+  <a href="./accessori_DE.html">Zubehör</a>
+  <a href="./ragazzi_DE.html">Kinder</a>
+  <a href="./index.html#faq">FAQ</a>
+  <a href="./index.html#contatti">Kontakt</a>
 </div>
 
 <div class="page">
 
   <div class="breadcrumbs">
     <div class="breadcrumbs__inner">
-      <a href="index.html" class="dim hover:underline">HOME</a>
+      <a href="./uomo_DE.html" class="dim hover:underline">HOME</a>
       <span class="sep">></span>
       <span class="current">HERREN RADSPORT</span>
     </div>
@@ -1166,430 +1241,430 @@
           <div class="products-grid">
             <article class="card">
               <div class="card-image">
-                                <a href="UOMO SCHEDE PRODOTTO/W6006-ECHELON.html" class="product-photo">
-                  <img src="images/UOMO/W6006 ECHELON - Kurzarmtrikot - Herren.png" alt="W6006 ECHELON" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                                <a href="./UOMO DE/W6006-ECHELON_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W6006 ECHELON" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/UOMO/W6006/1.png" alt="W6006 ECHELON Vorschau">
+                  <img src="../images/uomo.png" alt="W6006 ECHELON Vorschau">
                 </div>
               </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W6006-ECHELON.html" class="product-name"><strong>W6006 ECHELON</strong></a>
+                                          <a href="./UOMO DE/W6006-ECHELON_DE.html" class="product-name"><strong>W6006 ECHELON</strong></a>
               <div class="product-subtitle">Kurzarmtrikot - Herren</div>
                                         </article>
 
             <article class="card">
               <div class="card-image">
-                                <a href="UOMO SCHEDE PRODOTTO/W6511-APEX.html" class="product-photo">
-                  <img src="images/UOMO/W6511 APEX - Kurzarmtrikot - Herren.png" alt="W6511 APEX" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                                <a href="./UOMO DE/W6511-APEX_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W6511 APEX" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/UOMO/W6511/1.png" alt="W6511 APEX Vorschau">
+                  <img src="../images/uomo.png" alt="W6511 APEX Vorschau">
                 </div>
               </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W6511-APEX.html" class="product-name"><strong>W6511 APEX</strong></a>
-              <div class="product-subtitle">Kurzarmtrikot - Herren</div>
-                                        </article>
-
-            <article class="card">
-              <div class="card-image third">
-                <a href="UOMO SCHEDE PRODOTTO/W6551-BASECAMP.html" class="product-photo">
-                  <img src="images/UOMO/W6551 BASECAMP - Kurzarmtrikot - Herren.png" alt="W6551 BASECAMP" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
-                </a>
-                <div class="preview-replacement">
-                  <img src="images/UOMO/W6551/1.png" alt="W6551 BASECAMP Vorschau">
-                </div>
-              </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W6551-BASECAMP.html" class="product-name"><strong>W6551 BASECAMP</strong></a>
-              <div class="product-subtitle">Kurzarmtrikot - Herren</div>
-                                        </article>
-
-            <article class="card">
-              <div class="card-image">
-                                <a href="UOMO SCHEDE PRODOTTO/W6521-APEX-ULTRA.html" class="product-photo">
-                  <img src="images/UOMO/W6521 APEX ULTRA - Kurzarmtrikot - Herren.png" alt="W6521 APEX ULTRA" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
-                </a>
-                <div class="preview-replacement">
-                  <img src="images/UOMO/W6521/1.png" alt="W6521 APEX ULTRA Vorschau">
-                </div>
-              </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W6521-APEX-ULTRA.html" class="product-name"><strong>W6521 APEX ULTRA</strong></a>
-              <div class="product-subtitle">Kurzarmtrikot - Herren</div>
-                                        </article>
-
-            <article class="card">
-              <div class="card-image">
-                                <a href="UOMO SCHEDE PRODOTTO/W6301-DRAFT.html" class="product-photo">
-                  <img src="images/UOMO/W6301 DRAFT - Kurzarmtrikot - Herren.png" alt="W6301 DRAFT" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
-                </a>
-                <div class="preview-replacement">
-                  <img src="images/UOMO/W6301/1.png" alt="W6301 DRAFT Vorschau">
-                </div>
-              </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W6301-DRAFT.html" class="product-name"><strong>W6301 DRAFT</strong></a>
+                                          <a href="./UOMO DE/W6511-APEX_DE.html" class="product-name"><strong>W6511 APEX</strong></a>
               <div class="product-subtitle">Kurzarmtrikot - Herren</div>
                                         </article>
 
             <article class="card">
               <div class="card-image third">
-                <a href="UOMO SCHEDE PRODOTTO/W6701-B-CORE.html" class="product-photo">
-                  <img src="images/UOMO/W6701 B-CORE - Kurzarmtrikot - Herren.png" alt="W6701 B-CORE" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                <a href="./UOMO DE/W6551-BASECAMP_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W6551 BASECAMP" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/UOMO/W6701/1.png" alt="W6701 B-CORE Vorschau">
+                  <img src="../images/uomo.png" alt="W6551 BASECAMP Vorschau">
                 </div>
               </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W6701-B-CORE.html" class="product-name"><strong>W6701 B-CORE</strong></a>
+                                          <a href="./UOMO DE/W6551-BASECAMP_DE.html" class="product-name"><strong>W6551 BASECAMP</strong></a>
               <div class="product-subtitle">Kurzarmtrikot - Herren</div>
                                         </article>
 
             <article class="card">
               <div class="card-image">
-                                <a href="UOMO SCHEDE PRODOTTO/W6005-ECHELON.html" class="product-photo">
-                  <img src="images/UOMO/W6005/5.png" alt="W6005 ECHELON" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                                <a href="./UOMO DE/W6521-APEX-ULTRA_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W6521 APEX ULTRA" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/UOMO/W6005/1.png" alt="W6005 ECHELON Vorschau">
+                  <img src="../images/uomo.png" alt="W6521 APEX ULTRA Vorschau">
                 </div>
               </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W6005-ECHELON.html" class="product-name"><strong>W6005 ECHELON</strong></a>
+                                          <a href="./UOMO DE/W6521-APEX-ULTRA_DE.html" class="product-name"><strong>W6521 APEX ULTRA</strong></a>
+              <div class="product-subtitle">Kurzarmtrikot - Herren</div>
+                                        </article>
+
+            <article class="card">
+              <div class="card-image">
+                                <a href="./UOMO DE/W6301-DRAFT_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W6301 DRAFT" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                </a>
+                <div class="preview-replacement">
+                  <img src="../images/uomo.png" alt="W6301 DRAFT Vorschau">
+                </div>
+              </div>
+                                          <a href="./UOMO DE/W6301-DRAFT_DE.html" class="product-name"><strong>W6301 DRAFT</strong></a>
+              <div class="product-subtitle">Kurzarmtrikot - Herren</div>
+                                        </article>
+
+            <article class="card">
+              <div class="card-image third">
+                <a href="./UOMO DE/W6701-B-CORE_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W6701 B-CORE" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                </a>
+                <div class="preview-replacement">
+                  <img src="../images/uomo.png" alt="W6701 B-CORE Vorschau">
+                </div>
+              </div>
+                                          <a href="./UOMO DE/W6701-B-CORE_DE.html" class="product-name"><strong>W6701 B-CORE</strong></a>
+              <div class="product-subtitle">Kurzarmtrikot - Herren</div>
+                                        </article>
+
+            <article class="card">
+              <div class="card-image">
+                                <a href="./UOMO DE/W6005-ECHELON_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W6005 ECHELON" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                </a>
+                <div class="preview-replacement">
+                  <img src="../images/uomo.png" alt="W6005 ECHELON Vorschau">
+                </div>
+              </div>
+                                          <a href="./UOMO DE/W6005-ECHELON_DE.html" class="product-name"><strong>W6005 ECHELON</strong></a>
               <div class="product-subtitle">Trägerhose - Herren</div>
                                         </article>
 
             <article class="card">
               <div class="card-image">
-                                <a href="UOMO SCHEDE PRODOTTO/W6028-ECHELON-AIR.html" class="product-photo">
-                  <img src="images/UOMO/W6028/5.png" alt="W6028 ECHELON AIR" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                                <a href="./UOMO DE/W6028-ECHELON-AIR_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W6028 ECHELON AIR" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/UOMO/W6028/1.png" alt="W6028 ECHELON AIR Vorschau">
+                  <img src="../images/uomo.png" alt="W6028 ECHELON AIR Vorschau">
                 </div>
               </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W6028-ECHELON-AIR.html" class="product-name"><strong>W6028 ECHELON AIR</strong></a>
+                                          <a href="./UOMO DE/W6028-ECHELON-AIR_DE.html" class="product-name"><strong>W6028 ECHELON AIR</strong></a>
               <div class="product-subtitle">Trägerhose - Herren</div>
                                         </article>
 
             <article class="card">
               <div class="card-image third">
-                <a href="UOMO SCHEDE PRODOTTO/W6510-APEX.html" class="product-photo">
-                  <img src="images/UOMO/W6510/BLSQW6510_APEX_BIB_front.png" alt="W6510 APEX" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                <a href="./UOMO DE/W6510-APEX_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W6510 APEX" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/UOMO/W6510/1.png" alt="W6510 APEX Vorschau">
+                  <img src="../images/uomo.png" alt="W6510 APEX Vorschau">
                 </div>
               </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W6510-APEX.html" class="product-name"><strong>W6510 APEX</strong></a>
+                                          <a href="./UOMO DE/W6510-APEX_DE.html" class="product-name"><strong>W6510 APEX</strong></a>
               <div class="product-subtitle">Trägerhose - Herren</div>
                                         </article>
 
             <article class="card">
               <div class="card-image">
-                                <a href="UOMO SCHEDE PRODOTTO/W6550-BASECAMP.html" class="product-photo">
-                  <img src="images/UOMO/W6550/5.png" alt="W6550 BASECAMP" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                                <a href="./UOMO DE/W6550-BASECAMP_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W6550 BASECAMP" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/UOMO/W6550/1.png" alt="W6550 BASECAMP Vorschau">
+                  <img src="../images/uomo.png" alt="W6550 BASECAMP Vorschau">
                 </div>
               </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W6550-BASECAMP.html" class="product-name"><strong>W6550 BASECAMP</strong></a>
+                                          <a href="./UOMO DE/W6550-BASECAMP_DE.html" class="product-name"><strong>W6550 BASECAMP</strong></a>
               <div class="product-subtitle">Trägerhose - Herren</div>
                                         </article>
 
             <article class="card">
               <div class="card-image">
-                                <a href="UOMO SCHEDE PRODOTTO/W6702-B-CORE.html" class="product-photo">
-                  <img src="images/UOMO/W6702/5.png" alt="W6702 B-CORE" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                                <a href="./UOMO DE/W6702-B-CORE_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W6702 B-CORE" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/UOMO/W6702/1.png" alt="W6702 B-CORE Vorschau">
+                  <img src="../images/uomo.png" alt="W6702 B-CORE Vorschau">
                 </div>
               </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W6702-B-CORE.html" class="product-name"><strong>W6702 B-CORE</strong></a>
+                                          <a href="./UOMO DE/W6702-B-CORE_DE.html" class="product-name"><strong>W6702 B-CORE</strong></a>
               <div class="product-subtitle">Trägerhose - Herren</div>
                                         </article>
 
             <article class="card">
               <div class="card-image third">
-                <a href="UOMO SCHEDE PRODOTTO/W6007-ECHELON.html" class="product-photo">
-                  <img src="images/UOMO/W6007 ECHELON - Windweste - Herren.png" alt="W6007 ECHELON" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                <a href="./UOMO DE/W6007-ECHELON_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W6007 ECHELON" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/UOMO/W6007/1.png" alt="W6007 ECHELON Vorschau">
+                  <img src="../images/uomo.png" alt="W6007 ECHELON Vorschau">
                 </div>
               </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W6007-ECHELON.html" class="product-name"><strong>W6007 ECHELON</strong></a>
+                                          <a href="./UOMO DE/W6007-ECHELON_DE.html" class="product-name"><strong>W6007 ECHELON</strong></a>
               <div class="product-subtitle">Windweste - Herren</div>
                                         </article>
 
             <article class="card">
               <div class="card-image">
-                                <a href="UOMO SCHEDE PRODOTTO/W6513-APEX.html" class="product-photo">
-                  <img src="images/UOMO/W6513 APEX - Windweste - Herren.png" alt="W6513 APEX" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                                <a href="./UOMO DE/W6513-APEX_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W6513 APEX" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/UOMO/W6513/1.png" alt="W6513 APEX Vorschau">
+                  <img src="../images/uomo.png" alt="W6513 APEX Vorschau">
                 </div>
               </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W6513-APEX.html" class="product-name"><strong>W6513 APEX</strong></a>
+                                          <a href="./UOMO DE/W6513-APEX_DE.html" class="product-name"><strong>W6513 APEX</strong></a>
               <div class="product-subtitle">Windweste - Herren</div>
                                         </article>
 
             <article class="card">
               <div class="card-image">
-                                <a href="UOMO SCHEDE PRODOTTO/W6008-ECHELON.html" class="product-photo">
-                  <img src="images/UOMO/W6008 ECHELON - Langarmtrikot - Herren.png" alt="W6008 ECHELON" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                                <a href="./UOMO DE/W6008-ECHELON_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W6008 ECHELON" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/UOMO/W6008/1.png" alt="W6008 ECHELON Vorschau">
+                  <img src="../images/uomo.png" alt="W6008 ECHELON Vorschau">
                 </div>
               </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W6008-ECHELON.html" class="product-name"><strong>W6008 ECHELON</strong></a>
+                                          <a href="./UOMO DE/W6008-ECHELON_DE.html" class="product-name"><strong>W6008 ECHELON</strong></a>
               <div class="product-subtitle">Langarmtrikot - Herren</div>
                                         </article>
 
             <article class="card">
               <div class="card-image third">
-                <a href="UOMO SCHEDE PRODOTTO/W6512-APEX.html" class="product-photo">
-                  <img src="images/UOMO/W6512 APEX - Langarmtrikot - Herren.png" alt="W6512 APEX" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                <a href="./UOMO DE/W6512-APEX_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W6512 APEX" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/UOMO/W6512/1.png" alt="W6512 APEX Vorschau">
+                  <img src="../images/uomo.png" alt="W6512 APEX Vorschau">
                 </div>
               </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W6512-APEX.html" class="product-name"><strong>W6512 APEX</strong></a>
+                                          <a href="./UOMO DE/W6512-APEX_DE.html" class="product-name"><strong>W6512 APEX</strong></a>
               <div class="product-subtitle">Langarmtrikot - Herren</div>
                                         </article>
 
             <article class="card">
               <div class="card-image">
-                                <a href="UOMO SCHEDE PRODOTTO/W6017-ECHELON-WR.html" class="product-photo">
-                  <img src="images/UOMO/W6017 ECHELON WR - Langarmtrikot - Herren.png" alt="W6017 ECHELON WR" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                                <a href="./UOMO DE/W6017-ECHELON-WR_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W6017 ECHELON WR" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/UOMO/W6017/1.png" alt="W6017 ECHELON WR Vorschau">
+                  <img src="../images/uomo.png" alt="W6017 ECHELON WR Vorschau">
                 </div>
               </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W6017-ECHELON-WR.html" class="product-name"><strong>W6017 ECHELON WR</strong></a>
+                                          <a href="./UOMO DE/W6017-ECHELON-WR_DE.html" class="product-name"><strong>W6017 ECHELON WR</strong></a>
               <div class="product-subtitle">Langarmtrikot - Herren</div>
                                         </article>
 
             <article class="card">
               <div class="card-image">
-                                <a href="UOMO SCHEDE PRODOTTO/W6014-ECHELON.html" class="product-photo">
-                  <img src="images/UOMO/W6005/5.png" alt="W6014 ECHELON" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                                <a href="./UOMO DE/W6014-ECHELON_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W6014 ECHELON" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/UOMO/W6005/1.png" alt="W6014 ECHELON Vorschau">
+                  <img src="../images/uomo.png" alt="W6014 ECHELON Vorschau">
                 </div>
               </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W6014-ECHELON.html" class="product-name"><strong>W6014 ECHELON</strong></a>
+                                          <a href="./UOMO DE/W6014-ECHELON_DE.html" class="product-name"><strong>W6014 ECHELON</strong></a>
               <div class="product-subtitle">Thermo-Trägerhose - Herren</div>
                                         </article>
 
             <article class="card">
               <div class="card-image third">
-                <a href="UOMO SCHEDE PRODOTTO/W6520-APEX.html" class="product-photo">
-                  <img src="images/UOMO/W6520/BLSQW6510_APEX_BIB_front.png" alt="W6520 APEX" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                <a href="./UOMO DE/W6520-APEX_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W6520 APEX" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/UOMO/W6520/1.png" alt="W6520 APEX Vorschau">
+                  <img src="../images/uomo.png" alt="W6520 APEX Vorschau">
                 </div>
               </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W6520-APEX.html" class="product-name"><strong>W6520 APEX</strong></a>
+                                          <a href="./UOMO DE/W6520-APEX_DE.html" class="product-name"><strong>W6520 APEX</strong></a>
               <div class="product-subtitle">Thermo-Trägerhose - Herren</div>
                                         </article>
 
             <article class="card">
               <div class="card-image">
-                                <a href="UOMO SCHEDE PRODOTTO/W6013-ECHELON.html" class="product-photo">
-                  <img src="images/UOMO/W6013 ECHELON - Winterjacke - Herren.png" alt="W6013 ECHELON" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                                <a href="./UOMO DE/W6013-ECHELON_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W6013 ECHELON" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/UOMO/W6013/1.png" alt="W6013 ECHELON Vorschau">
+                  <img src="../images/uomo.png" alt="W6013 ECHELON Vorschau">
                 </div>
               </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W6013-ECHELON.html" class="product-name"><strong>W6013 ECHELON</strong></a>
+                                          <a href="./UOMO DE/W6013-ECHELON_DE.html" class="product-name"><strong>W6013 ECHELON</strong></a>
               <div class="product-subtitle">Winterjacke - Herren</div>
                                         </article>
 
             <article class="card">
               <div class="card-image">
-                                <a href="UOMO SCHEDE PRODOTTO/W6519-APEX.html" class="product-photo">
-                  <img src="images/UOMO/W6519 APEX - Winterjacke - Herren.png" alt="W6519 APEX" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                                <a href="./UOMO DE/W6519-APEX_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W6519 APEX" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/UOMO/W6519/1.png" alt="W6519 APEX Vorschau">
+                  <img src="../images/uomo.png" alt="W6519 APEX Vorschau">
                 </div>
               </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W6519-APEX.html" class="product-name"><strong>W6519 APEX</strong></a>
+                                          <a href="./UOMO DE/W6519-APEX_DE.html" class="product-name"><strong>W6519 APEX</strong></a>
               <div class="product-subtitle">Winterjacke - Herren</div>
                                         </article>
 
             <article class="card">
               <div class="card-image third">
-                <a href="UOMO SCHEDE PRODOTTO/W6101-ECHELON.html" class="product-photo">
-                  <img src="images/UOMO/W6101 ECHELON - Winter-Kurzarmjacke – Herren.png" alt="W6101 ECHELON" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                <a href="./UOMO DE/W6101-ECHELON_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W6101 ECHELON" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/UOMO/W6101/1.png" alt="W6101 ECHELON Vorschau">
+                  <img src="../images/uomo.png" alt="W6101 ECHELON Vorschau">
                 </div>
               </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W6101-ECHELON.html" class="product-name"><strong>W6101 ECHELON</strong></a>
+                                          <a href="./UOMO DE/W6101-ECHELON_DE.html" class="product-name"><strong>W6101 ECHELON</strong></a>
               <div class="product-subtitle">Winter-Kurzarmjacke – Herren</div>
                                         </article>
 
             <article class="card">
               <div class="card-image">
-                                <a href="UOMO SCHEDE PRODOTTO/W6009-ECHELON.html" class="product-photo">
-                  <img src="images/UOMO/W6009/5.png" alt="W6009 ECHELON" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                                <a href="./UOMO DE/W6009-ECHELON_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W6009 ECHELON" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/UOMO/W6009/1.png" alt="W6009 ECHELON Vorschau">
+                  <img src="../images/uomo.png" alt="W6009 ECHELON Vorschau">
                 </div>
               </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W6009-ECHELON.html" class="product-name"><strong>W6009 ECHELON</strong></a>
+                                          <a href="./UOMO DE/W6009-ECHELON_DE.html" class="product-name"><strong>W6009 ECHELON</strong></a>
               <div class="product-subtitle">Lange Radhose - Herren</div>
                                         </article>
 
             <article class="card">
               <div class="card-image">
-                                <a href="UOMO SCHEDE PRODOTTO/W6518-APEX.html" class="product-photo">
-                  <img src="images/UOMO/W6518/5.png" alt="W6518 APEX" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                                <a href="./UOMO DE/W6518-APEX_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W6518 APEX" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/UOMO/W6518/1.png" alt="W6518 APEX Vorschau">
+                  <img src="../images/uomo.png" alt="W6518 APEX Vorschau">
                 </div>
               </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W6518-APEX.html" class="product-name"><strong>W6518 APEX</strong></a>
+                                          <a href="./UOMO DE/W6518-APEX_DE.html" class="product-name"><strong>W6518 APEX</strong></a>
               <div class="product-subtitle">Lange Radhose - Herren</div>
                                         </article>
 
             <article class="card">
               <div class="card-image third">
-                <a href="UOMO SCHEDE PRODOTTO/W6100-APEX.html" class="product-photo">
-                  <img src="images/UOMO/W6100 APEX - Windjacke - Herren.png" alt="W6100 APEX" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                <a href="./UOMO DE/W6100-APEX_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W6100 APEX" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/UOMO/W6100/1.png" alt="W6100 APEX Vorschau">
+                  <img src="../images/uomo.png" alt="W6100 APEX Vorschau">
                 </div>
               </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W6100-APEX.html" class="product-name"><strong>W6100 APEX</strong></a>
+                                          <a href="./UOMO DE/W6100-APEX_DE.html" class="product-name"><strong>W6100 APEX</strong></a>
               <div class="product-subtitle">Windjacke - Herren</div>
                                         </article>
 
             <article class="card">
               <div class="card-image">
-                                <a href="UOMO SCHEDE PRODOTTO/W6553-BASECAMP.html" class="product-photo">
-                  <img src="images/UOMO/W6553 BASECAMP - Windjacke - Herren.png" alt="W6553 BASECAMP" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                                <a href="./UOMO DE/W6553-BASECAMP_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W6553 BASECAMP" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/UOMO/W6553/1.png" alt="W6553 BASECAMP Vorschau">
+                  <img src="../images/uomo.png" alt="W6553 BASECAMP Vorschau">
                 </div>
               </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W6553-BASECAMP.html" class="product-name"><strong>W6553 BASECAMP</strong></a>
+                                          <a href="./UOMO DE/W6553-BASECAMP_DE.html" class="product-name"><strong>W6553 BASECAMP</strong></a>
               <div class="product-subtitle">Windjacke - Herren</div>
                                         </article>
 
             <article class="card">
               <div class="card-image">
-                                <a href="UOMO SCHEDE PRODOTTO/W6012-ECHELON.html" class="product-photo">
-                  <img src="images/UOMO/W6012 ECHELON - Bedruckter Langarm-Zeitfahranzug - Herren.png" alt="W6012 ECHELON" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                                <a href="./UOMO DE/W6012-ECHELON_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W6012 ECHELON" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/UOMO/W6012/1.png" alt="W6012 ECHELON Vorschau">
+                  <img src="../images/uomo.png" alt="W6012 ECHELON Vorschau">
                 </div>
               </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W6012-ECHELON.html" class="product-name"><strong>W6012 ECHELON</strong></a>
+                                          <a href="./UOMO DE/W6012-ECHELON_DE.html" class="product-name"><strong>W6012 ECHELON</strong></a>
               <div class="product-subtitle">Bedruckter Langarm-Zeitfahranzug - Herren</div>
                                         </article>
 
             <article class="card">
               <div class="card-image third">
-                <a href="UOMO SCHEDE PRODOTTO/W6015-ECHELON.html" class="product-photo">
-                  <img src="images/UOMO/W6015 ECHELON - Langarm-Zeitfahranzug mit Silikonlogos - Herren.png" alt="W6015 ECHELON" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                <a href="./UOMO DE/W6015-ECHELON_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W6015 ECHELON" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/UOMO/W6015/1.png" alt="W6015 ECHELON Vorschau">
+                  <img src="../images/uomo.png" alt="W6015 ECHELON Vorschau">
                 </div>
               </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W6015-ECHELON.html" class="product-name"><strong>W6015 ECHELON</strong></a>
+                                          <a href="./UOMO DE/W6015-ECHELON_DE.html" class="product-name"><strong>W6015 ECHELON</strong></a>
               <div class="product-subtitle">Langarm-Zeitfahranzug mit Silikonlogos - Herren</div>
                                         </article>
 
             <article class="card">
               <div class="card-image">
-                                <a href="UOMO SCHEDE PRODOTTO/W6024-ECHELON.html" class="product-photo">
-                  <img src="images/UOMO/W6024 ECHELON - Kurzarm-Zeitfahranzug mit Silikonlogos - Herren.png" alt="W6024 ECHELON" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                                <a href="./UOMO DE/W6024-ECHELON_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W6024 ECHELON" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/UOMO/W6024/1.png" alt="W6024 ECHELON Vorschau">
+                  <img src="../images/uomo.png" alt="W6024 ECHELON Vorschau">
                 </div>
               </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W6024-ECHELON.html" class="product-name"><strong>W6024 ECHELON</strong></a>
+                                          <a href="./UOMO DE/W6024-ECHELON_DE.html" class="product-name"><strong>W6024 ECHELON</strong></a>
               <div class="product-subtitle">Kurzarm-Zeitfahranzug mit Silikonlogos - Herren</div>
                                         </article>
 
             <article class="card">
               <div class="card-image">
-                                <a href="UOMO SCHEDE PRODOTTO/W6011-APEX.html" class="product-photo">
-                  <img src="images/UOMO/W6011 APEX - Kurzarm-Rennanzug Straße - Herren.png" alt="W6011 APEX" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                                <a href="./UOMO DE/W6011-APEX_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W6011 APEX" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/UOMO/W6011/1.png" alt="W6011 APEX Vorschau">
+                  <img src="../images/uomo.png" alt="W6011 APEX Vorschau">
                 </div>
               </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W6011-APEX.html" class="product-name"><strong>W6011 APEX</strong></a>
+                                          <a href="./UOMO DE/W6011-APEX_DE.html" class="product-name"><strong>W6011 APEX</strong></a>
               <div class="product-subtitle">Kurzarm-Rennanzug Straße - Herren</div>
                                         </article>
 
             <article class="card">
               <div class="card-image third">
-                <a href="UOMO SCHEDE PRODOTTO/W6036-ECHELON.html" class="product-photo">
-                  <img src="images/UOMO/W6036 ECHELON - Cycle-01 - Personalisierbarer Aero-Rennanzug - Herren.png" alt="W6036 ECHELON" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                <a href="./UOMO DE/W6036-ECHELON_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W6036 ECHELON" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/UOMO/W6036/1.png" alt="W6036 ECHELON Vorschau">
+                  <img src="../images/uomo.png" alt="W6036 ECHELON Vorschau">
                 </div>
               </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W6036-ECHELON.html" class="product-name"><strong>W6036 ECHELON</strong></a>
+                                          <a href="./UOMO DE/W6036-ECHELON_DE.html" class="product-name"><strong>W6036 ECHELON</strong></a>
               <div class="product-subtitle">Cycle-01 - Personalisierbarer Aero-Rennanzug - Herren</div>
                                         </article>
 
             <article class="card">
               <div class="card-image">
-                                <a href="UOMO SCHEDE PRODOTTO/W7201-FREE-RIDE.html" class="product-photo">
-                  <img src="images/UOMO/W7201 FREE RIDE - Kurzarm-T-Shirt - Herren.png" alt="W7201 FREE RIDE" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                                <a href="./UOMO DE/W7201-FREE-RIDE_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W7201 FREE RIDE" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/UOMO/W7201/1.png" alt="W7201 FREE RIDE Vorschau">
+                  <img src="../images/uomo.png" alt="W7201 FREE RIDE Vorschau">
                 </div>
               </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W7201-FREE-RIDE.html" class="product-name"><strong>W7201 FREE RIDE</strong></a>
+                                          <a href="./UOMO DE/W7201-FREE-RIDE_DE.html" class="product-name"><strong>W7201 FREE RIDE</strong></a>
               <div class="product-subtitle">Kurzarm-T-Shirt - Herren</div>
                                         </article>
 
             <article class="card">
               <div class="card-image">
-                                <a href="UOMO SCHEDE PRODOTTO/W7204-FREE-RIDE.html" class="product-photo">
-                  <img src="images/UOMO/W7204 FREE RIDE - Kurzarmtrikot mit Reißverschluss - Herren.png" alt="W7204 FREE RIDE" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                                <a href="./UOMO DE/W7204-FREE-RIDE_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W7204 FREE RIDE" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/UOMO/W7204/1.png" alt="W7204 FREE RIDE Vorschau">
+                  <img src="../images/uomo.png" alt="W7204 FREE RIDE Vorschau">
                 </div>
               </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W7204-FREE-RIDE.html" class="product-name"><strong>W7204 FREE RIDE</strong></a>
+                                          <a href="./UOMO DE/W7204-FREE-RIDE_DE.html" class="product-name"><strong>W7204 FREE RIDE</strong></a>
               <div class="product-subtitle">Kurzarmtrikot mit Reißverschluss - Herren</div>
                                         </article>
 
             <article class="card">
               <div class="card-image third">
-                <a href="UOMO SCHEDE PRODOTTO/W7200-FREE-RIDE.html" class="product-photo">
-                  <img src="images/UOMO/W7200 FREE RIDE - Langarm-T-Shirt - Herren.png" alt="W7200 FREE RIDE" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                <a href="./UOMO DE/W7200-FREE-RIDE_DE.html" class="product-photo">
+                  <img src="../images/uomo.png" alt="W7200 FREE RIDE" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
                 </a>
                 <div class="preview-replacement">
-                  <img src="images/UOMO/W7200/1.png" alt="W7200 FREE RIDE Vorschau">
+                  <img src="../images/uomo.png" alt="W7200 FREE RIDE Vorschau">
                 </div>
               </div>
-                                          <a href="UOMO SCHEDE PRODOTTO/W7200-FREE-RIDE.html" class="product-name"><strong>W7200 FREE RIDE</strong></a>
+                                          <a href="./UOMO DE/W7200-FREE-RIDE_DE.html" class="product-name"><strong>W7200 FREE RIDE</strong></a>
               <div class="product-subtitle">Langarm-T-Shirt - Herren</div>
                                         </article>
 
@@ -1597,75 +1672,58 @@
         </section>
       </div>
 
-       <footer class="bg-white py-8 text-gray-700 text-sm">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
-                <!-- Logo -->
-                <div class="col-span-1">
-                    <a href="https://www.bicycle-line.com/it/" target="_blank"><img src="images/logodfs.png" alt="Bicycle Line Logo" class="w-20 h-auto"></a>
-                </div>
-
-                <!-- BICYCLE LINE -->
-                <div class="col-span-1">
-                    <h3 class="font-bold text-gray-900 mb-3">BICYCLE LINE</h3>
-                    <ul class="space-y-1">
-                        <li><a href="https://www.bicycle-line.com/it/content/4-brand" class="hover:text-gray-900 transition">Brand</a></li>
-                        <li><a href="https://www.bicycle-line.com/it/content/6-storia" class="hover:text-gray-900 transition">Geschichte</a></li>
-                        <li><a href="https://www.bicycle-line.com/it/content/9-sostenibilita" class="hover:text-gray-900 transition">Nachhaltigkeit</a></li>
-                        <li><a href="https://www.bicycle-line.com/it/contact" class="hover:text-gray-900 transition">Kontaktieren Sie uns</a></li>
-                    </ul>
-                </div>
-
-                <!-- SHOP -->
-                <div class="col-span-1">
-                    <h3 class="font-bold text-gray-900 mb-3">SHOP</h3>
-                    <ul class="space-y-1">
-                        <li><a href="https://www.bicycle-line.com/it/947-uomo" class="hover:text-gray-900 transition">Herren</a></li>
-                        <li><a href="https://www.bicycle-line.com/it/948-donna" class="hover:text-gray-900 transition">Damen</a></li>
-                        <li><a href="https://www.bicycle-line.com/it/949-cat-bambino" class="hover:text-gray-900 transition">Kinder</a></li>
-                        <li><a href="https://www.bicycle-line.com/it/1109-offerte" class="hover:text-gray-900 transition">Angebote</a></li>
-                        <li><a href="https://www.bicycle-line.com/it/content/23-shop" class="hover:text-gray-900 transition">Leitfaden zum Online-Shopping</a></li>
-                    </ul>
-                </div>
-
-                <!-- NÜTZLICHE LINKS -->
-                <div class="col-span-1">
-                    <h3 class="font-bold text-gray-900 mb-3">NÜTZLICHE LINKS</h3>
-                    <ul class="space-y-1">
-                        <li><a href="https://www.bicycle-line.com/it/content/1-spedizione" class="hover:text-gray-900 transition">Versand</a></li>
-                        <li><a href="https://www.bicycle-line.com/it/content/5-pagamento" class="hover:text-gray-900 transition">Zahlung</a></li>
-                        <li><a href="https://www.bicycle-line.com/it/content/18-faq" class="hover:text-gray-900 transition">FAQ</a></li>
-                        <li><a href="https://www.bicycle-line.com/it/content/12-guida-alle-taglie" class="hover:text-gray-900 transition">Größentabelle</a></li>
-                        <li><a href="https://www.bicycle-line.com/it/content/14-garanzia" class="hover:text-gray-900 transition">Produktnutzung und Garantie</a></li>
-                        <li><a href="https://www.bicycle-line.com/it/content/13-resi" class="hover:text-gray-900 transition">Rücksendungen</a></li>
-                    </ul>
-                </div>
-
-                <!-- RECHTLICHE HINWEISE + KONTAKT -->
-                <div class="col-span-1">
-                    <h3 class="font-bold text-gray-900 mb-3">RECHTLICHE HINWEISE</h3>
-                    <ul class="space-y-1">
-                        <li><a href="https://www.bicycle-line.com/it/content/15-privacy-policy" class="hover:text-gray-900 transition">Privacy Policy</a></li>
-                        <li><a href="https://www.bicycle-line.com/it/content/16-cookie-policy" class="hover:text-gray-900 transition">Cookie policy</a></li>
-                        <li><a href="https://www.bicycle-line.com/it/content/17-termini-e-condizioni" class="hover:text-gray-900 transition">Allgemeine Geschäftsbedingungen</a></li>
-                    </ul>
-
-                    <h3 class="font-bold text-gray-900 mb-3 mt-4">KONTAKTIEREN SIE UNS</h3>
-                    <ul class="space-y-1 text-xs">
-                        <li class="font-semibold">Bicycle Line - VAT 02027450267</li>
-                        <li>Via Ferrara, 2-4 31030 Dosson di Casier</li>
-                        <li>Treviso - Italien</li>
-                        <li>+39 0422 490156</li>
-                        <li>custom@bicycle-line.com</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Untere Leiste -->
-            <div class="border-t border-gray-300 mt-6 pt-4 text-center text-xs text-gray-500">
-            </div>
+       <!-- FOOTER -->
+<footer class="footer footer-index-clone">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <a href="https://www.bicycle-line.com/de/" target="_blank">
+            <img src="../images/logo bianco.png" alt="Bicycle Line">
+          </a>
         </div>
-    </footer>
+        <p class="footer-tagline">Individuelle technische Radsportbekleidung.<br>Italienische Produktion seit 1987.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Bicycle Line</h4>
+        <a href="https://www.bicycle-line.com/de/content/4-marke">Marke</a>
+        <a href="https://www.bicycle-line.com/de/content/6-geschichte">Geschichte</a>
+        <a href="https://www.bicycle-line.com/de/content/9-nachhaltigkeit">Nachhaltigkeit</a>
+        <a href="https://www.bicycle-line.com/de/contact">Kontakt</a>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="https://www.bicycle-line.com/de/947-herren">Herren</a>
+        <a href="https://www.bicycle-line.com/de/948-damen">Damen</a>
+        <a href="https://www.bicycle-line.com/de/949-kinder">Kinder</a>
+        <a href="https://www.bicycle-line.com/de/1109-angebote">Angebote</a>
+      </div>
+      <div class="footer-col">
+        <h4>Nützliche Links</h4>
+        <a href="https://www.bicycle-line.com/de/content/1-versand">Versand</a>
+        <a href="https://www.bicycle-line.com/de/content/18-faq">FAQ</a>
+        <a href="https://www.bicycle-line.com/de/content/12-size-guide">Größentabelle</a>
+        <a href="https://www.bicycle-line.com/de/content/13-rucksendungen">Rücksendungen</a>
+      </div>
+      <div class="footer-col">
+        <h4>Rechtliches</h4>
+        <a href="https://www.bicycle-line.com/de/content/15-datenschutz">Datenschutz</a>
+        <a href="https://www.bicycle-line.com/de/content/16-cookie-richtlinie">Cookie-Richtlinie</a>
+        <a href="https://www.bicycle-line.com/de/content/17-allgemeine-geschaftsbedingungen">Geschäftsbedingungen</a>
+        <div style="margin-top:24px;">
+          <h4>Kontakt</h4>
+          <li>Via Ferrara 2-4, 31030 Dosson TV</li>
+          <li>+39 0422 490156</li>
+          <li>custom@bicycle-line.com</li>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Bicycle Line Srl — VAT 02027450267</p>
+      <p>Dosson di Casier, Treviso — Italien</p>
+    </div>
+  </div>
+</footer>
     </main>
   </div>
 

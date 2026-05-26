@@ -1,0 +1,1554 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" type="image/png" href="../images/logodfs.png" />
+  <title>Bicycle Line — Vêtements de cyclisme personnalisés</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --white: #ffffff;
+      --off-white: #f4f4f2;
+      --grey-100: #e8e8e6;
+      --grey-300: #b0b0aa;
+      --grey-500: #6e6e68;
+      --grey-700: #2e2e2a;
+      --grey-800: #1c1c18;
+      --accent: #ffffff;
+      --nav-h: 80px;
+      --topbar-h: 36px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--black);
+      color: var(--white);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img, video { display: block; }
+
+    /* ─── ANNOUNCEMENT BAR ─── */
+    .topbar {
+      height: var(--topbar-h);
+      background: var(--black);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      gap: 20px;
+    }
+
+    .topbar a {
+      color: var(--white);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .topbar-right {
+      position: absolute;
+      right: 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 12px;
+    }
+
+    /* ─── NAV ─── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--nav-h);
+      background: var(--white);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      display: grid;
+      grid-template-columns: 200px 1fr 200px;
+      align-items: center;
+      padding: 0 32px;
+      transition: background 0.3s ease;
+    }
+
+    .nav-logo img {
+      height: 56px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--grey-700);
+      transition: color 0.2s;
+      padding: 4px 0;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--black);
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover { color: var(--black); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-actions {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .lang-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--grey-700);
+      cursor: pointer;
+      transition: color 0.2s;
+      background: none;
+      border: none;
+    }
+
+    .lang-btn:hover { color: var(--black); }
+
+    .lang-btn img {
+      width: 18px;
+      height: 12px;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+
+    .lang-dropdown {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      background: var(--white);
+      color: var(--black);
+      min-width: 140px;
+      border: 1px solid var(--grey-100);
+      z-index: 200;
+      display: none;
+    }
+
+    .lang-dropdown.open { display: block; }
+
+    .lang-dropdown a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--black);
+      transition: background 0.15s;
+    }
+
+    .lang-dropdown a:hover { background: var(--grey-100); }
+    .lang-dropdown img { width: 18px; height: 12px; object-fit: cover; border-radius: 2px; }
+
+    .lang-wrap { position: relative; }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative;
+      height: calc(100vh - var(--topbar-h) - var(--nav-h));
+      min-height: 560px;
+      background: var(--black);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.55;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.55) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 0 24px;
+      animation: fadeUp 0.9s ease both;
+    }
+
+    .hero-eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--grey-300);
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(52px, 8vw, 120px);
+      font-weight: 900;
+      line-height: 0.88;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+
+    .hero-sub {
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.75);
+      max-width: 440px;
+      margin: 0 auto 36px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 44px;
+      padding: 0 28px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+    }
+
+    .btn-white { background: var(--white); color: var(--black); }
+    .btn-white:hover { background: var(--grey-100); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.08); border-color: var(--white); }
+
+    .btn-dark { background: var(--grey-800); color: var(--white); border: 1px solid var(--grey-700); }
+    .btn-dark:hover { background: var(--grey-700); }
+
+    .btn-full { width: 100%; }
+
+    /* ─── SCROLL INDICATOR ─── */
+    .scroll-hint {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      opacity: 0.5;
+    }
+
+    .scroll-hint span {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--white), transparent);
+      animation: scrollDrop 1.6s ease-in-out infinite;
+    }
+
+    @keyframes scrollDrop {
+      0% { transform: scaleY(0); transform-origin: top; }
+      50% { transform: scaleY(1); transform-origin: top; }
+      51% { transform: scaleY(1); transform-origin: bottom; }
+      100% { transform: scaleY(0); transform-origin: bottom; }
+    }
+
+    /* ─── SECTION COMMONS ─── */
+    .section { padding: 100px 0; }
+    .section-sm { padding: 60px 0; }
+
+    .wrap {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .section-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--grey-500);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(38px, 5vw, 64px);
+      font-weight: 900;
+      line-height: 0.92;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: var(--black);
+    }
+
+    .section-body {
+      font-size: 15px;
+      font-weight: 400;
+      color: var(--black);
+      line-height: 1.7;
+      max-width: 560px;
+    }
+
+    /* ─── COME FUNZIONA ─── */
+    .process-section { background: var(--white); }
+
+    .process-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 64px;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+
+    .process-card {
+      padding: 40px 32px 40px 0;
+      border-left: 1px solid rgba(0,0,0,0.08);
+      padding-left: 32px;
+      position: relative;
+      transition: border-color 0.3s;
+    }
+
+    .process-card:hover { border-left-color: rgba(0,0,0,0.35); }
+
+    .process-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--grey-500);
+      margin-bottom: 28px;
+    }
+
+    .process-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: var(--black);
+      margin-bottom: 14px;
+    }
+
+    .process-card p {
+      font-size: 14px;
+      color: var(--grey-700);
+      line-height: 1.65;
+    }
+
+    /* ─── VIDEO EDITORIAL ─── */
+    .editorial {
+      position: relative;
+      overflow: hidden;
+      background: var(--black);
+    }
+
+    .editorial video, .editorial img {
+      width: 100%;
+      height: 80vh;
+      min-height: 480px;
+      object-fit: cover;
+      opacity: 0.6;
+    }
+
+    .editorial-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0.1) 60%);
+      display: flex;
+      align-items: flex-end;
+      padding: 60px;
+    }
+
+    .editorial-text h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(42px, 6vw, 80px);
+      font-weight: 900;
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      color: var(--white);
+      max-width: 780px;
+      margin-bottom: 28px;
+    }
+
+    /* ─── CATEGORY GRID ─── */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+    }
+
+    .cat-card {
+      position: relative;
+      overflow: hidden;
+      background: var(--grey-800);
+      aspect-ratio: 2/3;
+      cursor: pointer;
+    }
+
+    .cat-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .cat-card:hover img { transform: scale(1.04); }
+
+    .cat-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,10,10,0.7) 0%, rgba(10,10,10,0) 50%);
+    }
+
+    .cat-copy {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 32px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    .cat-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(36px, 5vw, 60px);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    /* ─── RAGAZZI FULL ─── */
+    .ragazzi-full {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ragazzi-full img {
+      width: 100%;
+      height: 65vh;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+
+    .ragazzi-full:hover img { transform: scale(1.02); }
+
+    .ragazzi-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10,10,10,0.75) 0%, transparent 60%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 48px;
+      text-align: center;
+    }
+
+    /* ─── STATEMENT ─── */
+    .statement {
+      background: var(--white);
+      color: var(--black);
+      padding: 80px 32px;
+      text-align: center;
+    }
+
+    .statement h2 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(44px, 7vw, 96px);
+      font-weight: 900;
+      line-height: 0.88;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      color: var(--black);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ─── CORRIDORI IMG ─── */
+    .corridori {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .corridori img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+
+    /* ─── VALUES ─── */
+    .values-section { background: var(--white); }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border-top: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .value-card {
+      padding: 40px;
+      border-right: 1px solid rgba(0,0,0,0.1);
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .value-card:nth-child(3n) { border-right: none; }
+
+    .value-icon {
+      width: 36px;
+      height: 36px;
+      margin-bottom: 24px;
+      color: var(--grey-500);
+    }
+
+    .value-card h3 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--black);
+      margin-bottom: 12px;
+    }
+
+    .value-card p {
+      font-size: 14px;
+      color: var(--grey-700);
+      line-height: 1.65;
+    }
+
+    /* ─── REVIEWS ─── */
+    .reviews-section { background: var(--grey-800); }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3px;
+    }
+
+    .review-card {
+      background: var(--black);
+      padding: 40px;
+    }
+
+    .review-stars {
+      font-size: 14px;
+      letter-spacing: 3px;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+
+    .review-text {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.6;
+      font-style: italic;
+      margin-bottom: 28px;
+    }
+
+    .review-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--grey-500);
+    }
+
+    /* ─── CONTACT ─── */
+    .contact-section { background: var(--black); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contact-info-title {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: clamp(44px, 5vw, 72px);
+      font-weight: 900;
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 24px;
+    }
+
+    .contact-desc {
+      font-size: 15px;
+      color: var(--grey-300);
+      line-height: 1.7;
+      margin-bottom: 48px;
+    }
+
+    .contact-method {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--grey-800);
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 14px;
+      color: var(--grey-300);
+    }
+
+    .contact-method-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--grey-500);
+      margin-bottom: 4px;
+    }
+
+    .contact-method-value {
+      font-size: 15px;
+      color: var(--white);
+    }
+
+    /* ─── FORM ─── */
+    .contact-form { background: var(--grey-800); padding: 40px; }
+
+    .field { margin-bottom: 20px; }
+
+    .field label {
+      display: block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--grey-300);
+      margin-bottom: 8px;
+    }
+
+    .field input, .field textarea, .field select {
+      width: 100%;
+      background: var(--black);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--white);
+      font-family: 'Barlow', sans-serif;
+      font-size: 14px;
+      padding: 13px 16px;
+      outline: none;
+      transition: border-color 0.2s;
+      border-radius: 0;
+      appearance: none;
+    }
+
+    .field input:focus, .field textarea:focus { border-color: var(--white); }
+
+    .field textarea { min-height: 120px; resize: vertical; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    .form-submit {
+      width: 100%;
+      background: var(--white);
+      color: var(--black);
+      border: none;
+      height: 50px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .form-submit:hover { background: var(--grey-100); }
+
+    #success-msg, #error-msg {
+      display: none;
+      padding: 14px 18px;
+      font-size: 14px;
+      margin-top: 16px;
+      border: 1px solid;
+    }
+    #success-msg { color: #7ef0a8; border-color: #235a36; background: #0f1f14; }
+    #error-msg { color: #ff9696; border-color: #6d2323; background: #1e0e0e; }
+
+    /* ─── FAQ ─── */
+    .faq-section { background: var(--white); }
+
+    .faq-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 56px;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .faq-btn {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      text-align: left;
+      cursor: pointer;
+      color: var(--black);
+    }
+
+    .faq-num {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--grey-500);
+      min-width: 28px;
+    }
+
+    .faq-q {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      flex: 1;
+      color: var(--black);
+    }
+
+    .faq-plus {
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--grey-500);
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .faq-item.open .faq-plus { transform: rotate(45deg); color: var(--black); }
+    .faq-item.open .faq-q { color: var(--black); }
+
+    .faq-ans {
+      display: none;
+      padding: 0 0 24px 52px;
+      font-size: 14px;
+      color: var(--grey-700);
+      line-height: 1.75;
+      max-width: 800px;
+    }
+
+    .faq-item.open .faq-ans { display: block; }
+
+    /* ─── FOOTER ─── */
+    .footer {
+      background: var(--black);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 64px 0 32px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr 1.2fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    .footer-logo img { height: 100px; margin-bottom: 20px; }
+
+    .footer-tagline {
+      font-size: 13px;
+      color: var(--grey-500);
+      line-height: 1.6;
+    }
+
+    .footer-col h4 {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .footer-col a, .footer-col li {
+      display: block;
+      font-size: 13px;
+      color: var(--grey-500);
+      margin-bottom: 10px;
+      transition: color 0.2s;
+      list-style: none;
+    }
+
+    .footer-col a:hover { color: var(--white); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom p {
+      font-size: 12px;
+      color: var(--grey-700);
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── MOBILE NAV ─── */
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 1px;
+      background: var(--black);
+      transition: all 0.3s;
+    }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--black);
+      z-index: 200;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    .mobile-nav.open { display: flex; }
+
+    .mobile-nav a {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 36px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    .mobile-close {
+      position: absolute;
+      top: 20px;
+      right: 28px;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .process-grid { grid-template-columns: 1fr 1fr; }
+      .values-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      :root { --nav-h: 56px; --topbar-h: 32px; }
+      .nav { grid-template-columns: 120px 1fr auto; padding: 0 20px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .topbar { font-size: 11px; padding: 0 16px; }
+      .topbar-right { display: none; }
+      .process-grid { grid-template-columns: 1fr; }
+      .cat-grid { grid-template-columns: 1fr 1fr; }
+      .cat-grid .cat-card:last-child { grid-column: span 2; aspect-ratio: 16/9; }
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .process-header { flex-direction: column; align-items: flex-start; gap: 20px; }
+      .faq-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .form-row { grid-template-columns: 1fr; }
+      .editorial-overlay { padding: 32px; }
+      .value-card { padding: 28px; }
+      .cat-card { aspect-ratio: 4/5; }
+    }
+
+    @media (max-width: 480px) {
+      .values-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .wrap { padding: 0 20px; }
+    }
+  
+    /* Local replacements for the small Tailwind utility subset used by these static pages. */
+    .fixed{position:fixed}.absolute{position:absolute}.inset-0{inset:0}.top-4{top:1rem}.right-4{right:1rem}.z-50{z-index:50}.hidden{display:none!important}.flex{display:flex}.grid{display:grid}.items-center{align-items:center}.justify-center{justify-content:center}.mx-auto{margin-left:auto;margin-right:auto}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mb-12{margin-bottom:3rem}.mt-8{margin-top:2rem}.p-8{padding:2rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-12{padding-top:3rem;padding-bottom:3rem}.w-20{width:5rem}.w-full{width:100%}.max-w-7xl{max-width:80rem}.max-w-4xl{max-width:56rem}.max-w-full{max-width:100%}.max-h-\[90vh\]{max-height:90vh}.h-auto{height:auto}.overflow-y-auto{overflow-y:auto}.rounded-lg{border-radius:.5rem}.bg-white{background:#fff}.bg-gray-50{background:#f9fafb}.bg-black{background:#000}.bg-opacity-50{--tw-bg-opacity:.5;background-color:rgba(0,0,0,var(--tw-bg-opacity))}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-sm{font-size:.875rem;line-height:1.25rem}.font-bold{font-weight:700}.text-gray-400{color:#9ca3af}.text-gray-500{color:#6b7280}.text-gray-600{color:#4b5563}.text-gray-700{color:#374151}.text-gray-900{color:#111827}.leading-relaxed{line-height:1.625}.space-x-4>:not([hidden])~:not([hidden]){margin-left:1rem}.space-y-3>:not([hidden])~:not([hidden]){margin-top:.75rem}.gap-8{gap:2rem}.border-t{border-top:1px solid #e5e7eb}.border-gray-200{border-color:#e5e7eb}.pt-8{padding-top:2rem}.transition{transition:all .15s ease}.hover\:text-gray-700:hover{color:#374151}.hover\:text-gray-900:hover{color:#111827}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.size-guide-fallback{margin:0 auto 18px;max-width:520px;text-align:center;color:#4b5563;line-height:1.6}@media(min-width:768px){.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(min-width:1024px){.lg\:grid-cols-5{grid-template-columns:repeat(5,minmax(0,1fr))}.lg\:px-8{padding-left:2rem;padding-right:2rem}}
+  
+
+/* Footer coerente con la home */
+.footer-index-clone {
+  background: #050505;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 70px 0 32px;
+  color: #ffffff;
+}
+.footer-index-clone .wrap {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.footer-index-clone .footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1.2fr;
+  gap: 48px;
+  margin-bottom: 54px;
+}
+.footer-index-clone .footer-logo img {
+  height: 100px;
+  margin-bottom: 20px;
+}
+.footer-index-clone .footer-tagline {
+  font-size: 13px;
+  color: #8a8a8a;
+  line-height: 1.7;
+}
+.footer-index-clone .footer-col h4 {
+  font-family: 'Barlow Condensed', Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: #ffffff;
+  margin: 0 0 18px;
+}
+.footer-index-clone .footer-col a,
+.footer-index-clone .footer-col li {
+  display: block;
+  font-size: 13px;
+  color: #8a8a8a;
+  margin-bottom: 10px;
+  line-height: 1.45;
+  text-decoration: none;
+  list-style: none;
+}
+.footer-index-clone .footer-col a:hover { color: #ffffff; }
+.footer-index-clone .footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.footer-index-clone .footer-bottom p {
+  font-size: 12px;
+  color: #666666;
+  margin: 0;
+}
+@media (max-width: 1024px) {
+  .footer-index-clone .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .footer-index-clone .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-index-clone .footer-bottom { flex-direction: column; }
+}
+@media (max-width: 480px) {
+  .footer-index-clone .wrap { padding: 0 20px; }
+  .footer-index-clone .footer-grid { grid-template-columns: 1fr; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="topbar" style="position:relative;">
+  <span>Commandes personnalisées à partir de <strong>10 pièces</strong> — Production 100 % italienne</span>
+  <div class="topbar-right">
+    <span style="opacity:0.5;">|</span>
+    <a href="#contatti">Demander un devis →</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">
+    <a href="https://www.bicycle-line.com/it/" target="_blank"><img src="../images/logodfs.png" alt="Bicycle Line"></a>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="./index.html#come-funziona">Comment ça marche</a></li>
+    <li><a href="./uomo_FR.html">Homme</a></li>
+    <li><a href="./donna_FR.html">Femme</a></li>
+    <li><a href="./accessori_FR.html">Accessoires</a></li>
+    <li><a href="./ragazzi_FR.html">Enfants</a></li>
+    <li><a href="./index.html#faq">FAQ</a></li>
+    <li><a href="./index.html#contatti">Contacts</a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <div class="lang-wrap">
+      <button class="lang-btn" id="lang-toggle">
+        <img src="../images/BANDIERE/italia.jpg" alt="IT">
+        <span>IT</span>
+        <i class="fas fa-chevron-down" style="font-size:9px; opacity:0.6;"></i>
+      </button>
+      <div class="lang-dropdown" id="lang-dropdown">
+        <a href="../index.html"><img src="../images/BANDIERE/italia.jpg" alt="IT"> Italien</a>
+        <a href="../INGLESE/index.html"><img src="../images/BANDIERE/english.jpg" alt="EN"> Anglais</a>
+        <a href="../TEDESCO/index.html"><img src="../images/BANDIERE/Deutsch.jpg" alt="DE"> Allemand</a>
+        <a href="./index.html"><img src="../images/BANDIERE/Français.jpg" alt="FR"> Français</a>
+        <a href="../SPAGNOLO/index.html"><img src="../images/BANDIERE/Español.jpg" alt="ES"> Espagnol</a>
+      </div>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobile-nav">
+  <button class="mobile-close" id="mobile-close">✕</button>
+  <a href="./index.html#come-funziona">Comment ça marche</a>
+  <a href="./uomo_FR.html">Homme</a>
+  <a href="./donna_FR.html">Femme</a>
+  <a href="./accessori_FR.html">Accessoires</a>
+  <a href="./ragazzi_FR.html">Enfants</a>
+  <a href="./index.html#faq">FAQ</a>
+  <a href="./index.html#contatti">Contacts</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <video autoplay muted loop playsinline>
+    <source src="../images/herosection.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Depuis 1987 — Trévise, Italie</p>
+    <h1 class="hero-title">Tenues<br>personnalisées</h1>
+    <p class="hero-sub">Design sur mesure et production spécialisée pour votre équipe.</p>
+    <a href="#contatti" class="btn btn-white">Demander des informations</a>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- COME FUNZIONA -->
+<section id="come-funziona" class="section process-section">
+  <div class="wrap">
+    <div class="process-header fade-up">
+      <div>
+        <p class="section-label">Le processus</p>
+        <h2 class="section-title">Comment ça<br>marche</h2>
+      </div>
+      <div>
+        <p class="section-body">Un parcours simple et guidé pour créer une tenue cohérente avec votre équipe, de la première idée à la production finale.</p>
+      </div>
+    </div>
+    <div class="process-grid">
+      <div class="process-card fade-up">
+        <p class="process-num">01 / 04</p>
+        <h3>Inspirez-vous</h3>
+        <p>Partagez identité, couleurs, logos et objectifs. Nous partons de votre univers pour définir un concept fort et reconnaissable.</p>
+      </div>
+      <div class="process-card fade-up">
+        <p class="process-num">02 / 04</p>
+        <h3>Graphisme</h3>
+        <p>Notre équipe développe une proposition visuelle pensée pour valoriser le vêtement, les matières et la présence des marques ou sponsors.</p>
+      </div>
+      <div class="process-card fade-up">
+        <p class="process-num">03 / 04</p>
+        <h3>Design final</h3>
+        <p>Nous affinons détails, proportions et rendu global sur chaque article afin d’obtenir une collection technique cohérente et premium.</p>
+      </div>
+      <div class="process-card fade-up">
+        <p class="process-num">04 / 04</p>
+        <h3>Production</h3>
+        <p>Après validation, le projet part en production avec contrôle direct et attention portée à la qualité, au confort et à la durabilité.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO EDITORIAL -->
+<section class="editorial fade-up">
+  <video autoplay muted loop playsinline>
+    <source src="../images/VIDEO TRASFORMAZIONE.mp4" type="video/mp4">
+  </video>
+  <div class="editorial-overlay">
+    <div class="editorial-text">
+      <h2>Découvrez le meilleur du custom, en un seul endroit.</h2>
+      <a href="#contatti" class="btn btn-white">Demander des informations</a>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORY GRID: UOMO / DONNA / RAGAZZI -->
+<section class="section-sm" style="background: var(--white);">
+  <div class="cat-grid">
+    <a href="./uomo_FR.html" class="cat-card fade-up">
+      <img src="../images/uomo.png" alt="Homme">
+      <div class="cat-overlay"></div>
+      <div class="cat-copy">
+        <span class="cat-title">Homme</span>
+        <span class="btn btn-white" style="flex-shrink:0;">Voir le catalogue</span>
+      </div>
+    </a>
+    <a href="./donna_FR.html" class="cat-card fade-up">
+      <img src="../images/donna.png" alt="Femme">
+      <div class="cat-overlay"></div>
+      <div class="cat-copy">
+        <span class="cat-title">Femme</span>
+        <span class="btn btn-white" style="flex-shrink:0;">Voir le catalogue</span>
+      </div>
+    </a>
+    <a href="./ragazzi_FR.html" class="cat-card fade-up">
+      <img src="../images/ragazzi.png" alt="Enfants">
+      <div class="cat-overlay"></div>
+      <div class="cat-copy">
+        <span class="cat-title">Enfants</span>
+        <span class="btn btn-white" style="flex-shrink:0;">Voir le catalogue</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- STATEMENT -->
+<div class="statement fade-up">
+  <h2>Lignes épurées.<br>Identité forte.<br>Performance réelle.</h2>
+</div>
+
+<!-- CORRIDORI IMAGE -->
+<div class="corridori fade-up">
+  <a href="#contatti">
+    <img src="../images/corridori.png" alt="Bicycle Line — Team">
+  </a>
+</div>
+
+<!-- COSA CI RENDE DIVERSI -->
+<section id="differenze" class="section values-section">
+  <div class="wrap">
+    <div class="fade-up" style="margin-bottom:56px;">
+      <p class="section-label">Pourquoi BL</p>
+      <h2 class="section-title" style="max-width:600px; color: var(--black);">Ce qui nous rend<br>différents</h2>
+    </div>
+    <div class="values-grid fade-up">
+      <div class="value-card">
+        <div class="value-icon"><i class="fas fa-pen-ruler fa-lg"></i></div>
+        <h3>Design sur mesure</h3>
+        <p>Des tenues conçues de zéro, sans modèles rigides, pour créer une présence cohérente avec votre équipe.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><i class="fas fa-location-dot fa-lg"></i></div>
+        <h3>Fabriqué en Italie</h3>
+        <p>Production italiana con controllo diretto, strutture specializzate e attenzione costante alla qualità finale.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><i class="fas fa-bullseye fa-lg"></i></div>
+        <h3>Focus sponsors</h3>
+        <p>Les logos et marques sont étudiés pour garantir visibilité, proportion et lisibilité pendant l’utilisation.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><i class="fas fa-cube fa-lg"></i></div>
+        <h3>Aperçus réalistes</h3>
+        <p>Des visualisations claires du résultat final pour évaluer le projet avant le lancement en production.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><i class="fas fa-layer-group fa-lg"></i></div>
+        <h3>Cohérence sur toute la ligne</h3>
+        <p>Un concept unique adapté aux différents vêtements pour garder une collection reconnaissable et uniforme.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon"><i class="fas fa-list-check fa-lg"></i></div>
+        <h3>Processus guidé</h3>
+        <p>Une méthode claire, avec étapes définies et révisions jusqu’à la validation finale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="section reviews-section">
+  <div class="wrap">
+    <div class="fade-up" style="margin-bottom:48px; display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:20px;">
+      <div>
+        <p class="section-label">Témoignages</p>
+        <h2 class="section-title" style="color: var(--white);">Ils nous<br>font confiance</h2>
+      </div>
+      <a href="https://www.feedaty.com/recensioni/bicycle-line" target="_blank" class="btn btn-outline">Lire sur Feedaty →</a>
+    </div>
+    <div class="reviews-grid fade-up">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Excellents produits, je recommande vivement."</p>
+        <span class="review-tag">Vérifié</span>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Matériaux d’excellente qualité."</p>
+        <span class="review-tag">Vérifié</span>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Tenues magnifiques, avec de très belles finitions."</p>
+        <span class="review-tag">Vérifié</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATTI -->
+<section id="contatti" class="section contact-section">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="fade-up">
+        <p class="section-label">Parlons-en</p>
+        <h2 class="contact-info-title">Contactez-nous</h2>
+        <p class="contact-desc">Demandez un devis personnalisé sans engagement pour votre tenue de cyclisme. Notre équipe vous guidera dans le choix du modèle le plus proche de vos besoins.</p>
+
+        <div class="contact-method">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <div>
+            <p class="contact-method-label">E-mail</p>
+            <p class="contact-method-value">custom@bicycle-line.com</p>
+          </div>
+        </div>
+        <div class="contact-method">
+          <div class="contact-icon"><i class="fas fa-phone"></i></div>
+          <div>
+            <p class="contact-method-label">Téléphone</p>
+            <p class="contact-method-value">+39 0422 490156</p>
+          </div>
+        </div>
+        <div class="contact-method">
+          <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div>
+            <p class="contact-method-label">Siège</p>
+            <p class="contact-method-value">Via Francesco Ferrara 2, 31030 Dosson TV</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="fade-up">
+        <form class="contact-form" id="contact-form" method="POST" action="https://hook.eu2.make.com/pxiuwmjdbat2fxz5yfqh9ya5lgh3qwec">
+          <div class="form-row">
+            <div class="field">
+              <label>Prénom *</label>
+              <input type="text" name="nome" placeholder="Votre prénom" required>
+            </div>
+            <div class="field">
+              <label>Nom *</label>
+              <input type="text" name="cognome" placeholder="Votre nom" required>
+              <input type="hidden" name="lang" value="fr">
+            </div>
+          </div>
+          <div class="field">
+            <label>Nom de l’équipe *</label>
+            <input type="text" name="nomeTeam" placeholder="Nom de votre équipe" required>
+          </div>
+          <div class="field">
+            <label>E-mail *</label>
+            <input type="email" name="email" placeholder="tua@email.com" required>
+          </div>
+          <div class="field">
+            <label>Sport</label>
+            <input type="text" name="sport" value="Ciclismo" readonly>
+          </div>
+          <div class="field">
+            <label>Nombre d’athlètes</label>
+            <input type="number" name="numeroAtleti" placeholder="Athlètes de l’équipe">
+          </div>
+          <div class="field">
+            <label>Message</label>
+            <textarea name="messaggio" placeholder="Écrivez ici toute information supplémentaire…"></textarea>
+          </div>
+          <button type="submit" class="form-submit">Envoyer la demande</button>
+          <div id="success-msg">✓ Demande envoyée correctement</div>
+          <div id="error-msg">✗ Erreur d’envoi, réessayez plus tard</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section faq-section">
+  <div class="wrap">
+    <div class="faq-header fade-up">
+      <div>
+        <p class="section-label">Questions fréquentes</p>
+        <h2 class="section-title" style="color: var(--black);">FAQ</h2>
+      </div>
+      <p class="section-body" style="max-width:400px;">Réponses rapides sur les quantités minimales, les délais et le processus de commande.</p>
+    </div>
+
+    <div class="fade-up">
+      <div class="faq-item">
+        <button class="faq-btn"><span class="faq-num">01</span><span class="faq-q">Qu’est-ce que le service Custom de Bicycle Line ?</span><span class="faq-plus">+</span></button>
+        <div class="faq-ans">Le service Custom de Bicycle Line permet aux équipes, clubs, entreprises et événements de créer des vêtements techniques personnalisés : de la conception graphique dédiée à la production finale.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn"><span class="faq-num">02</span><span class="faq-q">Comment démarrer un projet de personnalisation ?</span><span class="faq-plus">+</span></button>
+        <div class="faq-ans">Envoyez une demande via le formulaire de contact. Nous vous donnerons les premières informations puis collecterons logos et éléments pour développer la proposition graphique.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn"><span class="faq-num">03</span><span class="faq-q">Nous n’avons pas de design défini, pouvez-vous aider ?</span><span class="faq-plus">+</span></button>
+        <div class="faq-ans">Oui. Nous pouvons proposer des bases graphiques et directions stylistiques prêtes à personnaliser avec les couleurs, logos et identité de votre équipe.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn"><span class="faq-num">04</span><span class="faq-q">Quelle est la quantité minimale de commande ?</span><span class="faq-plus">+</span></button>
+        <div class="faq-ans">La quantité minimale est de 10 pièces par article.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn"><span class="faq-num">05</span><span class="faq-q">Quel est le délai standard de livraison ?</span><span class="faq-plus">+</span></button>
+        <div class="faq-ans">Les délais standards de production et livraison sont généralement d’environ 6 semaines après validation finale, avec possibles variations saisonnières.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn"><span class="faq-num">06</span><span class="faq-q">Pouvons-nous recommander les tenues plus tard ?</span><span class="faq-plus">+</span></button>
+        <div class="faq-ans">Oui, il est possible de recommander avec le même design. Pour les réassorts sans changement graphique, la quantité minimale est de 5 pièces par article.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn"><span class="faq-num">07</span><span class="faq-q">Proposez-vous aussi des coupes pour enfants ?</span><span class="faq-plus">+</span></button>
+        <div class="faq-ans">Oui, des lignes dédiées aux jeunes sportifs avec tailles junior/enfant sont disponibles.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn"><span class="faq-num">08</span><span class="faq-q">Comment choisir correctement ma taille ?</span><span class="faq-plus">+</span></button>
+        <div class="faq-ans">Au moment de définir les tailles, il sera possible de demander un kit d’essayage pour un choix plus précis.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer footer-index-clone">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <a href="https://www.bicycle-line.com/fr/" target="_blank">
+            <img src="../images/logo bianco.png" alt="Bicycle Line">
+          </a>
+        </div>
+        <p class="footer-tagline">Vêtements techniques de cyclisme personnalisés.<br>Production italienne depuis 1987.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Bicycle Line</h4>
+        <a href="https://www.bicycle-line.com/fr/content/4-marque">Marque</a>
+        <a href="https://www.bicycle-line.com/fr/content/6-histoire">Histoire</a>
+        <a href="https://www.bicycle-line.com/fr/content/9-durabilite">Durabilité</a>
+        <a href="https://www.bicycle-line.com/fr/contact">Contactez-nous</a>
+      </div>
+      <div class="footer-col">
+        <h4>Boutique</h4>
+        <a href="https://www.bicycle-line.com/fr/947-homme">Homme</a>
+        <a href="https://www.bicycle-line.com/fr/948-femme">Femme</a>
+        <a href="https://www.bicycle-line.com/fr/949-cat-enfant">Enfant</a>
+        <a href="https://www.bicycle-line.com/fr/1109-soldes">Offres</a>
+      </div>
+      <div class="footer-col">
+        <h4>Liens Utiles</h4>
+        <a href="https://www.bicycle-line.com/fr/content/1-livraison">Livraison</a>
+        <a href="https://www.bicycle-line.com/fr/content/18-faq">FAQ</a>
+        <a href="https://www.bicycle-line.com/fr/content/12-guide-des-tailles">Guide des tailles</a>
+        <a href="https://www.bicycle-line.com/fr/content/13-retours">Retours</a>
+      </div>
+      <div class="footer-col">
+        <h4>Mentions Légales</h4>
+        <a href="https://www.bicycle-line.com/fr/content/15-politique-de-confidentialite">Politique de confidentialité</a>
+        <a href="https://www.bicycle-line.com/fr/content/16-politique-relative-aux-cookies">Politique relative aux cookies</a>
+        <a href="https://www.bicycle-line.com/fr/content/17-conditions-generales">Conditions générales</a>
+        <div style="margin-top:24px;">
+          <h4>Contacts</h4>
+          <li>Via Ferrara 2-4, 31030 Dosson TV</li>
+          <li>+39 0422 490156</li>
+          <li>custom@bicycle-line.com</li>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Bicycle Line Srl — VAT 02027450267</p>
+      <p>Dosson di Casier, Trévise — Italie</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // LANG DROPDOWN
+  const langToggle = document.getElementById('lang-toggle');
+  const langDropdown = document.getElementById('lang-dropdown');
+  langToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    langDropdown.classList.toggle('open');
+  });
+  document.addEventListener('click', () => langDropdown.classList.remove('open'));
+
+  // MOBILE NAV
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+  const mobileClose = document.getElementById('mobile-close');
+  hamburger.addEventListener('click', () => mobileNav.classList.add('open'));
+  mobileClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileNav.classList.remove('open')));
+
+  // FAQ ACCORDION
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // SCROLL FADE-IN
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // CONTACT FORM
+  const form = document.getElementById('contact-form');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const successMsg = document.getElementById('success-msg');
+      const errorMsg = document.getElementById('error-msg');
+      successMsg.style.display = 'none';
+      errorMsg.style.display = 'none';
+
+      const data = Object.fromEntries(new FormData(form).entries());
+      data.timestamp = new Date().toISOString();
+      data.pageUrl = window.location.href;
+
+      try {
+        const res = await fetch('https://hook.eu2.make.com/pxiuwmjdbat2fxz5yfqh9ya5lgh3qwec', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        if (!res.ok) throw new Error();
+        successMsg.style.display = 'block';
+        form.reset();
+        form.querySelector('[name="sport"]').value = 'Ciclismo';
+      } catch {
+        errorMsg.style.display = 'block';
+      }
+    });
+  }
+</script>
+</body>
+</html>
