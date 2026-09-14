@@ -703,6 +703,29 @@ function toggleLanguageMenu(button) {
   const dropdown = document.getElementById('language-dropdown');
   dropdown.classList.toggle('hidden');
 }
+
+// Accordion functionality for collapsible product sections
+document.addEventListener('DOMContentLoaded', function() {
+  const accHeads = document.querySelectorAll('.acc-head');
+
+  accHeads.forEach(accHead => {
+    const accIcon = accHead.querySelector('.acc-icon');
+    if (!accIcon) return;
+
+    const accItem = accHead.parentElement;
+    const accBody = accItem.querySelector('.acc-body');
+    if (!accBody) return;
+
+    const isClosed = accBody.style.display === 'none';
+    accIcon.textContent = isClosed ? '+' : '-';
+
+    accHead.addEventListener('click', function() {
+      const hidden = accBody.style.display === 'none';
+      accBody.style.display = hidden ? 'block' : 'none';
+      accIcon.textContent = hidden ? '-' : '+';
+    });
+  });
+});
 </script>
 </body>
 </html>
