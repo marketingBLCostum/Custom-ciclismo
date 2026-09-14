@@ -1,0 +1,228 @@
+{
+  "missingCodes": [],
+  "issues": [
+    {
+      "lang": "it",
+      "file": "ACCESSORI SCHEDA PRODOTTO\\W0274-CALZINI-ESTIVI-13CM.html",
+      "code": "W0274",
+      "title": "W0274 CALZINI ESTIVI 13CM",
+      "eyebrow": "CALZINI ESTIVI 13CM",
+      "codeOk": true,
+      "eyebrowOk": false,
+      "descOk": true,
+      "descResults": [
+        {
+          "words": [
+            "calzino",
+            "estivo",
+            "microfibra",
+            "antibatterica",
+            "comfort",
+            "ottimale",
+            "realizzato",
+            "fasce",
+            "elastiche",
+            "mantengono"
+          ],
+          "ok": true
+        },
+        {
+          "words": [
+            "trattamento",
+            "antibatterico",
+            "tessuto",
+            "skinlife",
+            "costruzione",
+            "rete",
+            "traspirante",
+            "polsino",
+            "elastico",
+            "caviglia"
+          ],
+          "ok": true
+        }
+      ]
+    },
+    {
+      "lang": "it",
+      "file": "ACCESSORI SCHEDA PRODOTTO\\W6610-CALZINI-ESTIVI-18CM.html",
+      "code": "W6610",
+      "title": "W6610 CALZINI ESTIVI 18CM",
+      "eyebrow": "CALZINI ESTIVI 18CM",
+      "codeOk": true,
+      "eyebrowOk": false,
+      "descOk": true,
+      "descResults": [
+        {
+          "words": [
+            "calzino",
+            "estivo",
+            "microfibra",
+            "antibatterica",
+            "comfort",
+            "ottimale",
+            "realizzato",
+            "fasce",
+            "elastiche",
+            "mantengono"
+          ],
+          "ok": true
+        },
+        {
+          "words": [
+            "trattamento",
+            "antibatterico",
+            "tessuto",
+            "skinlife",
+            "costruzione",
+            "rete",
+            "traspirante",
+            "polsino",
+            "elastico",
+            "caviglia"
+          ],
+          "ok": true
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "file": "INGLESE\\ACCESSORI EN\\W0274-CALZINI-ESTIVI-13CM-EN.html",
+      "code": "W0274",
+      "title": "W0274 SUMMER SOCKS 13CM",
+      "eyebrow": "SUMMER SOCKS 13CM",
+      "codeOk": true,
+      "eyebrowOk": false,
+      "descOk": true,
+      "descResults": [
+        {
+          "words": [
+            "summer",
+            "sock",
+            "antibacterial",
+            "microfiber",
+            "optimal",
+            "comfort",
+            "with",
+            "elastic",
+            "bands",
+            "keep"
+          ],
+          "ok": true
+        },
+        {
+          "words": [
+            "antibacterial",
+            "treatment",
+            "skinlife",
+            "fabric",
+            "breathable",
+            "mesh",
+            "construction",
+            "elastic",
+            "cuff",
+            "ankle"
+          ],
+          "ok": false
+        }
+      ]
+    },
+    {
+      "lang": "en",
+      "file": "INGLESE\\ACCESSORI EN\\W6610-CALZINI-ESTIVI-18CM-EN.html",
+      "code": "W6610",
+      "title": "W6610 SUMMER SOCKS 18CM",
+      "eyebrow": "SUMMER SOCKS 18CM",
+      "codeOk": true,
+      "eyebrowOk": false,
+      "descOk": true,
+      "descResults": [
+        {
+          "words": [
+            "summer",
+            "sock",
+            "antibacterial",
+            "microfiber",
+            "optimal",
+            "comfort",
+            "with",
+            "elastic",
+            "bands",
+            "keep"
+          ],
+          "ok": true
+        },
+        {
+          "words": [
+            "antibacterial",
+            "treatment",
+            "skinlife",
+            "fabric",
+            "breathable",
+            "mesh",
+            "construction",
+            "elastic",
+            "cuff",
+            "ankle"
+          ],
+          "ok": false
+        }
+      ]
+    },
+    {
+      "lang": "fr",
+      "file": "FRANCESE\\UOMO FR\\W6011-APEX_FR.html",
+      "code": "W6011",
+      "title": "W6011 APEX",
+      "eyebrow": "Combinaison route manches courtes",
+      "codeOk": true,
+      "eyebrowOk": false,
+      "descOk": true,
+      "descResults": [
+        {
+          "words": [
+            "equilibre",
+            "parfait",
+            "entre",
+            "confort",
+            "aerodynamisme",
+            "une",
+            "fusion",
+            "tissus",
+            "piste",
+            "chrono"
+          ],
+          "ok": true
+        },
+        {
+          "words": [
+            "tissu",
+            "extremement",
+            "leger",
+            "respirant",
+            "elastique",
+            "partie",
+            "superieure",
+            "tissu",
+            "compressif",
+            "personnalisable"
+          ],
+          "ok": true
+        },
+        {
+          "words": [
+            "tissu",
+            "partie",
+            "interieure",
+            "cuissard",
+            "disponible",
+            "bleu",
+            "marine",
+            "noir"
+          ],
+          "ok": true
+        }
+      ]
+    }
+  ]
+}
