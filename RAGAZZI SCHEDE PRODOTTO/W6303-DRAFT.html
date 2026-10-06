@@ -736,6 +736,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const accBody = accItem.querySelector('.acc-body');
     if (!accBody) return;
 
+    if (accIcon.textContent.trim() === '+') {
+      accBody.style.display = 'none';
+    }
+
     const isClosed = accBody.style.display === 'none';
     accIcon.textContent = isClosed ? '+' : '-';
 
