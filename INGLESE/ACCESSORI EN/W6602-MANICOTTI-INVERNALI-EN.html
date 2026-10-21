@@ -445,6 +445,7 @@ a{text-decoration:none;color:inherit}
 }
 
 </style>
+  <link rel="stylesheet" href="../../catalog-fixes.css">
 </head>
 <body>
 
@@ -453,7 +454,7 @@ a{text-decoration:none;color:inherit}
   <span>Custom products from <strong>10 pieces</strong> — 100% Italian production</span>
   <div class="topbar-right">
     <span style="opacity:0.5;">|</span>
-    <a href="#kontakt">Request a quote →</a>
+    <a href="../index.html#contatti">Request a quote →</a>
   </div>
 </div>
 
@@ -636,7 +637,7 @@ a{text-decoration:none;color:inherit}
         <p class="promo-copy"></p>
         <div class="promo-links">
           <a href="../accessori_EN.html" class="promo-btn">Discover more products <span class="arrow">></span></a>
-          <a href="../uomo_EN.html#kontakt" class="promo-btn">I want more information <span class="arrow">></span></a>
+          <a href="../index.html#contatti" class="promo-btn">I want more information <span class="arrow">></span></a>
         </div>
       </div>
     </section>
@@ -733,6 +734,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const accItem = this.parentElement;
       const accBody = accItem.querySelector('.acc-body');
       const accIcon = this.querySelector('.acc-icon');
+      if (!accIcon || !accBody) return;
       
       // Toggle accordion body
       if (accBody.style.display === 'none') {

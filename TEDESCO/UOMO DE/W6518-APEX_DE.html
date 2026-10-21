@@ -444,14 +444,15 @@ a{text-decoration:none;color:inherit}
   .footer-index-clone .footer-grid { grid-template-columns: 1fr; }
 }
 
-</style></head>
+</style>  <link rel="stylesheet" href="../../catalog-fixes.css">
+</head>
 <body>
 <!-- ANNOUNCEMENT BAR -->
 <div class="topbar" style="position:relative;">
 <span>Individuelle Bestellungen ab <strong>10 Stück</strong> — 100% italienische Produktion</span>
 <div class="topbar-right">
 <span style="opacity:0.5;">|</span>
-<a href="#contatti">Angebot anfordern →</a>
+<a href="../index.html#contatti">Angebot anfordern →</a>
 </div>
 </div>
 <!-- NAV -->
@@ -613,16 +614,7 @@ a{text-decoration:none;color:inherit}
 <div class="acc-title">OPTIONEN</div>
 <div class="acc-icon">+</div>
 </div>
-<div class="acc-body">
-<div class="description">
-<ul style="list-style-type: none; padding: 0; margin: 0;">
-<li style="margin-bottom: 8px;">• Gewebe für den inneren Teil der langen Radhose in Navyblau und Schwarz erhältlich</li>
-<li style="margin-bottom: 8px;">• Sitzpolster Road Performance Force</li>
-<li style="margin-bottom: 8px;">• Sitzpolster Ghost Air Gel</li>
-<li style="margin-bottom: 8px;">• Sitzpolster Core Evo</li>
-</ul>
-</div>
-</div>
+<div class="acc-body"><div class="description"><ul style="list-style:none;padding:0;margin:0"><li style="margin-bottom:8px">• Individuelles Logo in Weiß oder dunklem reflektierendem Material.</li><li style="margin-bottom:8px">• Gewebe für den inneren Teil der langen Radhose in Navyblau und Schwarz erhältlich</li><li style="margin-bottom:8px">• Sitzpolster Road Performance Force</li><li style="margin-bottom:8px">• Sitzpolster Ghost Air Gel</li><li style="margin-bottom:8px">• Sitzpolster Core Evo</li></ul></div></div>
 </div>
 </div>
 </aside>
@@ -729,6 +721,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const accItem = this.parentElement;
       const accBody = accItem.querySelector('.acc-body');
       const accIcon = this.querySelector('.acc-icon');
+      if (!accIcon || !accBody) return;
       
       // Toggle accordion body
       if (accBody.style.display === 'none') {

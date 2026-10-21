@@ -445,6 +445,7 @@ a{text-decoration:none;color:inherit}
 }
 
 </style>
+  <link rel="stylesheet" href="../../catalog-fixes.css">
 </head>
 <body>
 
@@ -453,7 +454,7 @@ a{text-decoration:none;color:inherit}
   <span>Commandes personnalisées à partir de <strong>10 pièces</strong> — Production 100 % italienne</span>
   <div class="topbar-right">
     <span style="opacity:0.5;">|</span>
-    <a href="#contatti">Demander un devis →</a>
+    <a href="../index.html#contatti">Demander un devis →</a>
   </div>
 </div>
 
@@ -717,6 +718,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const accItem = this.parentElement;
       const accBody = accItem.querySelector('.acc-body');
       const accIcon = this.querySelector('.acc-icon');
+      if (!accIcon || !accBody) return;
       
       // Toggle accordion body
       if (accBody.style.display === 'none') {

@@ -445,15 +445,16 @@ a{text-decoration:none;color:inherit}
 }
 
 </style>
+  <link rel="stylesheet" href="../../catalog-fixes.css">
 </head>
 <body>
 
 <!-- ANNOUNCEMENT BAR -->
 <div class="topbar" style="position:relative;">
-  <span>Custom-made products from <strong>10 pieces</strong> — 100% Italian production</span>
+  <span>Custom products from <strong>10 pieces</strong> — 100% Italian production</span>
   <div class="topbar-right">
     <span style="opacity:0.5;">|</span>
-    <a href="#kontakt">Request a quote →</a>
+    <a href="../index.html#contatti">Request a quote →</a>
   </div>
 </div>
 
@@ -481,11 +482,11 @@ a{text-decoration:none;color:inherit}
         <i class="fas fa-chevron-down" style="font-size:9px; opacity:0.6;"></i>
       </button>
       <div class="lang-dropdown" id="lang-dropdown">
-        <a href="../../ragazzi.html"><img src="../../images/BANDIERE/italia.jpg" alt="IT"> Italiano</a>
-        <a href="./W6602-MANICOTTI-INVERNALI-EN.html" aria-current="true"><img src="../../images/BANDIERE/english.jpg" alt="EN"> English</a>
-        <a href="../../TEDESCO/ragazzi_DE.html"><img src="../../images/BANDIERE/Deutsch.jpg" alt="DE"> Deutsch</a>
-        <a href="../../FRANCESE/ragazzi_FR.html"><img src="../../images/BANDIERE/Français.jpg" alt="FR"> Français</a>
-        <a href="../../SPAGNOLO/ragazzi_ES.html"><img src="../../images/BANDIERE/Español.jpg" alt="ES"> Español</a>
+        <a href="../../ACCESSORI SCHEDA PRODOTTO/W6602-MANICOTTI-INVERNALI.html"><img src="../../images/BANDIERE/italia.jpg" alt="IT"> Italiano</a>
+        <a href="../ACCESSORI EN/W6602-MANICOTTI-INVERNALI-EN.html" aria-current="true"><img src="../../images/BANDIERE/english.jpg" alt="EN"> English</a>
+        <a href="../../TEDESCO/ACCESSORI DE/W6602-MANICOTTI-INVERNALI-DE.html"><img src="../../images/BANDIERE/Deutsch.jpg" alt="DE"> Deutsch</a>
+        <a href="../../FRANCESE/ACCESSORI FR/W6602-MANICOTTI-INVERNALI-FR.html"><img src="../../images/BANDIERE/Français.jpg" alt="FR"> Français</a>
+        <a href="../../SPAGNOLO/ACCESSORI ES/W6602-MANICOTTI-INVERNALI-ES.html"><img src="../../images/BANDIERE/Español.jpg" alt="ES"> Español</a>
       </div>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -515,11 +516,11 @@ a{text-decoration:none;color:inherit}
 
   <div class="breadcrumbs">
     <div class="breadcrumbs__inner">
-      <a href="../ragazzi_EN.html" class="dim hover:underline">HOME</a>
+      <a href="../accessori_EN.html" class="dim hover:underline">HOME</a>
       <span class="sep">></span>
-      <a href="../ragazzi_EN.html" class="dim hover:underline">KIDS CYCLING</a>
+      <a href="../accessori_EN.html" class="dim hover:underline">ACCESSORIES</a>
       <span class="sep">></span>
-      <span class="current">W6602-MANICOTTI-INVERNALI</span>
+      <span class="current">W6602 WINTER ARM WARMERS</span>
     </div>
   </div>
 
@@ -557,7 +558,7 @@ a{text-decoration:none;color:inherit}
           </div>
           <div class="acc-body">
             <div class="description">
-              Our winter cycling arm warmers are essential for the coldest rides. Made from premium Miti fabric, they offer warmth and breathability. Thanks to the ergonomic fit, they integrate perfectly with your jersey. The silicone elastic at the top keeps the arm warmers securely in place for a stable ride.
+              Our winter cycling arm warmers are essential for the coldest rides. Made from premium Miti fabric, they provide warmth and breathability. Thanks to the ergonomic fit, they integrate perfectly with your jersey. A silicone elastic band at the top keeps the arm warmers firmly in place for a hassle-free ride.
             </div>
           </div>
         </div>
@@ -600,12 +601,12 @@ a{text-decoration:none;color:inherit}
           <div class="acc-body">
             <div class="description">
               <ul style="list-style-type: none; padding: 0; margin: 0;">
-                <li style="margin-bottom: 8px;">• Excellent breathability</li>
+                <li style="margin-bottom: 8px;">• Excellent breathable properties</li>
                 <li style="margin-bottom: 8px;">• Thermal Mititech fabric</li>
                 <li style="margin-bottom: 8px;">• Excellent thermal protection</li>
                 <li style="margin-bottom: 8px;">• UPF 50+</li>
                 <li style="margin-bottom: 8px;">• Active compression</li>
-                <li style="margin-bottom: 8px;">• Silicone elastic band at the upper part and clean-cut edge at the wrist</li>
+                <li style="margin-bottom: 8px;">• Silicone elastic band at the top and raw-cut finish at the wrist</li>
                 <li style="margin-bottom: 8px;">• High elasticity</li>
                 <li style="margin-bottom: 8px;">• Customization with 1 logo on the outside of the arm warmer</li>
               </ul>
@@ -636,7 +637,7 @@ a{text-decoration:none;color:inherit}
         <p class="promo-copy"></p>
         <div class="promo-links">
           <a href="../accessori_EN.html" class="promo-btn">Discover more products <span class="arrow">></span></a>
-          <a href="../uomo_EN.html#kontakt" class="promo-btn">I want more information <span class="arrow">></span></a>
+          <a href="../index.html#contatti" class="promo-btn">I want more information <span class="arrow">></span></a>
         </div>
       </div>
     </section>
@@ -733,6 +734,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const accItem = this.parentElement;
       const accBody = accItem.querySelector('.acc-body');
       const accIcon = this.querySelector('.acc-icon');
+      if (!accIcon || !accBody) return;
       
       // Toggle accordion body
       if (accBody.style.display === 'none') {

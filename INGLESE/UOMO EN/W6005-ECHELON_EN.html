@@ -445,14 +445,15 @@ a{text-decoration:none;color:inherit}
   .footer-index-clone .footer-grid { grid-template-columns: 1fr; }
 }
 
-</style></head>
+</style>  <link rel="stylesheet" href="../../catalog-fixes.css">
+</head>
 <body>
 <!-- ANNOUNCEMENT BAR -->
 <div class="topbar" style="position:relative;">
 <span>Custom orders from <strong>10 pieces</strong> — 100% Italian Production</span>
 <div class="topbar-right">
 <span style="opacity:0.5;">|</span>
-<a href="#contatti">Request quote →</a>
+<a href="../index.html#contatti">Request quote →</a>
 </div>
 </div>
 <!-- NAV -->
@@ -555,11 +556,7 @@ a{text-decoration:none;color:inherit}
 <div class="acc-head">
 <div class="acc-title">Description</div>
 </div>
-<div class="acc-body">
-<div class="description">
-              Tested by our professional cyclists, the Echelon bib shorts represent excellence in terms of comfort and performance. Extremely comfortable both for daily training and races, this bib shorts is made with elastic and compressive fabric. The Ghost Air Gel chamois, made with a soft-touch Prize material, consists of high-density foams and gel inserts. Despite its dense structure, the chamois remains extremely elastic and comfortable, with minimal bulk. The silicone print on the bottom of the raw-cut legs keeps the shorts in the correct position even during intense pedaling. The raw-cut rear panel construction with laser-perforated holes for breathability ensures brace stability and excellent structural comfort. Additionally, the elastic microfiber braces with adequate width offer extra support without causing irritation or discomfort.
-            </div>
-</div>
+<div class="acc-body"><div class="description">The Echelon bib shorts are designed to deliver comfort, support and performance for everyday training and racing. The anatomical construction and technical stretch compression fabric follow the rider’s movements. The Ghost Air Gel pad combines high-density reticulated foams and injected gel inserts for long-distance comfort, with a mesh front section for ventilation. Internal hypoallergenic silicone at the raw-cut leg openings keeps the shorts secure; the laser-perforated rear panel and soft elastic microfibre bib straps improve breathability and support.</div></div>
 </div>
 <div class="acc-item">
 <div class="acc-head">
@@ -595,35 +592,14 @@ a{text-decoration:none;color:inherit}
 <div class="acc-title">MAIN FEATURES</div>
 <div class="acc-icon">+</div>
 </div>
-<div class="acc-body">
-<div class="description">
-<ul style="list-style-type: none; padding: 0; margin: 0;">
-<li style="margin-bottom: 8px;">• Main fabric made with Brugnoli® Explosive technology: high compression and muscle resistance with 220 gr/m² weight</li>
-<li style="margin-bottom: 8px;">• Total UPF protection (50+)</li>
-<li style="margin-bottom: 8px;">• Minimal seams to increase comfort</li>
-<li style="margin-bottom: 8px;">• Ghost Air Gel chamois for long distances. Reticulated foams and injected gel inserts guarantee excellent comfort even after 7 hours. Front mesh insert provides excellent breathability</li>
-<li style="margin-bottom: 8px;">• Internal hypoallergenic silicone print on bottom that provides stability function keeping pant position stable and correct</li>
-<li style="margin-bottom: 8px;">• Customization: with 2 logos on the sides and 2 small logos on the inner leg</li>
-</ul>
-</div>
-</div>
+<div class="acc-body"><div class="description"><ul style="list-style:none;padding:0;margin:0"><li style="margin-bottom:8px">• Main fabric made with Brugnoli® Explosive technology: high compression and muscle resistance with 220 gr/m² weight</li><li style="margin-bottom:8px">• Total UPF protection (50+)</li><li style="margin-bottom:8px">• Minimal seams to increase comfort</li><li style="margin-bottom:8px">• Ghost Air Gel pad with high-density reticulated foams and gel inserts, designed for rides of up to approximately 7 hours.</li><li style="margin-bottom:8px">• Internal hypoallergenic silicone print on bottom that provides stability function keeping pant position stable and correct</li><li style="margin-bottom:8px">• Customization: with 2 logos on the sides and 2 small logos on the inner leg</li><li style="margin-bottom:8px">• Anatomical construction designed to follow the riding position.</li><li style="margin-bottom:8px">• Raw-cut rear panel with laser micro-perforations for ventilation.</li><li style="margin-bottom:8px">• Soft elastic microfibre bib straps sized to distribute pressure across the shoulders.</li><li style="margin-bottom:8px">• Mesh front section of the pad for improved ventilation and moisture management.</li></ul></div></div>
 </div>
 <div class="acc-item">
 <div class="acc-head">
 <div class="acc-title">OPTIONS</div>
 <div class="acc-icon">+</div>
 </div>
-<div class="acc-body">
-<div class="description">
-<ul style="list-style-type: none; padding: 0; margin: 0;">
-<li style="margin-bottom: 8px;">• Logo customization with white silicone material or dark reflective material</li>
-<li style="margin-bottom: 8px;">• Shorts fabric available in navy blue and black</li>
-<li style="margin-bottom: 8px;">• Road Performance Force chamois</li>
-<li style="margin-bottom: 8px;">• X-Stra chamois</li>
-<li style="margin-bottom: 8px;">• Core Evo chamois</li>
-</ul>
-</div>
-</div>
+<div class="acc-body"><div class="description"><ul style="list-style:none;padding:0;margin:0"><li style="margin-bottom:8px">• Custom logos in white DTF or dark reflective material.</li><li style="margin-bottom:8px">• Shorts fabric available in navy blue and black</li><li style="margin-bottom:8px">• Road Performance Force chamois</li><li style="margin-bottom:8px">• X-Stra chamois</li><li style="margin-bottom:8px">• Core Evo chamois</li></ul></div></div>
 </div>
 </div>
 </aside>
@@ -730,6 +706,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const accItem = this.parentElement;
       const accBody = accItem.querySelector('.acc-body');
       const accIcon = this.querySelector('.acc-icon');
+      if (!accIcon || !accBody) return;
       
       // Toggle accordion body
       if (accBody.style.display === 'none') {

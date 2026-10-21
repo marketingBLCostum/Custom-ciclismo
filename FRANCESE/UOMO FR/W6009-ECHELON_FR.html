@@ -445,6 +445,7 @@ a{text-decoration:none;color:inherit}
 }
 
 </style>
+  <link rel="stylesheet" href="../../catalog-fixes.css">
 </head>
 <body>
 
@@ -453,7 +454,7 @@ a{text-decoration:none;color:inherit}
   <span>Commandes personnalisées à partir de <strong>10 pièces</strong> — Production 100 % italienne</span>
   <div class="topbar-right">
     <span style="opacity:0.5;">|</span>
-    <a href="#contatti">Demander un devis →</a>
+    <a href="../index.html#contatti">Demander un devis →</a>
   </div>
 </div>
 
@@ -572,7 +573,7 @@ a{text-decoration:none;color:inherit}
           </div>
           <div class="acc-body">
             <div class="description">
-              Collant de running d’hiver avec traitement DWR, réalisé en tissu thermique avec intérieur en polaire douce. Le tissu est très élastique et hautement respirant, idéal pour les sorties hivernales. La construction des coutures à coupe franche offre un excellent confort structurel. Le tissu a reçu un traitement déperlant DWR pour vous protéger de la pluie légère et de l’humidité. L’élastique siliconé à la cheville assure une tenue sûre et confortable. Les détails réfléchissants augmentent votre visibilité dans des conditions de faible luminosité.
+              Collant de cyclisme d’hiver avec traitement DWR, réalisé en tissu thermique avec intérieur en polaire douce. Le tissu est très élastique et hautement respirant, idéal pour les sorties hivernales. La construction des coutures à coupe franche offre un excellent confort structurel. Le tissu a reçu un traitement déperlant DWR pour vous protéger de la pluie légère et de l’humidité. L’élastique siliconé à la cheville assure une tenue sûre et confortable. Les détails réfléchissants augmentent votre visibilité dans des conditions de faible luminosité.
             </div>
           </div>
         </div>
@@ -750,6 +751,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const accItem = this.parentElement;
       const accBody = accItem.querySelector('.acc-body');
       const accIcon = this.querySelector('.acc-icon');
+      if (!accIcon || !accBody) return;
       
       // Toggle accordion body
       if (accBody.style.display === 'none') {

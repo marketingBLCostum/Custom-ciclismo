@@ -1,0 +1,36 @@
+/* Responsive corrections shared by the catalog pages. */
+@media (max-width: 1200px) {
+  main.page { width: 100%; min-width: 0; max-width: 100%; grid-template-columns: minmax(0, 1fr); }
+  main.page > .gallery { width: 100%; min-width: 0; max-width: 100%; grid-template-columns: minmax(0, 1fr); }
+  main.page > .gallery > .media, main.page > .sidebar { min-width: 0; max-width: 100%; }
+  main.page > .sidebar { overflow-wrap: anywhere; }
+  .sidebar .sizes { flex-wrap: wrap; }
+}
+@media (max-width: 600px) {
+  .breadcrumbs { height: auto; }
+  .breadcrumbs__inner { height: auto; min-height: 42px; flex-wrap: wrap; padding-top: 8px; padding-bottom: 8px; }
+  .sidebar .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .hero-content { width: 100%; min-width: 0; max-width: 100%; }
+  .hero-title { font-size: clamp(32px, 8vw, 48px); overflow-wrap: anywhere; }
+  .hero-sub { width: 100%; max-width: 100%; }
+}
+@media (max-width: 600px) {
+  .statement h2 { font-size: clamp(28px, 7.5vw, 42px); overflow-wrap: anywhere; }
+  .cat-copy { padding: 16px; flex-direction: column; align-items: flex-start; gap: 12px; }
+  .cat-title { font-size: clamp(24px, 7vw, 36px); overflow-wrap: anywhere; }
+  .cat-copy .btn { max-width: 100%; min-width: 0; min-height: 40px; height: auto; padding: 8px 12px; font-size: 11px; text-align: center; white-space: normal; }
+}
+@media (max-width: 600px) {
+  .contact-grid, .values-grid, .contact-form .form-row { grid-template-columns: minmax(0, 1fr); }
+  .contact-grid > *, .value-card, .process-header > *, .contact-form .field { min-width: 0; max-width: 100%; }
+  .contact-form { padding: 24px; }
+  .contact-form input, .contact-form select, .contact-form textarea { min-width: 0; max-width: 100%; }
+  .contact-method > div { min-width: 0; overflow-wrap: anywhere; }
+  .contact-info-title, .section-title, .value-card h3 { overflow-wrap: anywhere; }
+}
+@media (max-width: 600px) {
+  .faq-btn { gap: 12px; }
+  .faq-q { min-width: 0; overflow-wrap: anywhere; }
+  .faq-num, .faq-plus { flex-shrink: 0; }
+  .faq-ans { overflow-wrap: anywhere; }
+}

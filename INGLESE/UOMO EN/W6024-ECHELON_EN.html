@@ -447,14 +447,15 @@ a{text-decoration:none;color:inherit}
   .footer-index-clone .footer-grid { grid-template-columns: 1fr; }
 }
 
-</style></head>
+</style>  <link rel="stylesheet" href="../../catalog-fixes.css">
+</head>
 <body>
 <!-- ANNOUNCEMENT BAR -->
 <div class="topbar" style="position:relative;">
 <span>Custom orders from <strong>10 pieces</strong> — 100% Italian Production</span>
 <div class="topbar-right">
 <span style="opacity:0.5;">|</span>
-<a href="#contatti">Request quote →</a>
+<a href="../index.html#contatti">Request quote →</a>
 </div>
 </div>
 <!-- NAV -->
@@ -733,6 +734,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const accItem = this.parentElement;
       const accBody = accItem.querySelector('.acc-body');
       const accIcon = this.querySelector('.acc-icon');
+      if (!accIcon || !accBody) return;
       
       // Toggle accordion body
       if (accBody.style.display === 'none') {

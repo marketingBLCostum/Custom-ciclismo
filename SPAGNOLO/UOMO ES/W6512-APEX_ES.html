@@ -445,6 +445,7 @@ a{text-decoration:none;color:inherit}
 }
 
 </style>
+  <link rel="stylesheet" href="../../catalog-fixes.css">
 </head>
 <body>
 
@@ -453,7 +454,7 @@ a{text-decoration:none;color:inherit}
   <span>Pedidos personalizados desde <strong>10 unidades</strong> — Producción 100% italiana</span>
   <div class="topbar-right">
     <span style="opacity:0.5;">|</span>
-    <a href="#contatti">Solicitar presupuesto →</a>
+    <a href="../index.html#contatti">Solicitar presupuesto →</a>
   </div>
 </div>
 
@@ -585,7 +586,7 @@ a{text-decoration:none;color:inherit}
             <div class="metric-grid">
               <div class="metric">
                 <div class="label">Ajuste</div>
-                <div class="bars"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span></div>
+                <div class="bars"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div>
               </div>
               <div class="metric">
                 <div class="label">Transpirabilidad</div>
@@ -593,7 +594,7 @@ a{text-decoration:none;color:inherit}
               </div>
               <div class="metric">
                 <div class="label">Elasticidad</div>
-                <div class="bars"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span></div>
+                <div class="bars"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div>
               </div>
             </div>
             <div class="temp">
@@ -746,6 +747,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const accItem = this.parentElement;
       const accBody = accItem.querySelector('.acc-body');
       const accIcon = this.querySelector('.acc-icon');
+      if (!accIcon || !accBody) return;
       
       // Toggle accordion body
       if (accBody.style.display === 'none') {

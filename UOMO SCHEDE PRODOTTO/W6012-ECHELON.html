@@ -447,6 +447,7 @@ a{text-decoration:none;color:inherit}
 }
 
 </style>
+  <link rel="stylesheet" href="../catalog-fixes.css">
 </head>
 <body>
 
@@ -455,7 +456,7 @@ a{text-decoration:none;color:inherit}
   <span>Ordini personalizzati da <strong>10 pezzi</strong> — Produzione 100% italiana</span>
   <div class="topbar-right">
     <span style="opacity:0.5;">|</span>
-    <a href="#contatti">Richiedi preventivo →</a>
+    <a href="../index.html#contatti">Richiedi preventivo →</a>
   </div>
 </div>
 
@@ -644,7 +645,9 @@ a{text-decoration:none;color:inherit}
               </ul>
             </div>
           </div>
-      </div>
+
+        <div class="acc-item"><div class="acc-head"><div class="acc-title">OPZIONI</div><div class="acc-icon">+</div></div><div class="acc-body"><div class="description"><ul style="list-style:none;padding:0;margin:0"><li style="margin-bottom:8px">• Personalizzazione del logo in bianco o materiale riflettente scuro.</li><li style="margin-bottom:8px">• Tessuto interno disponibile in blu navy e nero.</li></ul></div></div></div>
+</div>
     </aside>
   </main>
 
@@ -751,6 +754,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const accItem = this.parentElement;
       const accBody = accItem.querySelector('.acc-body');
       const accIcon = this.querySelector('.acc-icon');
+      if (!accIcon || !accBody) return;
       
       // Toggle accordion body
       if (accBody.style.display === 'none') {

@@ -444,14 +444,15 @@ a{text-decoration:none;color:inherit}
   .footer-index-clone .footer-grid { grid-template-columns: 1fr; }
 }
 
-</style></head>
+</style>  <link rel="stylesheet" href="../../catalog-fixes.css">
+</head>
 <body>
 <!-- ANNOUNCEMENT BAR -->
 <div class="topbar" style="position:relative;">
 <span>Individuelle Bestellungen ab <strong>10 Stück</strong> — 100% italienische Produktion</span>
 <div class="topbar-right">
 <span style="opacity:0.5;">|</span>
-<a href="#contatti">Angebot anfordern →</a>
+<a href="../index.html#contatti">Angebot anfordern →</a>
 </div>
 </div>
 <!-- NAV -->
@@ -582,10 +583,10 @@ a{text-decoration:none;color:inherit}
 <div class="temp">
 <div class="temp-head">
 <div class="temp-title">Temperatur</div>
-<div class="temp-chip">+18 / +35 °C</div>
+<div class="temp-chip">+15 / +30 °C</div>
 </div>
 <div class="temp-line"></div>
-<div class="temp-range">+18°C<span style="margin:0 8px;">—</span>+35°C</div>
+<div class="temp-range">+15°C<span style="margin:0 8px;">—</span>+30°C</div>
 </div>
 </div>
 </div>
@@ -711,6 +712,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const accItem = this.parentElement;
       const accBody = accItem.querySelector('.acc-body');
       const accIcon = this.querySelector('.acc-icon');
+      if (!accIcon || !accBody) return;
       
       // Toggle accordion body
       if (accBody.style.display === 'none') {

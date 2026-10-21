@@ -445,6 +445,7 @@ a{text-decoration:none;color:inherit}
 }
 
 </style>
+  <link rel="stylesheet" href="../catalog-fixes.css">
 </head>
 <body>
 
@@ -453,7 +454,7 @@ a{text-decoration:none;color:inherit}
   <span>Ordini personalizzati da <strong>10 pezzi</strong> — Produzione 100% italiana</span>
   <div class="topbar-right">
     <span style="opacity:0.5;">|</span>
-    <a href="#contatti">Richiedi preventivo →</a>
+    <a href="../index.html#contatti">Richiedi preventivo →</a>
   </div>
 </div>
 
@@ -570,11 +571,7 @@ a{text-decoration:none;color:inherit}
           <div class="acc-head">
             <div class="acc-title">Descrizione</div>
           </div>
-          <div class="acc-body">
-            <div class="description">
-              Vivi la velocità quotidiana con la nostra salopette Echelon Air, ottimizzata per aerodinamica e peso. Progettata per ridurre la resistenza e migliorare il flusso d’aria, la Echelon Air è costruita per la velocità. Con tessuti leggeri e compressivi, costruzione ergonomica dei pannelli e fondello Ghost, questa salopette è pronta per la competizione. La stampa in silicone sul fondo gamba tagliato a vivo mantiene il pantaloncino in posizione anche durante le uscite intense. Il pannello posteriore tagliato a vivo con fori di ventilazione laser garantisce stabilità alle bretelle e comfort superiore. Inoltre, le bretelle elastiche in microfibra di larghezza adeguata offrono supporto senza irritazioni o fastidi.
-            </div>
-          </div>
+          <div class="acc-body"><div class="description">Echelon Air è l’evoluzione alleggerita di Echelon per allenamenti e uscite con clima caldo. Il tessuto tecnico da circa 190 g/m², con un’alta percentuale di elastomero, unisce elasticità, sostegno e stabilità. La costruzione anatomica con cuciture ridotte segue la posizione del ciclista; le bretelle alleggerite riducono il materiale utilizzato e migliorano il comfort nelle giornate calde. Il fondello Ghost Air Gel è sviluppato per le lunghe distanze. I fondi gamba tagliati a vivo con silicone interno mantengono la salopette in posizione senza elastici aggiuntivi.</div></div>
         </div>
 
         <div class="acc-item">
@@ -612,18 +609,7 @@ a{text-decoration:none;color:inherit}
             <div class="acc-title">CARATTERISTICHE PRINCIPALI</div>
             <div class="acc-icon">+</div>
           </div>
-          <div class="acc-body">
-            <div class="description">
-              <ul style="list-style-type: none; padding: 0; margin: 0;">
-                <li style="margin-bottom: 8px;">• Cuciture minime per aumentare il comfort</li>
-                <li style="margin-bottom: 8px;">• Finitura termosaldata sul pannello frontale per aumentare il comfort</li>
-                <li style="margin-bottom: 8px;">• Taglio ergonomico valorizzato dalla costruzione a taglio vivo</li>
-                <li style="margin-bottom: 8px;">• Fondello Ghost Air Gel per lunghe distanze. Le schiume reticolate e gli inserti in gel iniettato garantiscono un comfort eccellente anche dopo 7 ore. L’inserto anteriore in rete garantisce un’adeguata traspirabilità</li>
-                <li style="margin-bottom: 8px;">• Personalizzazione: con 2 loghi sui lati e 2 piccoli loghi sull’interno gamba</li>
-                <li style="margin-bottom: 8px;">• Le estremità delle gambe con stampa in silicone ipoallergenico all'interno offrono una funzione di presa assicurando che l'estremità della gamba rimanga nella posizione corretta</li>
-              </ul>
-            </div>
-          </div>
+          <div class="acc-body"><div class="description"><ul style="list-style:none;padding:0;margin:0"><li style="margin-bottom:8px">• Tessuto tecnico leggero da circa 190 g/m² con alta percentuale di elastomero per elasticità e sostegno.</li><li style="margin-bottom:8px">• Costruzione anatomica con cuciture ridotte, più leggera rispetto a Echelon.</li><li style="margin-bottom:8px">• Fondi gamba tagliati a vivo con silicone interno per una presa stabile.</li><li style="margin-bottom:8px">• Bretelle alleggerite per migliorare comfort e leggerezza.</li><li style="margin-bottom:8px">• Fondello Ghost Air Gel con schiume reticolate ad alta densità e inserti in gel, per uscite fino a circa 7 ore.</li><li style="margin-bottom:8px">• Personalizzazione: 2 loghi sui lati e 2 piccoli loghi sull’interno gamba.</li><li style="margin-bottom:8px">• Sezione anteriore del fondello in rete per migliorare ventilazione e gestione dell’umidità.</li></ul></div></div>
         </div>
 
         <div class="acc-item">
@@ -631,17 +617,7 @@ a{text-decoration:none;color:inherit}
             <div class="acc-title">OPZIONI</div>
             <div class="acc-icon">+</div>
           </div>
-          <div class="acc-body">
-            <div class="description">
-              <ul style="list-style-type: none; padding: 0; margin: 0;">
-                <li style="margin-bottom: 8px;">• Personalizzazione del logo con materiale in silicone bianco o materiale riflettente scuro</li>
-                <li style="margin-bottom: 8px;">• Tessuto dei pantaloncini disponibile in blu navy e nero</li>
-                <li style="margin-bottom: 8px;">• Fondello Road Performance Force</li>
-                <li style="margin-bottom: 8px;">• Fondello X-Stra</li>
-                <li style="margin-bottom: 8px;">• Fondello Core Evo</li>
-              </ul>
-            </div>
-          </div>
+          <div class="acc-body"><div class="description"><ul style="list-style:none;padding:0;margin:0"><li style="margin-bottom:8px">• Loghi personalizzati in DTF bianco o materiale riflettente scuro.</li><li style="margin-bottom:8px">• Tessuto disponibile per la stagione 2026/2027 in 6 colori: Asphalt Grey, Plum, Burgundy, North Blue, Rider Green e Black.</li><li style="margin-bottom:8px">• Fondello Road Performance Force</li><li style="margin-bottom:8px">• Fondello X-Stra</li><li style="margin-bottom:8px">• Fondello Core Evo</li></ul></div></div>
         </div>
       </div>
     </aside>
@@ -750,6 +726,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const accItem = this.parentElement;
       const accBody = accItem.querySelector('.acc-body');
       const accIcon = this.querySelector('.acc-icon');
+      if (!accIcon || !accBody) return;
       
       // Toggle accordion body
       if (accBody.style.display === 'none') {

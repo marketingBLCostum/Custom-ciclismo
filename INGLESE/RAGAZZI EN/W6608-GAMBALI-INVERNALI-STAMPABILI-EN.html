@@ -445,6 +445,7 @@ a{text-decoration:none;color:inherit}
 }
 
 </style>
+  <link rel="stylesheet" href="../../catalog-fixes.css">
 </head>
 <body>
 
@@ -453,7 +454,7 @@ a{text-decoration:none;color:inherit}
   <span>Custom orders from <strong>10 pieces</strong> — 100% Italian production</span>
   <div class="topbar-right">
     <span style="opacity:0.5;">|</span>
-    <a href="#contatti">Request a quote →</a>
+    <a href="../index.html#contatti">Request a quote →</a>
   </div>
 </div>
 
@@ -481,11 +482,11 @@ a{text-decoration:none;color:inherit}
         <i class="fas fa-chevron-down" style="font-size:9px; opacity:0.6;"></i>
       </button>
       <div class="lang-dropdown" id="lang-dropdown">
-        <a href="../../ragazzi.html"><img src="../../images/BANDIERE/italia.jpg" alt="IT"> Italiano</a>
-        <a href="./W6608-GAMBALI-INVERNALI-STAMPABILI-EN.html" aria-current="true"><img src="../../images/BANDIERE/english.jpg" alt="EN"> English</a>
-        <a href="../../TEDESCO/ragazzi_DE.html"><img src="../../images/BANDIERE/Deutsch.jpg" alt="DE"> Deutsch</a>
-        <a href="../../FRANCESE/ragazzi_FR.html"><img src="../../images/BANDIERE/Français.jpg" alt="FR"> Français</a>
-        <a href="../../SPAGNOLO/ragazzi_ES.html"><img src="../../images/BANDIERE/Español.jpg" alt="ES"> Español</a>
+        <a href="../../ACCESSORI SCHEDA PRODOTTO/W6608-GAMBALI-INVERNALI-STAMPABILI.html"><img src="../../images/BANDIERE/italia.jpg" alt="IT"> Italiano</a>
+        <a href="../ACCESSORI EN/W6608-GAMBALI-INVERNALI-STAMPABILI-EN.html" aria-current="true"><img src="../../images/BANDIERE/english.jpg" alt="EN"> English</a>
+        <a href="../../TEDESCO/ACCESSORI DE/W6608-GAMBALI-INVERNALI-STAMPABILI-DE.html"><img src="../../images/BANDIERE/Deutsch.jpg" alt="DE"> Deutsch</a>
+        <a href="../../FRANCESE/ACCESSORI FR/W6608-GAMBALI-INVERNALI-STAMPABILI-FR.html"><img src="../../images/BANDIERE/Français.jpg" alt="FR"> Français</a>
+        <a href="../../SPAGNOLO/ACCESSORI ES/W6608-GAMBALI-INVERNALI-STAMPABILI-ES.html"><img src="../../images/BANDIERE/Español.jpg" alt="ES"> Español</a>
       </div>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -515,11 +516,11 @@ a{text-decoration:none;color:inherit}
 
   <div class="breadcrumbs">
     <div class="breadcrumbs__inner">
-      <a href="../ragazzi_EN.html" class="dim hover:underline">HOME</a>
+      <a href="../accessori_EN.html" class="dim hover:underline">HOME</a>
       <span class="sep">></span>
-      <a href="../ragazzi_EN.html" class="dim hover:underline">KIDS CYCLING</a>
+      <a href="../accessori_EN.html" class="dim hover:underline">ACCESSORIES</a>
       <span class="sep">></span>
-      <span class="current">W6608-GAMBALI-INVERNALI-STAMPABILI</span>
+      <span class="current">W6608 PRINTABLE WINTER LEG WARMERS</span>
     </div>
   </div>
 
@@ -557,7 +558,7 @@ a{text-decoration:none;color:inherit}
           </div>
           <div class="acc-body">
             <div class="description">
-              Customizable thermal leg warmers: essential for your winter rides in your team colors. Made from high-quality thermal fabric, they offer warmth and breathability. With sublimation customization, these leg warmers reflect your unique style. Perfect for early mornings or dusk training sessions, they let you face the cold with confidence and comfort.
+              Customizable thermal leg warmers: essential for your winter rides in your team colors. Made from high-quality thermal fabric, they provide warmth and breathability. With sublimation customization, these leg warmers reflect your unique style. Perfect for early mornings or dusk training sessions, they let you face the cold with confidence and comfort.
             </div>
           </div>
         </div>
@@ -583,7 +584,7 @@ a{text-decoration:none;color:inherit}
             </div>
             <div class="temp">
               <div class="temp-head">
-                <div class="temp-title">Temperaturee</div>
+                <div class="temp-title">Temperaturea</div>
                 <div class="temp-chip">+4 / +18 °C</div>
               </div>
               <div class="temp-line"></div>
@@ -600,12 +601,12 @@ a{text-decoration:none;color:inherit}
           <div class="acc-body">
             <div class="description">
               <ul style="list-style-type: none; padding: 0; margin: 0;">
-                <li style="margin-bottom: 8px;">• Excellent breathability</li>
+                <li style="margin-bottom: 8px;">• Excellent breathable properties</li>
                 <li style="margin-bottom: 8px;">• Miti Full Black Endurance thermal fabric</li>
                 <li style="margin-bottom: 8px;">• Excellent thermal protection</li>
                 <li style="margin-bottom: 8px;">• UPF 50+</li>
                 <li style="margin-bottom: 8px;">• Active compression</li>
-                <li style="margin-bottom: 8px;">• Silicone elastic gripper at the upper part and raw-cut finish at the wrist</li>
+                <li style="margin-bottom: 8px;">• Silicone elastic band at the top and raw-cut finish at the ankle</li>
                 <li style="margin-bottom: 8px;">• High elasticity</li>
                 <li style="margin-bottom: 8px;">• Customization with digital sublimation technique</li>
               </ul>
@@ -719,6 +720,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const accItem = this.parentElement;
       const accBody = accItem.querySelector('.acc-body');
       const accIcon = this.querySelector('.acc-icon');
+      if (!accIcon || !accBody) return;
       
       // Toggle accordion body
       if (accBody.style.display === 'none') {
@@ -740,7 +742,6 @@ document.addEventListener('DOMContentLoaded', function() {
       accBody.style.display = 'none';
     }
   });
-});
 });
 </script>
 </body>

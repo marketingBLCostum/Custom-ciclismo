@@ -445,14 +445,15 @@ a{text-decoration:none;color:inherit}
   .footer-index-clone .footer-grid { grid-template-columns: 1fr; }
 }
 
-</style></head>
+</style>  <link rel="stylesheet" href="../../catalog-fixes.css">
+</head>
 <body>
 <!-- ANNOUNCEMENT BAR -->
 <div class="topbar" style="position:relative;">
 <span>Individuelle Bestellungen ab<strong>10 Stück</strong>— 100 % italienische Produktion</span>
 <div class="topbar-right">
 <span style="opacity:0.5;">|</span>
-<a href="#contatti">Angebot anfordern →</a>
+<a href="../index.html#contatti">Angebot anfordern →</a>
 </div>
 </div>
 <!-- NAV -->
@@ -556,7 +557,7 @@ a{text-decoration:none;color:inherit}
 <div class="acc-title">Beschreibung</div>
 </div>
 <div class="acc-body">
-<div class="description">Winter-Lauftights mit DWR-Behandlung, gefertigt aus Thermogewebe mit weichem Fleece auf der Innenseite. Das Material ist sehr elastisch und hoch atmungsaktiv, ideal für Fahrten im Winter. Die roh geschnittene Nahtkonstruktion bietet ausgezeichneten strukturellen Komfort. Das Gewebe wurde wasserabweisend mit DWR behandelt, um dich vor leichtem Regen und Feuchtigkeit zu schützen. Der Silikon-Elastikabschluss am Knöchel sorgt für sicheren und komfortablen Sitz. Reflektierende Details erhöhen deine Sichtbarkeit bei schlechten Lichtverhältnissen.</div>
+<div class="description">Winter-Radträgerhose mit DWR-Behandlung, gefertigt aus Thermogewebe mit weichem Fleece auf der Innenseite. Das Material ist sehr elastisch und hoch atmungsaktiv, ideal für Fahrten im Winter. Die roh geschnittene Nahtkonstruktion bietet ausgezeichneten strukturellen Komfort. Das Gewebe wurde wasserabweisend mit DWR behandelt, um dich vor leichtem Regen und Feuchtigkeit zu schützen. Der Silikon-Elastikabschluss am Knöchel sorgt für sicheren und komfortablen Sitz. Reflektierende Details erhöhen deine Sichtbarkeit bei schlechten Lichtverhältnissen.</div>
 </div>
 </div>
 <div class="acc-item">
@@ -728,6 +729,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const accItem = this.parentElement;
       const accBody = accItem.querySelector('.acc-body');
       const accIcon = this.querySelector('.acc-icon');
+      if (!accIcon || !accBody) return;
       
       // Toggle accordion body
       if (accBody.style.display === 'none') {

@@ -445,14 +445,15 @@ a{text-decoration:none;color:inherit}
   .footer-index-clone .footer-grid { grid-template-columns: 1fr; }
 }
 
-</style></head>
+</style>  <link rel="stylesheet" href="../../catalog-fixes.css">
+</head>
 <body>
 <!-- ANNOUNCEMENT BAR -->
 <div class="topbar" style="position:relative;">
 <span>Custom orders from <strong>10 pieces</strong> — 100% Italian Production</span>
 <div class="topbar-right">
 <span style="opacity:0.5;">|</span>
-<a href="#contatti">Request quote →</a>
+<a href="../index.html#contatti">Request quote →</a>
 </div>
 </div>
 <!-- NAV -->
@@ -555,11 +556,7 @@ a{text-decoration:none;color:inherit}
 <div class="acc-head">
 <div class="acc-title">Description</div>
 </div>
-<div class="acc-body">
-<div class="description">
-              Experience everyday speed with our Echelon Air bib shorts, optimized for aerodynamics and weight. Designed to reduce resistance and improve airflow, the Echelon Air bib shorts are built for speed. With lightweight and compressive fabrics, ergonomic panel construction and Ghost chamois, this bib shorts is ready for competition. The silicone print on the bottom of the raw-cut legs ensures shorts stay in place even during intense rides. The raw-cut rear panel with laser-cut ventilation holes guarantees brace stability and superior comfort. Additionally, elastic microfiber braces with adequate width offer extra support without causing irritation or discomfort.
-            </div>
-</div>
+<div class="acc-body"><div class="description">Echelon Air is a lighter evolution of Echelon for training and warm-weather rides. Technical fabric of approximately 190 g/m² with a high elastane content combines stretch, support and stability. The anatomical construction with reduced seams follows the riding position; lightweight bib straps reduce the amount of material used and enhance comfort in warmer conditions. The Ghost Air Gel pad is developed for long-distance riding. Raw-cut leg openings with internal silicone keep the bib shorts securely positioned without additional elastic grippers.</div></div>
 </div>
 <div class="acc-item">
 <div class="acc-head">
@@ -595,35 +592,14 @@ a{text-decoration:none;color:inherit}
 <div class="acc-title">MAIN FEATURES</div>
 <div class="acc-icon">+</div>
 </div>
-<div class="acc-body">
-<div class="description">
-<ul style="list-style-type: none; padding: 0; margin: 0;">
-<li style="margin-bottom: 8px;">• Minimal seams to increase comfort</li>
-<li style="margin-bottom: 8px;">• Bonded finish in front panel to increase comfort</li>
-<li style="margin-bottom: 8px;">• Ergonomic cut enhanced by raw-cut construction</li>
-<li style="margin-bottom: 8px;">• Ghost Air Gel chamois for long distances. Reticulated foams and injected gel inserts guarantee excellent comfort even after 7 hours. Front mesh insert guarantees adequate breathability</li>
-<li style="margin-bottom: 8px;">• Customization: with 2 logos on sides and 2 small logos on inner legs</li>
-<li style="margin-bottom: 8px;">• The leg openings with hypoallergenic silicone print on the inside provide grip, ensuring the leg hem stays in the correct position</li>
-</ul>
-</div>
-</div>
+<div class="acc-body"><div class="description"><ul style="list-style:none;padding:0;margin:0"><li style="margin-bottom:8px">• Lightweight technical fabric of approximately 190 g/m² with a high elastane content for stretch and support.</li><li style="margin-bottom:8px">• Anatomical construction with reduced seams, lighter than the standard Echelon.</li><li style="margin-bottom:8px">• Raw-cut leg openings with internal silicone for a secure grip.</li><li style="margin-bottom:8px">• Lightweight bib strap construction for comfort and reduced weight.</li><li style="margin-bottom:8px">• Ghost Air Gel pad with high-density reticulated foams and gel inserts, designed for rides of up to approximately 7 hours.</li><li style="margin-bottom:8px">• Customisation: 2 logos on the sides and 2 small logos on the inner legs.</li><li style="margin-bottom:8px">• Mesh front section of the pad for improved ventilation and moisture management.</li></ul></div></div>
 </div>
 <div class="acc-item">
 <div class="acc-head">
 <div class="acc-title">OPTIONS</div>
 <div class="acc-icon">+</div>
 </div>
-<div class="acc-body">
-<div class="description">
-<ul style="list-style-type: none; padding: 0; margin: 0;">
-<li style="margin-bottom: 8px;">• Logo customization with white silicone material or dark reflective material</li>
-<li style="margin-bottom: 8px;">• Shorts fabric available in navy blue and black</li>
-<li style="margin-bottom: 8px;">• Road Performance Force chamois</li>
-<li style="margin-bottom: 8px;">• X-Stra chamois</li>
-<li style="margin-bottom: 8px;">• Core Evo chamois</li>
-</ul>
-</div>
-</div>
+<div class="acc-body"><div class="description"><ul style="list-style:none;padding:0;margin:0"><li style="margin-bottom:8px">• Custom logos in white DTF or dark reflective material.</li><li style="margin-bottom:8px">• Fabric available for the 2026/2027 season in 6 colours: Asphalt Grey, Plum, Burgundy, North Blue, Rider Green and Black.</li><li style="margin-bottom:8px">• Road Performance Force chamois</li><li style="margin-bottom:8px">• X-Stra chamois</li><li style="margin-bottom:8px">• Core Evo chamois</li></ul></div></div>
 </div>
 </div>
 </aside>
@@ -730,6 +706,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const accItem = this.parentElement;
       const accBody = accItem.querySelector('.acc-body');
       const accIcon = this.querySelector('.acc-icon');
+      if (!accIcon || !accBody) return;
       
       // Toggle accordion body
       if (accBody.style.display === 'none') {

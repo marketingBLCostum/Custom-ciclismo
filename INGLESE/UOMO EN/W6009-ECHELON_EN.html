@@ -445,14 +445,15 @@ a{text-decoration:none;color:inherit}
   .footer-index-clone .footer-grid { grid-template-columns: 1fr; }
 }
 
-</style></head>
+</style>  <link rel="stylesheet" href="../../catalog-fixes.css">
+</head>
 <body>
 <!-- ANNOUNCEMENT BAR -->
 <div class="topbar" style="position:relative;">
 <span>Custom orders from <strong>10 pieces</strong> — 100% Italian Production</span>
 <div class="topbar-right">
 <span style="opacity:0.5;">|</span>
-<a href="#contatti">Request quote →</a>
+<a href="../index.html#contatti">Request quote →</a>
 </div>
 </div>
 <!-- NAV -->
@@ -557,7 +558,7 @@ a{text-decoration:none;color:inherit}
 </div>
 <div class="acc-body">
 <div class="description">
-              Winter running tights with DWR treatment, made in thermal fabric with soft fleece inside. The fabric is very elastic and highly breathable, ideal for winter rides. The raw-cut seam construction offers excellent structural comfort. The fabric has been treated with DWR water-repellent to protect you from light rain and moisture. The silicone elastic at the ankle ensures a secure and comfortable fit. Reflective details increase your visibility in low-light conditions.
+              Winter cycling bib tights with DWR treatment, made in thermal fabric with soft fleece inside. The fabric is very elastic and highly breathable, ideal for winter rides. The raw-cut seam construction offers excellent structural comfort. The fabric has been treated with DWR water-repellent to protect you from light rain and moisture. The silicone elastic at the ankle ensures a secure and comfortable fit. Reflective details increase your visibility in low-light conditions.
             </div>
 </div>
 </div>
@@ -730,6 +731,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const accItem = this.parentElement;
       const accBody = accItem.querySelector('.acc-body');
       const accIcon = this.querySelector('.acc-icon');
+      if (!accIcon || !accBody) return;
       
       // Toggle accordion body
       if (accBody.style.display === 'none') {

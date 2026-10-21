@@ -447,14 +447,15 @@ a{text-decoration:none;color:inherit}
   .footer-index-clone .footer-grid { grid-template-columns: 1fr; }
 }
 
-</style></head>
+</style>  <link rel="stylesheet" href="../../catalog-fixes.css">
+</head>
 <body>
 <!-- ANNOUNCEMENT BAR -->
 <div class="topbar" style="position:relative;">
 <span>Custom orders from <strong>10 pieces</strong> — 100% Italian Production</span>
 <div class="topbar-right">
 <span style="opacity:0.5;">|</span>
-<a href="#contatti">Request quote →</a>
+<a href="../index.html#contatti">Request quote →</a>
 </div>
 </div>
 <!-- NAV -->
@@ -626,6 +627,8 @@ a{text-decoration:none;color:inherit}
 </ul>
 </div>
 </div>
+
+        <div class="acc-item"><div class="acc-head"><div class="acc-title">OPTIONS</div><div class="acc-icon">+</div></div><div class="acc-body"><div class="description"><ul style="list-style:none;padding:0;margin:0"><li style="margin-bottom:8px">• Custom logo in white or dark reflective material.</li><li style="margin-bottom:8px">• Inner fabric available in navy blue and black.</li></ul></div></div></div>
 </div>
 </aside>
 </main>
@@ -731,6 +734,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const accItem = this.parentElement;
       const accBody = accItem.querySelector('.acc-body');
       const accIcon = this.querySelector('.acc-icon');
+      if (!accIcon || !accBody) return;
       
       // Toggle accordion body
       if (accBody.style.display === 'none') {

@@ -445,15 +445,16 @@ a{text-decoration:none;color:inherit}
 }
 
 </style>
+  <link rel="stylesheet" href="../../catalog-fixes.css">
 </head>
 <body>
 
 <!-- ANNOUNCEMENT BAR -->
 <div class="topbar" style="position:relative;">
-  <span>Custom-made products from <strong>10 pieces</strong> — 100% Italian production</span>
+  <span>Custom products from <strong>10 pieces</strong> — 100% Italian production</span>
   <div class="topbar-right">
     <span style="opacity:0.5;">|</span>
-    <a href="#kontakt">Request a quote →</a>
+    <a href="../index.html#contatti">Request a quote →</a>
   </div>
 </div>
 
@@ -481,11 +482,11 @@ a{text-decoration:none;color:inherit}
         <i class="fas fa-chevron-down" style="font-size:9px; opacity:0.6;"></i>
       </button>
       <div class="lang-dropdown" id="lang-dropdown">
-        <a href="../../ragazzi.html"><img src="../../images/BANDIERE/italia.jpg" alt="IT"> Italiano</a>
-        <a href="./W6601-CALZINI-ESTIVI-AERO-PIEDE-BIANCO-EN.html" aria-current="true"><img src="../../images/BANDIERE/english.jpg" alt="EN"> English</a>
-        <a href="../../TEDESCO/ragazzi_DE.html"><img src="../../images/BANDIERE/Deutsch.jpg" alt="DE"> Deutsch</a>
-        <a href="../../FRANCESE/ragazzi_FR.html"><img src="../../images/BANDIERE/Français.jpg" alt="FR"> Français</a>
-        <a href="../../SPAGNOLO/ragazzi_ES.html"><img src="../../images/BANDIERE/Español.jpg" alt="ES"> Español</a>
+        <a href="../../ACCESSORI SCHEDA PRODOTTO/W6601-CALZINI-ESTIVI-AERO-PIEDE-BIANCO.html"><img src="../../images/BANDIERE/italia.jpg" alt="IT"> Italiano</a>
+        <a href="../ACCESSORI EN/W6601-CALZINI-ESTIVI-AERO-PIEDE-BIANCO-EN.html" aria-current="true"><img src="../../images/BANDIERE/english.jpg" alt="EN"> English</a>
+        <a href="../../TEDESCO/ACCESSORI DE/W6601-CALZINI-ESTIVI-AERO-PIEDE-BIANCO-DE.html"><img src="../../images/BANDIERE/Deutsch.jpg" alt="DE"> Deutsch</a>
+        <a href="../../FRANCESE/ACCESSORI FR/W6601-CALZINI-ESTIVI-AERO-PIEDE-BIANCO-FR.html"><img src="../../images/BANDIERE/Français.jpg" alt="FR"> Français</a>
+        <a href="../../SPAGNOLO/ACCESSORI ES/W6601-CALZINI-ESTIVI-AERO-PIEDE-BIANCO-ES.html"><img src="../../images/BANDIERE/Español.jpg" alt="ES"> Español</a>
       </div>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -515,17 +516,17 @@ a{text-decoration:none;color:inherit}
 
   <div class="breadcrumbs">
     <div class="breadcrumbs__inner">
-      <a href="../ragazzi_EN.html" class="dim hover:underline">HOME</a>
+      <a href="../accessori_EN.html" class="dim hover:underline">HOME</a>
       <span class="sep">></span>
-      <a href="../ragazzi_EN.html" class="dim hover:underline">KIDS CYCLING</a>
+      <a href="../accessori_EN.html" class="dim hover:underline">ACCESSORIES</a>
       <span class="sep">></span>
-      <span class="current">W6601-CALZINI-ESTIVI-AERO-PIEDE-BIANCO</span>
+      <span class="current">W6601 AERO SUMMER SOCKS WHITE FOOT</span>
     </div>
   </div>
 
   <main class="page">
     <section class="gallery">
-      <figure class="media tall">
+      <figure class="media tall contain">
         <img src="../../images/ACCESSORI/W6601.png" alt="W6601 AERO SUMMER SOCKS WHITE FOOT 1">
       </figure>
     </section>
@@ -555,7 +556,7 @@ a{text-decoration:none;color:inherit}
           </div>
           <div class="acc-body">
             <div class="description">
-              High-cuff sock developed from experience with professional teams. Made from two very different materials to combine comfort and technical performance: the leg area is made from elastic fabric for maximum aerodynamic movement, while the foot, with a reinforced toe, is made from soft, comfortable and breathable yarn with terry cushioning. Recommended for road cycling and for those seeking maximum speed and performance in every detail.
+              High-cuff sock developed from experience with professional teams. Made with two very different materials to combine comfort and technical performance: the leg area uses an elastic fabric for maximum aerodynamic efficiency during movement, while the foot area, with a reinforced toe, is made from a soft, comfortable and breathable yarn with sponge padding. Recommended for road cycling and for those seeking maximum speed and performance in every detail.
             </div>
           </div>
         </div>
@@ -598,9 +599,9 @@ a{text-decoration:none;color:inherit}
           <div class="acc-body">
             <div class="description">
               <ul style="list-style-type: none; padding: 0; margin: 0;">
-                <li style="margin-bottom: 8px;">• 18 cm height.</li>
+                <li style="margin-bottom: 8px;">• 18 cm height</li>
                 <li style="margin-bottom: 8px;">• Lycra MITI - Qskin fabric</li>
-                <li style="margin-bottom: 8px;">• Toe and sole padded with terry cushioning</li>
+                <li style="margin-bottom: 8px;">• Toe and sole padded with sponge</li>
                 <li style="margin-bottom: 8px;">• Reinforced toe</li>
                 <li style="margin-bottom: 8px;">• Breathable mesh construction</li>
                 <li style="margin-bottom: 8px;">• Aerodynamic fabric on the calf area</li>
@@ -620,7 +621,7 @@ a{text-decoration:none;color:inherit}
         <p class="promo-copy"></p>
         <div class="promo-links">
           <a href="../accessori_EN.html" class="promo-btn">Discover more products <span class="arrow">></span></a>
-          <a href="../uomo_EN.html#kontakt" class="promo-btn">I want more information <span class="arrow">></span></a>
+          <a href="../index.html#contatti" class="promo-btn">I want more information <span class="arrow">></span></a>
         </div>
       </div>
     </section>
@@ -717,6 +718,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const accItem = this.parentElement;
       const accBody = accItem.querySelector('.acc-body');
       const accIcon = this.querySelector('.acc-icon');
+      if (!accIcon || !accBody) return;
       
       // Toggle accordion body
       if (accBody.style.display === 'none') {

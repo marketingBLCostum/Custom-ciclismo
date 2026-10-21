@@ -445,6 +445,7 @@ a{text-decoration:none;color:inherit}
 }
 
 </style>
+  <link rel="stylesheet" href="../../catalog-fixes.css">
 </head>
 <body>
 
@@ -453,7 +454,7 @@ a{text-decoration:none;color:inherit}
   <span>Custom orders from <strong>10 pieces</strong> — 100% Italian production</span>
   <div class="topbar-right">
     <span style="opacity:0.5;">|</span>
-    <a href="#contatti">Request a quote →</a>
+    <a href="../index.html#contatti">Request a quote →</a>
   </div>
 </div>
 
@@ -481,11 +482,11 @@ a{text-decoration:none;color:inherit}
         <i class="fas fa-chevron-down" style="font-size:9px; opacity:0.6;"></i>
       </button>
       <div class="lang-dropdown" id="lang-dropdown">
-        <a href="../../ragazzi.html"><img src="../../images/BANDIERE/italia.jpg" alt="IT"> Italiano</a>
-        <a href="./W6612-BERRETTINO-ESTIVO-AIR-CAP-EN.html" aria-current="true"><img src="../../images/BANDIERE/english.jpg" alt="EN"> English</a>
-        <a href="../../TEDESCO/ragazzi_DE.html"><img src="../../images/BANDIERE/Deutsch.jpg" alt="DE"> Deutsch</a>
-        <a href="../../FRANCESE/ragazzi_FR.html"><img src="../../images/BANDIERE/Français.jpg" alt="FR"> Français</a>
-        <a href="../../SPAGNOLO/ragazzi_ES.html"><img src="../../images/BANDIERE/Español.jpg" alt="ES"> Español</a>
+        <a href="../../ACCESSORI SCHEDA PRODOTTO/W6612-BERRETTINO-ESTIVO-AIR-CAP.html"><img src="../../images/BANDIERE/italia.jpg" alt="IT"> Italiano</a>
+        <a href="../ACCESSORI EN/W6612-BERRETTINO-ESTIVO-AIR-CAP-EN.html" aria-current="true"><img src="../../images/BANDIERE/english.jpg" alt="EN"> English</a>
+        <a href="../../TEDESCO/ACCESSORI DE/W6612-BERRETTINO-ESTIVO-AIR-CAP-DE.html"><img src="../../images/BANDIERE/Deutsch.jpg" alt="DE"> Deutsch</a>
+        <a href="../../FRANCESE/ACCESSORI FR/W6612-BERRETTINO-ESTIVO-AIR-CAP-FR.html"><img src="../../images/BANDIERE/Français.jpg" alt="FR"> Français</a>
+        <a href="../../SPAGNOLO/ACCESSORI ES/W6612-BERRETTINO-ESTIVO-AIR-CAP-ES.html"><img src="../../images/BANDIERE/Español.jpg" alt="ES"> Español</a>
       </div>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -515,11 +516,11 @@ a{text-decoration:none;color:inherit}
 
   <div class="breadcrumbs">
     <div class="breadcrumbs__inner">
-      <a href="../ragazzi_EN.html" class="dim hover:underline">HOME</a>
+      <a href="../accessori_EN.html" class="dim hover:underline">HOME</a>
       <span class="sep">></span>
-      <a href="../ragazzi_EN.html" class="dim hover:underline">KIDS CYCLING</a>
+      <a href="../accessori_EN.html" class="dim hover:underline">ACCESSORIES</a>
       <span class="sep">></span>
-      <span class="current">W6612-BERRETTINO-ESTIVO-AIR-CAP</span>
+      <span class="current">W6612 SUMMER AIR-CAP</span>
     </div>
   </div>
 
@@ -552,7 +553,7 @@ a{text-decoration:none;color:inherit}
           </div>
           <div class="acc-body">
             <div class="description">
-              The BL Air-Cap is perfect for all outdoor sports: cycling, running, trail running and more. Made from perforated stretch fabric, the BL cap improves heat dissipation, ensuring optimal breathability and lightness.
+              The BL Air-Cap is perfect for all outdoor sports: cycling, running, trail running and more. Made from perforated elastic fabric, the BL cap improves heat dissipation, ensuring optimal breathability and lightness.
             </div>
           </div>
         </div>
@@ -578,7 +579,7 @@ a{text-decoration:none;color:inherit}
             </div>
             <div class="temp">
               <div class="temp-head">
-                <div class="temp-title">Temperaturee</div>
+                <div class="temp-title">Temperaturea</div>
                 <div class="temp-chip">+14 / +35 °C</div>
               </div>
               <div class="temp-line"></div>
@@ -596,8 +597,8 @@ a{text-decoration:none;color:inherit}
             <div class="description">
               <ul style="list-style-type: none; padding: 0; margin: 0;">
                 <li style="margin-bottom: 8px;">• Good UPF protection (15+)</li>
-                <li style="margin-bottom: 8px;">• Softer internal elastic band for improved comfort</li>
-                <li style="margin-bottom: 8px;">• The mesh insert ensures proper breathability, while the premium microfiber fabric provides a soft feel and quick drying</li>
+                <li style="margin-bottom: 8px;">• Softer internal elastic band to improve comfort</li>
+                <li style="margin-bottom: 8px;">• The mesh insert ensures proper breathability, while the premium microfiber fabric provides a soft touch and quick drying</li>
                 <li style="margin-bottom: 8px;">• Visor made from durable material</li>
                 <li style="margin-bottom: 8px;">• Customization with digital sublimation technique</li>
               </ul>
@@ -711,6 +712,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const accItem = this.parentElement;
       const accBody = accItem.querySelector('.acc-body');
       const accIcon = this.querySelector('.acc-icon');
+      if (!accIcon || !accBody) return;
       
       // Toggle accordion body
       if (accBody.style.display === 'none') {

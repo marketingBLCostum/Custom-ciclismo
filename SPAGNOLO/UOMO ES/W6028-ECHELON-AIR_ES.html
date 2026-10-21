@@ -445,6 +445,7 @@ a{text-decoration:none;color:inherit}
 }
 
 </style>
+  <link rel="stylesheet" href="../../catalog-fixes.css">
 </head>
 <body>
 
@@ -453,7 +454,7 @@ a{text-decoration:none;color:inherit}
   <span>Pedidos personalizados desde <strong>10 piezas</strong> — Producción 100% italiana</span>
   <div class="topbar-right">
     <span style="opacity:0.5;">|</span>
-    <a href="#contatti">Solicitar presupuesto →</a>
+    <a href="../index.html#contatti">Solicitar presupuesto →</a>
   </div>
 </div>
 
@@ -570,11 +571,7 @@ a{text-decoration:none;color:inherit}
           <div class="acc-head">
             <div class="acc-title">Descripción</div>
           </div>
-          <div class="acc-body">
-            <div class="description">
-              Experimenta la velocidad diaria con nuestro culotte con tirantes Echelon Air, optimizado para aerodinámica y ligereza. Diseñado para reducir la resistencia y mejorar el flujo de aire, el culotte Echelon Air está construido para la velocidad. Con tejidos ligeros y compresivos, construcción ergonómica por paneles y badana Ghost, este culotte está listo para competir. El estampado de silicona en el bajo de las piernas con corte vivo asegura que el culotte se mantenga en su sitio incluso durante salidas intensas. El panel trasero de corte vivo con orificios de ventilación láser garantiza estabilidad en los tirantes y un confort superior. Además, los tirantes elásticos de microfibra, con una anchura adecuada, ofrecen soporte adicional sin causar irritaciones ni molestias.
-            </div>
-          </div>
+          <div class="acc-body"><div class="description">Echelon Air es la evolución ligera del Echelon para entrenamientos y salidas con tiempo cálido. El tejido técnico de unos 190 g/m² con alto contenido de elastano combina elasticidad, soporte y estabilidad. La construcción anatómica con menos costuras sigue la posición de pedaleo; los tirantes aligerados reducen el material y mejoran la comodidad en días cálidos. La badana Ghost Air Gel está desarrollada para largas distancias. Las piernas sin rematar con silicona interior mantienen el culote estable sin elásticos adicionales.</div></div>
         </div>
 
         <div class="acc-item">
@@ -612,18 +609,7 @@ a{text-decoration:none;color:inherit}
             <div class="acc-title">CARACTERÍSTICAS PRINCIPALES</div>
             <div class="acc-icon">+</div>
           </div>
-          <div class="acc-body">
-            <div class="description">
-              <ul style="list-style-type: none; padding: 0; margin: 0;">
-                <li style="margin-bottom: 8px;">• Costuras mínimas para aumentar el confort</li>
-                <li style="margin-bottom: 8px;">• Acabado termosellado en el panel frontal para aumentar el confort</li>
-                <li style="margin-bottom: 8px;">• Corte ergonómico optimizado por la construcción de corte vivo</li>
-                <li style="margin-bottom: 8px;">• Badana Ghost Air Gel para largas distancias. Las espumas reticuladas y los insertos de gel inyectado garantizan un confort excelente incluso después de 7 horas. El inserto frontal de malla garantiza una transpirabilidad adecuada</li>
-                <li style="margin-bottom: 8px;">• Personalización: con 2 logotipos en los laterales y 2 pequeños logotipos en el interior de las piernas</li>
-                <li style="margin-bottom: 8px;">• Los extremos de las piernas con estampado interno de silicona hipoalergénica ofrecen función de agarre, asegurando que el bajo de la pierna permanezca en la posición correcta</li>
-              </ul>
-            </div>
-          </div>
+          <div class="acc-body"><div class="description"><ul style="list-style:none;padding:0;margin:0"><li style="margin-bottom:8px">• Tejido técnico ligero de unos 190 g/m² con alto contenido de elastano para elasticidad y soporte.</li><li style="margin-bottom:8px">• Construcción anatómica con menos costuras, más ligera que el Echelon clásico.</li><li style="margin-bottom:8px">• Terminaciones de pierna sin rematar con silicona interior para una sujeción estable.</li><li style="margin-bottom:8px">• Construcción aligerada de los tirantes para mayor comodidad y ligereza.</li><li style="margin-bottom:8px">• Badana Ghost Air Gel con espumas reticuladas de alta densidad e insertos de gel, para salidas de hasta unas 7 horas.</li><li style="margin-bottom:8px">• Personalización: 2 logotipos laterales y 2 pequeños logotipos en el interior de las piernas.</li><li style="margin-bottom:8px">• Sección delantera de malla en la badana para mejorar la ventilación y la gestión de la humedad.</li></ul></div></div>
         </div>
 
         <div class="acc-item">
@@ -631,17 +617,7 @@ a{text-decoration:none;color:inherit}
             <div class="acc-title">OPCIONES</div>
             <div class="acc-icon">+</div>
           </div>
-          <div class="acc-body">
-            <div class="description">
-              <ul style="list-style-type: none; padding: 0; margin: 0;">
-                <li style="margin-bottom: 8px;">• Personalización del logotipo con material de silicona blanca o material reflectante oscuro</li>
-                <li style="margin-bottom: 8px;">• Tejido del culotte disponible en azul marino y negro</li>
-                <li style="margin-bottom: 8px;">• Badana Road Performance Force</li>
-                <li style="margin-bottom: 8px;">• Badana X-Stra</li>
-                <li style="margin-bottom: 8px;">• Badana Core Evo</li>
-              </ul>
-            </div>
-          </div>
+          <div class="acc-body"><div class="description"><ul style="list-style:none;padding:0;margin:0"><li style="margin-bottom:8px">• Logotipos personalizados en DTF blanco o material reflectante oscuro.</li><li style="margin-bottom:8px">• Tejido disponible para la temporada 2026/2027 en 6 colores: Asphalt Grey, Plum, Burgundy, North Blue, Rider Green y Black.</li><li style="margin-bottom:8px">• Badana Road Performance Force</li><li style="margin-bottom:8px">• Badana X-Stra</li><li style="margin-bottom:8px">• Badana Core Evo</li></ul></div></div>
         </div>
       </div>
     </aside>
@@ -750,6 +726,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const accItem = this.parentElement;
       const accBody = accItem.querySelector('.acc-body');
       const accIcon = this.querySelector('.acc-icon');
+      if (!accIcon || !accBody) return;
       
       // Toggle accordion body
       if (accBody.style.display === 'none') {

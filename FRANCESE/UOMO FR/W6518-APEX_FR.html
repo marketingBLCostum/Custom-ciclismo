@@ -444,14 +444,15 @@ a{text-decoration:none;color:inherit}
   .footer-index-clone .footer-grid { grid-template-columns: 1fr; }
 }
 
-</style></head>
+</style>  <link rel="stylesheet" href="../../catalog-fixes.css">
+</head>
 <body>
 <!-- ANNOUNCEMENT BAR -->
 <div class="topbar" style="position:relative;">
 <span>Commandes personnalisées à partir de <strong>10 pièces</strong> — Production 100 % italienne</span>
 <div class="topbar-right">
 <span style="opacity:0.5;">|</span>
-<a href="#contatti">Demander un devis →</a>
+<a href="../index.html#contatti">Demander un devis →</a>
 </div>
 </div>
 <!-- NAV -->
@@ -613,16 +614,7 @@ a{text-decoration:none;color:inherit}
 <div class="acc-title">OPTIONS</div>
 <div class="acc-icon">+</div>
 </div>
-<div class="acc-body">
-<div class="description">
-<ul style="list-style-type: none; padding: 0; margin: 0;">
-<li style="margin-bottom: 8px;">• Tissu pour la partie intérieure du collant disponible en bleu marine et noir</li>
-<li style="margin-bottom: 8px;">• Peau Road Performance Force</li>
-<li style="margin-bottom: 8px;">• Peau Ghost Air Gel</li>
-<li style="margin-bottom: 8px;">• Peau Core Evo</li>
-</ul>
-</div>
-</div>
+<div class="acc-body"><div class="description"><ul style="list-style:none;padding:0;margin:0"><li style="margin-bottom:8px">• Logo personnalisé en blanc ou matériau réfléchissant foncé.</li><li style="margin-bottom:8px">• Tissu pour la partie intérieure du collant disponible en bleu marine et noir</li><li style="margin-bottom:8px">• Peau Road Performance Force</li><li style="margin-bottom:8px">• Peau Ghost Air Gel</li><li style="margin-bottom:8px">• Peau Core Evo</li></ul></div></div>
 </div>
 </div>
 </aside>
@@ -729,6 +721,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const accItem = this.parentElement;
       const accBody = accItem.querySelector('.acc-body');
       const accIcon = this.querySelector('.acc-icon');
+      if (!accIcon || !accBody) return;
       
       // Toggle accordion body
       if (accBody.style.display === 'none') {
