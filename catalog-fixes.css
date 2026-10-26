@@ -1,6 +1,6 @@
 /* Responsive corrections shared by the catalog pages. */
 @media (max-width: 1200px) {
-  main.page { width: 100%; min-width: 0; max-width: 100%; grid-template-columns: minmax(0, 1fr); }
+  :root main.page { width: 100%; min-width: 0; max-width: 100%; grid-template-columns: minmax(0, 1fr); }
   main.page > .gallery { width: 100%; min-width: 0; max-width: 100%; grid-template-columns: minmax(0, 1fr); }
   main.page > .gallery > .media, main.page > .sidebar { min-width: 0; max-width: 100%; }
   main.page > .sidebar { overflow-wrap: anywhere; }
@@ -33,4 +33,27 @@
   .faq-q { min-width: 0; overflow-wrap: anywhere; }
   .faq-num, .faq-plus { flex-shrink: 0; }
   .faq-ans { overflow-wrap: anywhere; }
+}
+
+/* Keep the desktop product columns fluid between the tablet and wide desktop layouts. */
+@media (min-width: 1201px) and (max-width: 1439px) {
+  :root body { min-width: 0; }
+  :root main.page { width: 100%; min-width: 0; max-width: 100%; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); }
+  main.page > .gallery { min-width: 0; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  main.page > .gallery > .media, main.page > .sidebar { min-width: 0; max-width: 100%; }
+  main.page > .sidebar { overflow-wrap: anywhere; }
+  .sidebar .sizes { flex-wrap: wrap; }
+  .sidebar .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 24px; }
+  :root .nav { grid-template-columns: 120px minmax(0, 1fr) 80px; }
+  :root .nav-links { padding-left: 0; gap: 22px; }
+}
+/* The full navigation does not fit tablet widths in all five languages. */
+@media (min-width: 769px) and (max-width: 1200px) {
+  :root .nav { grid-template-columns: minmax(0, 1fr) auto; }
+  :root .nav-links { display: none; }
+  :root .hamburger { display: flex; }
+}
+/* Avoid overlap between the announcement and its secondary action on tablets. */
+@media (min-width: 769px) and (max-width: 1200px) {
+  :root .topbar-right { display: none; }
 }
