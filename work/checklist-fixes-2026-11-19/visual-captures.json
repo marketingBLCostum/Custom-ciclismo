@@ -1,0 +1,31 @@
+[
+  {
+    "file": "RAGAZZI SCHEDE PRODOTTO/W2212.html",
+    "width": 320,
+    "target": ".sizes",
+    "name": "kid-sizes-320.png"
+  },
+  {
+    "file": "SPAGNOLO/ACCESSORI ES/W6602-MANICOTTI-INVERNALI-ES.html",
+    "width": 1440,
+    "name": "spanish-header.png"
+  },
+  {
+    "file": "SPAGNOLO/ACCESSORI ES/W6602-MANICOTTI-INVERNALI-ES.html",
+    "width": 390,
+    "target": ".promo-links",
+    "name": "spanish-links-mobile.png"
+  },
+  {
+    "file": "ACCESSORI SCHEDA PRODOTTO/W6600-CALZINI-ESTIVI-AERO-PIEDE-NERO.html",
+    "width": 390,
+    "target": ".sidebar",
+    "name": "aero-materials-mobile.png"
+  },
+  {
+    "file": "INGLESE/UOMO EN/W6012-ECHELON_EN.html",
+    "width": 390,
+    "target": ".sidebar",
+    "name": "W6012-options-mobile.png"
+  }
+]
