@@ -1,0 +1,24 @@
+{
+  "title": "W6015 ECHELON",
+  "titleRect": {
+    "x": 928,
+    "y": 208,
+    "width": 490,
+    "height": 26.390625,
+    "top": 208,
+    "right": 1418,
+    "bottom": 234.390625,
+    "left": 928
+  },
+  "sidebarRect": {
+    "x": 906,
+    "y": 158,
+    "width": 534,
+    "height": 1140.828125,
+    "top": 158,
+    "right": 1440,
+    "bottom": 1298.828125,
+    "left": 906
+  },
+  "overflow": false
+}
