@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="./images/logodfs.png" />
+  <title>Catalogo Donna</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --black: #0a0a0a;
+      --white: #ffffff;
+      --off-white: #f4f4f2;
+      --grey-100: #e8e8e6;
+      --grey-300: #b0b0aa;
+      --grey-500: #6e6e68;
+      --grey-700: #2e2e2a;
+      --grey-800: #1c1c18;
+      --accent: #ffffff;
+      --nav-h: 80px;
+      --topbar-h: 36px;
+      --text: #111111;
+      --muted: #707072;
+      --line: #e5e5e5;
+      --soft: #f5f5f5;
+      --promo: #f7f7f7;
+      --accent-old: #f15a24;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      font-family: "Roboto", Arial, sans-serif;
+      color: var(--text);
+      background: #fff;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      background: none;
+      border: 0;
+      cursor: pointer;
+    }
+
+    /* TOP BAR */
+    .ui-topbar{
+      height: 30px;
+      background: #0a0a0a;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 34px 0 60px;
+    }
+
+    .ui-topbar-left{
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .ui-topbar-left button{
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      background: none;
+      border: none;
+      cursor: pointer;
+      fill: #fff;
+    }
+
+    .ui-topbar-right{
+      display: flex;
+      gap: 14px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .ui-topbar-right a{
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .ui-topbar-right .sep{ opacity: .6; }
+
+    /* NAV BIANCO */
+    .ui-nav-white{
+      height: 96px;
+      background: linear-gradient(90deg,#ffffff,#f8f8f8,#ffffff);
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      padding: 0 40px;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .ui-nav-white .ui-logo{
+      display: flex;
+      align-items: center;
+    }
+
+    
+    .ui-nav-white .ui-nav-center{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 34px;
+    }
+
+    .ui-nav-white .ui-nav-center a{
+      color: #000;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .ui-nav-white .ui-nav-right{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .page {
+      width: 100%;
+      min-height: 100vh;
+    }
+
+    .top-strip {
+      height: 40px;
+      border-bottom: 1px solid #dedede;
+      background: #f6f6f6;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 18px 0 14px;
+      font-size: 13px;
+      line-height: 1;
+    }
+
+    .top-strip-left,
+    .top-strip-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .top-strip-left .mini-icon {
+      width: 18px;
+      height: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #111;
+      opacity: .92;
+    }
+
+    .divider {
+      color: #b7b7b7;
+      font-size: 12px;
+    }
+
+    .top-strip-right a {
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .main-header {
+      height: 112px;
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 180px 1fr 320px;
+      align-items: start;
+      padding: 18px 28px 0 28px;
+      background: white;
+    }
+
+    .brand {
+      display: flex;
+      align-items: flex-start;
+      padding-top: 4px;
+    }
+
+    .brand-mark {
+      width: 46px;
+      height: 18px;
+      position: relative;
+      display: inline-block;
+      transform: skewX(-18deg) rotate(-8deg);
+      background: linear-gradient(90deg, #111 0%, #111 60%, transparent 61%);
+      border-radius: 100% 0 70% 0 / 100% 0 80% 0;
+      clip-path: polygon(0 70%, 12% 55%, 35% 40%, 60% 23%, 100% 0, 68% 40%, 28% 78%, 0 100%);
+      margin-left: 4px;
+      margin-top: 2px;
+    }
+
+    .nav-center {
+      display: flex;
+      justify-content: center;
+      gap: 34px;
+      padding-top: 2px;
+      font-size: 24px;
+    }
+
+    .nav-center a {
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+    }
+
+    .header-right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 18px;
+      padding-top: 0;
+    }
+
+    .search {
+      width: 181px;
+      height: 40px;
+      border-radius: 999px;
+      background: var(--soft);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 14px;
+      color: #757575;
+      font-size: 16px;
+    }
+
+    .header-icon {
+      width: 24px;
+      height: 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #111;
+    }
+
+    .promo-bar {
+      grid-column: 1 / -1;
+      margin-top: 18px;
+      height: 40px;
+      background: var(--promo);
+      border-top: 1px solid #efefef;
+      display: grid;
+      grid-template-columns: 60px 1fr 60px;
+      align-items: center;
+      padding: 0 10px;
+    }
+
+    .promo-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+    }
+
+    .promo-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      font-size: 15px;
+      color: #111;
+      white-space: nowrap;
+    }
+
+    .promo-content strong {
+      font-weight: 600;
+    }
+
+    .promo-content a {
+      text-decoration: underline;
+      font-weight: 500;
+    }
+
+    .catalog-shell {
+      padding: 18px 32px 0 32px;
+    }
+
+    .catalog-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+    }
+
+    .catalog-title {
+      font-size: 26px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+
+    .toolbar-right {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      font-size: 17px;
+      font-weight: 500;
+    }
+
+    .toolbar-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #111;
+    }
+
+    .catalog-layout {
+      display: grid;
+      grid-template-columns: 216px minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .filters {
+      position: sticky;
+      top: 0;
+      padding-right: 6px;
+    }
+
+    .filter-scroll {
+      height: 437px;
+      overflow-y: auto;
+      padding-right: 10px;
+      margin-bottom: 18px;
+      scrollbar-width: auto;
+      scrollbar-color: #777 #fff;
+    }
+
+    .filter-scroll::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .filter-scroll::-webkit-scrollbar-track {
+      background: #fff;
+    }
+
+    .filter-scroll::-webkit-scrollbar-thumb {
+      background: #737373;
+      border-radius: 999px;
+    }
+
+    .category-link {
+      display: block;
+      font-size: 15px;
+      line-height: 1.45;
+      padding: 3px 2px;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .category-link.multi {
+      max-width: 165px;
+    }
+
+    .filter-group {
+      border-top: 1px solid var(--line);
+      padding: 18px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .products-area {
+      min-width: 0;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      min-width: 0;
+      margin-bottom: 30px;
+    }
+
+    .card-image {
+      background: #efefef;
+      aspect-ratio: 0.98 / 1;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-image.third {
+      background: #f0f0f0;
+    }
+
+    .wishlist-edit {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.95);
+      box-shadow: 0 1px 2px rgba(0,0,0,.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+    }
+
+    .product-photo {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      background: #f0f0f0;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .figure {
+      position: relative;
+      width: 62%;
+      height: 94%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .head {
+      position: absolute;
+      top: 6%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 18%;
+      height: 12%;
+      border-radius: 50% 50% 48% 48%;
+      z-index: 3;
+    }
+
+    .neck {
+      position: absolute;
+      top: 15.5%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 5.2%;
+      height: 4%;
+      border-radius: 6px;
+      z-index: 2;
+    }
+
+    .torso {
+      position: absolute;
+      top: 18%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 44%;
+      height: 41%;
+      border-radius: 18% 18% 10% 10% / 12% 12% 8% 8%;
+      z-index: 2;
+      overflow: hidden;
+    }
+
+    .arm {
+      position: absolute;
+      top: 22%;
+      width: 12%;
+      height: 34%;
+      border-radius: 40px;
+      z-index: 1;
+    }
+
+    .arm.left { left: 22%; transform: rotate(8deg); }
+    .arm.right { right: 22%; transform: rotate(-8deg); }
+
+    .forearm {
+      position: absolute;
+      width: 10%;
+      height: 25%;
+      border-radius: 40px;
+      z-index: 1;
+    }
+
+    .forearm.left { left: 18%; top: 44%; transform: rotate(2deg); }
+    .forearm.right { right: 18%; top: 44%; transform: rotate(-2deg); }
+
+    .hand {
+      position: absolute;
+      width: 7%;
+      height: 6%;
+      border-radius: 50%;
+      z-index: 2;
+    }
+
+    .hand.left { left: 15.5%; top: 67%; }
+    .hand.right { right: 15.5%; top: 67%; }
+
+    .leg {
+      position: absolute;
+      top: 54%;
+      width: 13.5%;
+      height: 34%;
+      border-radius: 40px 40px 22px 22px;
+      z-index: 1;
+    }
+
+    .leg.left { left: 37%; }
+    .leg.right { right: 37%; }
+
+    .model-1 .head,
+    .model-1 .neck,
+    .model-1 .arm,
+    .model-1 .forearm,
+    .model-1 .hand,
+    .model-1 .leg { background: linear-gradient(180deg, #3a2419 0%, #2f1a12 100%); }
+
+    .model-2 .head,
+    .model-2 .neck,
+    .model-2 .arm,
+    .model-2 .forearm,
+    .model-2 .hand,
+    .model-2 .leg { background: linear-gradient(180deg, #6c432e 0%, #4d2f21 100%); }
+
+    .model-3 .head,
+    .model-3 .neck,
+    .model-3 .arm,
+    .model-3 .forearm,
+    .model-3 .hand,
+    .model-3 .leg { background: linear-gradient(180deg, #8b5d46 0%, #6f4735 100%); }
+
+    .hair-short {
+      position: absolute;
+      top: 5.5%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 20%;
+      height: 6.5%;
+      background: #141414;
+      border-radius: 50% 50% 38% 38%;
+      z-index: 4;
+    }
+
+    .hair-braids {
+      position: absolute;
+      top: 4%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 23%;
+      height: 14%;
+      z-index: 4;
+    }
+
+    .hair-braids::before,
+    .hair-braids::after {
+      content: "";
+      position: absolute;
+      top: 12%;
+      width: 18%;
+      height: 78%;
+      background: repeating-linear-gradient(180deg, #241814 0 5px, #4d362d 5px 8px);
+      border-radius: 18px;
+    }
+
+    .hair-braids::before { left: 16%; transform: rotate(5deg); }
+    .hair-braids::after { right: 16%; transform: rotate(-5deg); }
+
+    .hair-braids span {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 0;
+      width: 66%;
+      height: 44%;
+      background: #231815;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .shirt-france {
+      background:
+        repeating-linear-gradient(155deg, rgba(35,92,214,.95) 0 3px, transparent 3px 10px),
+        radial-gradient(circle at 62% 18%, rgba(28,61,170,.85), transparent 26%),
+        radial-gradient(circle at 32% 44%, rgba(17,44,123,.9), transparent 28%),
+        linear-gradient(180deg, #183988 0%, #0c2258 100%);
+    }
+
+    .shirt-france::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 41%;
+      height: 11%;
+      background: #f4f4f4;
+      clip-path: polygon(0 0, 100% 0, 78% 100%, 22% 100%);
+      z-index: 2;
+    }
+
+    .shirt-france::after {
+      content: "";
+      position: absolute;
+      top: 6.4%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8%;
+      height: 9%;
+      background: #cf1e3e;
+      clip-path: polygon(45% 0, 55% 0, 58% 100%, 42% 100%);
+      z-index: 2;
+    }
+
+    .shirt-england {
+      background:
+        linear-gradient(180deg, #ffffff 0%, #f6f6f6 100%);
+    }
+
+    .shirt-england::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, transparent 0 92%, #f46b78 92% 100%),
+        linear-gradient(90deg, transparent 0 86%, #f46b78 86% 100%);
+      opacity: .9;
+    }
+
+    .shirt-england::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 44%;
+      height: 8%;
+      border-bottom: 4px solid #22304e;
+      border-left: 3px solid transparent;
+      border-right: 3px solid transparent;
+      border-radius: 0 0 18px 18px;
+      z-index: 2;
+    }
+
+    .shirt-brazil {
+      background:
+        radial-gradient(circle at 50% 24%, rgba(17,47,131,.18), transparent 20%),
+        linear-gradient(180deg, #0f1b34 0%, #071221 100%);
+    }
+
+    .shirt-brazil::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(165deg, rgba(31,97,245,.85) 0 3px, transparent 3px 16px),
+        linear-gradient(90deg, rgba(31,97,245,.14) 0 28%, transparent 28% 72%, rgba(31,97,245,.14) 72% 100%);
+      opacity: .95;
+    }
+
+    .short-blue { background: linear-gradient(180deg, #0d1e49 0%, #0a1634 100%); }
+    .short-white { background: linear-gradient(180deg, #fbfbfb 0%, #f0f0f0 100%); }
+    .short-dark { background: linear-gradient(180deg, #0d152d 0%, #08101d 100%); }
+
+    .crest, .swoosh, .j-logo, .star, .text-badge {
+      position: absolute;
+      z-index: 3;
+    }
+
+    .crest {
+      width: 12%;
+      height: 14%;
+      right: 16%;
+      top: 17%;
+      border-radius: 4px 4px 8px 8px;
+      border: 2px solid rgba(255,255,255,.9);
+      background: rgba(255,255,255,.18);
+      backdrop-filter: blur(1px);
+    }
+
+    .crest.eng {
+      right: 18%;
+      top: 18%;
+      background: #f5f5f5;
+      border: 1.5px solid #22304e;
+    }
+
+    .crest.bra {
+      right: 38%;
+      top: 16%;
+      width: 14%;
+      height: 16%;
+      background: #0b7f68;
+      border: 2px solid #ffcf32;
+      transform: rotate(1deg);
+    }
+
+    .swoosh {
+      left: 18%;
+      top: 21%;
+      width: 11%;
+      height: 4%;
+      background: currentColor;
+      transform: skewX(-24deg) rotate(-10deg);
+      clip-path: polygon(0 60%, 18% 42%, 50% 20%, 100% 0, 68% 35%, 25% 70%, 0 100%);
+    }
+
+    .swoosh.pink { color: #d96f8d; }
+    .swoosh.black { color: #111; }
+
+    .j-logo {
+      left: 19%;
+      top: 18%;
+      font-weight: 700;
+      color: #ffcf32;
+      font-size: 24px;
+    }
+
+    .star {
+      top: 11.5%;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #ffcf32;
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    .text-badge {
+      right: 34%;
+      top: 31%;
+      color: #ffcf32;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+    }
+
+    .legs-hands-on-hips .forearm.left {
+      left: 14%;
+      top: 45%;
+      transform: rotate(38deg);
+      height: 22%;
+    }
+
+    .legs-hands-on-hips .forearm.right {
+      right: 14%;
+      top: 45%;
+      transform: rotate(-38deg);
+      height: 22%;
+    }
+
+    .legs-hands-on-hips .hand.left {
+      left: 9.5%;
+      top: 59%;
+    }
+
+    .legs-hands-on-hips .hand.right {
+      right: 9.5%;
+      top: 59%;
+    }
+
+    .swatches {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+      margin-bottom: 6px;
+      min-height: 16px;
+    }
+
+    .swatch {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,0,0,.1);
+    }
+
+    .label-top {
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.35;
+      margin-bottom: 2px;
+      margin-top: 15px;
+    }
+
+    .product-name {
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.35;
+      margin-bottom: 3px;
+      margin-top: 15px;
+    }
+
+    .product-subtitle,
+    .product-colors {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    .product-price {
+      margin-top: 4px;
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    .muted-icon {
+      color: #666;
+    }
+
+    @media (max-width: 1400px) {
+      .products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 1080px) {
+      .main-header {
+        grid-template-columns: 1fr;
+        height: auto;
+        gap: 18px;
+        padding-bottom: 14px;
+      }
+
+      .nav-center,
+      .header-right,
+      .brand { justify-content: center; }
+
+      .catalog-layout { grid-template-columns: 1fr; }
+      .filters { position: static; }
+      .products-grid { grid-template-columns: 1fr; }
+    }
+
+    svg { display: block; }
+
+    .breadcrumbs{height:42px;border-bottom:1px solid var(--line);background:#fff}
+    .breadcrumbs__inner{max-width:1440px;margin:0 auto;padding:0 88px;height:100%;display:flex;align-items:center;gap:8px;font-size:13px;text-transform:uppercase}
+    .breadcrumbs .dim{color:#5f5f5f;font-weight:400}
+    .breadcrumbs .sep{color:#a0a0a0}
+    .breadcrumbs .current{font-weight:700}
+
+    /* Hover preview styles */
+    .card-image {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .preview-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 10;
+    }
+    
+    .preview-overlay img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    
+    .card-image:hover .preview-overlay {
+      opacity: 1;
+    }
+
+    /* ─── ANNOUNCEMENT BAR ─── */
+    .topbar {
+      height: var(--topbar-h);
+      background: var(--black);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Roboto', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      gap: 20px;
+    }
+
+    .topbar a {
+      color: var(--white);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .topbar-right {
+      position: absolute;
+      right: 28px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 12px;
+    }
+
+    /* ─── NAV ─── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--nav-h);
+      background: var(--white);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      display: grid;
+      grid-template-columns: 200px 1fr 200px;
+      align-items: center;
+      padding: 0 32px;
+      transition: background 0.3s ease;
+    }
+
+    .nav-logo img {
+      height: 56px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Roboto', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--grey-700);
+      transition: color 0.2s;
+      padding: 4px 0;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--black);
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover { color: var(--black); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-actions {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 20px;
+    }
+
+    
+    .lang-wrap { position: relative; }
+
+.lang-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: var(--black);
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    
+    .lang-btn img { width: 18px; height: 12px; object-fit: cover; border-radius: 1px; }
+
+.lang-dropdown {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      background: var(--white);
+      color: var(--black);
+      width: 140px;
+      border: 1px solid #e0e0e0;
+      z-index: 200;
+      display: none;
+      padding: 0;
+      box-shadow: none;
+    }
+
+    .lang-dropdown.open { display: block; }
+
+    .lang-dropdown a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 40px;
+      padding: 10px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1;
+      color: var(--black);
+      background: var(--white);
+      white-space: nowrap;
+      transition: background 0.15s;
+    }
+
+    .lang-dropdown a:hover, .lang-dropdown a[aria-current="true"] { background: #e6e6e6; }
+    .lang-dropdown img { width: 18px; height: 12px; object-fit: cover; border-radius: 1px; flex: 0 0 auto; }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 1px;
+      background: var(--black);
+      transition: all 0.3s;
+    }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--black);
+      z-index: 200;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+
+    .mobile-nav.open { display: flex; }
+
+    .mobile-nav a {
+      font-family: 'Roboto', sans-serif;
+      font-size: 36px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+
+    .mobile-close {
+      position: absolute;
+      top: 20px;
+      right: 28px;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      :root { --nav-h: 56px; --topbar-h: 32px; }
+      .nav { grid-template-columns: 120px 1fr auto; padding: 0 20px; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .topbar { font-size: 11px; padding: 0 16px; }
+      .topbar-right { display: none; }
+    }
+  
+    /* Local replacements for the small Tailwind utility subset used by these static pages. */
+    .fixed{position:fixed}.absolute{position:absolute}.inset-0{inset:0}.top-4{top:1rem}.right-4{right:1rem}.z-50{z-index:50}.hidden{display:none!important}.flex{display:flex}.grid{display:grid}.items-center{align-items:center}.justify-center{justify-content:center}.mx-auto{margin-left:auto;margin-right:auto}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mb-12{margin-bottom:3rem}.mt-8{margin-top:2rem}.p-8{padding:2rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-12{padding-top:3rem;padding-bottom:3rem}.w-20{width:5rem}.w-full{width:100%}.max-w-7xl{max-width:80rem}.max-w-4xl{max-width:56rem}.max-w-full{max-width:100%}.max-h-\[90vh\]{max-height:90vh}.h-auto{height:auto}.overflow-y-auto{overflow-y:auto}.rounded-lg{border-radius:.5rem}.bg-white{background:#fff}.bg-gray-50{background:#f9fafb}.bg-black{background:#000}.bg-opacity-50{--tw-bg-opacity:.5;background-color:rgba(0,0,0,var(--tw-bg-opacity))}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-sm{font-size:.875rem;line-height:1.25rem}.font-bold{font-weight:700}.text-gray-400{color:#9ca3af}.text-gray-500{color:#6b7280}.text-gray-600{color:#4b5563}.text-gray-700{color:#374151}.text-gray-900{color:#111827}.leading-relaxed{line-height:1.625}.space-x-4>:not([hidden])~:not([hidden]){margin-left:1rem}.space-y-3>:not([hidden])~:not([hidden]){margin-top:.75rem}.gap-8{gap:2rem}.border-t{border-top:1px solid #e5e7eb}.border-gray-200{border-color:#e5e7eb}.pt-8{padding-top:2rem}.transition{transition:all .15s ease}.hover\:text-gray-700:hover{color:#374151}.hover\:text-gray-900:hover{color:#111827}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.size-guide-fallback{margin:0 auto 18px;max-width:520px;text-align:center;color:#4b5563;line-height:1.6}@media(min-width:768px){.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(min-width:1024px){.lg\:grid-cols-5{grid-template-columns:repeat(5,minmax(0,1fr))}.lg\:px-8{padding-left:2rem;padding-right:2rem}}
+  
+
+/* Footer coerente con la home */
+.footer-index-clone {
+  background: #050505;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 70px 0 32px;
+  color: #ffffff;
+}
+.footer-index-clone .wrap {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.footer-index-clone .footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1.2fr;
+  gap: 48px;
+  margin-bottom: 54px;
+}
+.footer-index-clone .footer-logo img {
+  height: 100px;
+  margin-bottom: 20px;
+}
+.footer-index-clone .footer-tagline {
+  font-size: 13px;
+  color: #8a8a8a;
+  line-height: 1.7;
+}
+.footer-index-clone .footer-col h4 {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: #ffffff;
+  margin: 0 0 18px;
+}
+.footer-index-clone .footer-col a,
+.footer-index-clone .footer-col li {
+  display: block;
+  font-size: 13px;
+  color: #8a8a8a;
+  margin-bottom: 10px;
+  line-height: 1.45;
+  text-decoration: none;
+  list-style: none;
+}
+.footer-index-clone .footer-col a:hover { color: #ffffff; }
+@media (max-width: 1024px) {
+  .footer-index-clone .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .footer-index-clone .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 480px) {
+  .footer-index-clone .wrap { padding: 0 20px; }
+  .footer-index-clone .footer-grid { grid-template-columns: 1fr; }
+}
+
+</style>
+  <link rel="stylesheet" href="catalog-fixes.css">
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="topbar" style="position:relative;">
+  <span>Ordini personalizzati da <strong>10 pezzi</strong> — Produzione 100% Italiana</span>
+  <div class="topbar-right">
+    <span style="opacity:0.5;">|</span>
+    <a href="index.html#contatti">Richiedi preventivo →</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">
+    <a href="https://www.bicycle-line.com/it/" target="_blank"><img src="./images/logodfs.png" alt="Bicycle Line"></a>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="./index.html#come-funziona">Come Funziona</a></li>
+    <li><a href="./uomo.html">Uomo</a></li>
+    <li><a href="./donna.html">Donna</a></li>
+    <li><a href="./accessori.html">Accessori</a></li>
+    <li><a href="./ragazzi.html">Bambino</a></li>
+    <li><a href="./index.html#faq">FAQ</a></li>
+    <li><a href="./index.html#contatti">Contatti</a></li>
+  </ul>
+
+  <div class="nav-actions">
+    <div class="lang-wrap">
+      <button class="lang-btn" id="lang-toggle">
+        <img src="./images/BANDIERE/italia.jpg" alt="IT">
+        <span>IT</span>
+        <i class="fas fa-chevron-down" style="font-size:9px; opacity:0.6;"></i>
+      </button>
+      <div class="lang-dropdown" id="lang-dropdown">
+        <a href="./donna.html" aria-current="true"><img src="./images/BANDIERE/italia.jpg" alt="IT"> Italiano</a>
+        <a href="./INGLESE/donna_EN.html"><img src="./images/BANDIERE/english.jpg" alt="EN"> English</a>
+        <a href="./TEDESCO/donna_DE.html"><img src="./images/BANDIERE/Deutsch.jpg" alt="DE"> Deutsch</a>
+        <a href="./FRANCESE/donna_FR.html"><img src="./images/BANDIERE/Français.jpg" alt="FR"> Français</a>
+        <a href="./SPAGNOLO/donna_ES.html"><img src="./images/BANDIERE/Español.jpg" alt="ES"> Español</a>
+      </div>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobile-nav">
+  <button class="mobile-close" id="mobile-close">✕</button>
+  <a href="./index.html#come-funziona">Come Funziona</a>
+  <a href="./uomo.html">Uomo</a>
+  <a href="./donna.html">Donna</a>
+  <a href="./accessori.html">Accessori</a>
+  <a href="./ragazzi.html">Bambino</a>
+  <a href="./index.html#faq">FAQ</a>
+  <a href="./index.html#contatti">Contatti</a>
+</div>
+
+<div class="page">
+
+  <div class="breadcrumbs">
+    <div class="breadcrumbs__inner">
+      <a href="./index.html" class="dim hover:underline">HOME</a>
+      <span class="sep">></span>
+      <span class="current">CICLISMO DONNA</span>
+    </div>
+  </div>
+
+    <main class="catalog-shell">
+      <section class="products-area">
+          <div class="products-grid">
+            <article class="card">
+              <div class="card-image">
+                                <a href="./DONNA SCHEDE PRODOTTO/W7203-FREE-RIDE.html" class="product-photo">
+                  <img src="images/DONNA/W7203 img.png" alt="W7203 FREE RIDE" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                </a>
+              </div>
+                                          <a href="./DONNA SCHEDE PRODOTTO/W7203-FREE-RIDE.html" class="product-name"><strong>W7203 FREE RIDE</strong></a>
+              <div class="product-subtitle">T-shirt manica corta - donna</div>
+                                        </article>
+
+            <article class="card">
+              <div class="card-image">
+                                <a href="./DONNA SCHEDE PRODOTTO/W7202-FREE-RIDE.html" class="product-photo">
+                  <img src="images/DONNA/W7202 img.png" alt="W7202 FREE RIDE" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                </a>
+              </div>
+                                          <a href="./DONNA SCHEDE PRODOTTO/W7202-FREE-RIDE.html" class="product-name"><strong>W7202 FREE RIDE</strong></a>
+              <div class="product-subtitle">T-shirt manica lunga - donna</div>
+                                        </article>
+
+            <article class="card">
+              <div class="card-image">
+                                <a href="./DONNA SCHEDE PRODOTTO/W7205-FREE-RIDE.html" class="product-photo">
+                  <img src="images/DONNA/W7205 img.png" alt="W7205 FREE RIDE" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                </a>
+              </div>
+                                          <a href="./DONNA SCHEDE PRODOTTO/W7205-FREE-RIDE.html" class="product-name"><strong>W7205 FREE RIDE</strong></a>
+              <div class="product-subtitle">Maglia manica corta con zip - donna</div>
+                                        </article>
+
+
+            <article class="card">
+              <div class="card-image">
+                <a href="./DONNA SCHEDE PRODOTTO/W6004-ECHELON.html" class="product-photo"><img src="images/DONNA/W6004/1.png" alt="W6004 ECHELON" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);"></a>
+              </div>
+              <a href="./DONNA SCHEDE PRODOTTO/W6004-ECHELON.html" class="product-name"><strong>W6004 ECHELON</strong></a>
+              <div class="product-subtitle">Maglia manica corta - donna</div>
+            </article>
+<article class="card">
+              <div class="card-image">
+                                <a href="./DONNA SCHEDE PRODOTTO/W6514-APEX.html" class="product-photo">
+                  <img src="images/DONNA/W6514 img.png" alt="W6514 APEX" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                </a>
+              </div>
+                                          <a href="./DONNA SCHEDE PRODOTTO/W6514-APEX.html" class="product-name"><strong>W6514 APEX</strong></a>
+              <div class="product-subtitle">Maglia manica corta - donna</div>
+                                        </article>
+            <article class="card">
+              <div class="card-image">
+                <a href="./DONNA SCHEDE PRODOTTO/W6529-APEX-ULTRA.html" class="product-photo"><img src="images/DONNA/W6529/1.png" alt="W6529 APEX ULTRA" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);"></a>
+              </div>
+              <a href="./DONNA SCHEDE PRODOTTO/W6529-APEX-ULTRA.html" class="product-name"><strong>W6529 APEX ULTRA</strong></a>
+              <div class="product-subtitle">Maglia manica corta di peso medio - donna</div>
+            </article>
+
+
+
+            <article class="card">
+              <div class="card-image">
+                <a href="./DONNA SCHEDE PRODOTTO/W6045-ECHELON-ASIA.html" class="product-photo"><img src="images/DONNA/W6045/1.png" alt="W6045 ECHELON ASIA" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);"></a>
+              </div>
+              <a href="./DONNA SCHEDE PRODOTTO/W6045-ECHELON-ASIA.html" class="product-name"><strong>W6045 ECHELON ASIA</strong></a>
+              <div class="product-subtitle">Salopette - donna</div>
+            </article>
+            <article class="card">
+              <div class="card-image">
+                <a href="./DONNA SCHEDE PRODOTTO/W6046-ECHELON-AIR.html" class="product-photo"><img src="images/DONNA/W6046/1.png" alt="W6046 ECHELON AIR" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);"></a>
+              </div>
+              <a href="./DONNA SCHEDE PRODOTTO/W6046-ECHELON-AIR.html" class="product-name"><strong>W6046 ECHELON AIR</strong></a>
+              <div class="product-subtitle">Salopette - donna</div>
+            </article>
+            <article class="card">
+              <div class="card-image">
+                <a href="./DONNA SCHEDE PRODOTTO/W6047-ECHELON-AIR-CARGO.html" class="product-photo"><img src="images/DONNA/W6047/1.png" alt="W6047 ECHELON AIR CARGO" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);"></a>
+              </div>
+              <a href="./DONNA SCHEDE PRODOTTO/W6047-ECHELON-AIR-CARGO.html" class="product-name"><strong>W6047 ECHELON AIR CARGO</strong></a>
+              <div class="product-subtitle">Salopette con tasche cargo - donna</div>
+            </article>
+
+
+<article class="card">
+              <div class="card-image">
+                                <a href="./DONNA SCHEDE PRODOTTO/W6515-APEX.html" class="product-photo">
+                  <img src="images/DONNA/W6515 img.png" alt="W6515 APEX" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                </a>
+              </div>
+                                          <a href="./DONNA SCHEDE PRODOTTO/W6515-APEX.html" class="product-name"><strong>W6515 APEX</strong></a>
+              <div class="product-subtitle">Salopette - donna</div>
+                                        </article>
+
+            <article class="card">
+              <div class="card-image">
+                                <a href="./DONNA SCHEDE PRODOTTO/W6516-APEX.html" class="product-photo">
+                  <img src="images/DONNA/W6516 img.png" alt="W6516 APEX" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                </a>
+              </div>
+                                          <a href="./DONNA SCHEDE PRODOTTO/W6516-APEX.html" class="product-name"><strong>W6516 APEX</strong></a>
+              <div class="product-subtitle">Maglia manica lunga - donna</div>
+                                        </article>
+
+            <article class="card">
+              <div class="card-image">
+                                <a href="./DONNA SCHEDE PRODOTTO/W6517-APEX.html" class="product-photo">
+                  <img src="images/DONNA/W6517 img.png" alt="W6517 APEX" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                </a>
+              </div>
+                                          <a href="./DONNA SCHEDE PRODOTTO/W6517-APEX.html" class="product-name"><strong>W6517 APEX</strong></a>
+              <div class="product-subtitle">Gilet antivento - donna</div>
+                                        </article>
+            <article class="card">
+              <div class="card-image">
+                <a href="./DONNA SCHEDE PRODOTTO/W6541-APEX.html" class="product-photo"><img src="images/DONNA/W6541/1.png" alt="W6541 APEX" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);"></a>
+              </div>
+              <a href="./DONNA SCHEDE PRODOTTO/W6541-APEX.html" class="product-name"><strong>W6541 APEX</strong></a>
+              <div class="product-subtitle">Giacca invernale - donna</div>
+            </article>
+
+
+            <article class="card">
+              <div class="card-image">
+                                <a href="./DONNA SCHEDE PRODOTTO/W6302-DRAFT.html" class="product-photo">
+                  <img src="images/DONNA/W6302 img.png" alt="W6302 DRAFT" style="width:90%;height:90%;object-fit:contain;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+                </a>
+              </div>
+                                          <a href="./DONNA SCHEDE PRODOTTO/W6302-DRAFT.html" class="product-name"><strong>W6302 DRAFT</strong></a>
+              <div class="product-subtitle">Maglia manica corta - donna</div>
+                                        </article>
+
+                      </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+<script>
+// Language toggle
+const langToggle = document.getElementById('lang-toggle');
+const langDropdown = document.getElementById('lang-dropdown');
+const mobileNav = document.getElementById('mobile-nav');
+const hamburger = document.getElementById('hamburger');
+const mobileClose = document.getElementById('mobile-close');
+
+langToggle.addEventListener('click', () => {
+  langDropdown.classList.toggle('open');
+});
+
+document.addEventListener('click', (e) => {
+  if (!langToggle.contains(e.target) && !langDropdown.contains(e.target)) {
+    langDropdown.classList.remove('open');
+  }
+});
+
+// Mobile navigation
+hamburger.addEventListener('click', () => {
+  mobileNav.classList.add('open');
+});
+
+mobileClose.addEventListener('click', () => {
+  mobileNav.classList.remove('open');
+});
+
+function toggleLanguageMenu(button) {
+  const dropdown = document.getElementById('language-dropdown');
+  dropdown.classList.toggle('hidden');
+}
+
+// Preview hover functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const productCards = document.querySelectorAll('.card-image');
+  
+  productCards.forEach(card => {
+    const link = card.querySelector('.product-photo');
+    if (link) {
+      const href = link.getAttribute('href');
+      const productCode = extractProductCode(href);
+      
+      if (productCode) {
+        const previewImg = document.createElement('div');
+        previewImg.className = 'preview-overlay';
+        
+        // Create preview image
+        const img = document.createElement('img');
+        
+        // Map product codes to their first gallery image
+        const previewMap = {
+          'W7203-FREE-RIDE': 'images/DONNA/W7203/1.png',
+          'W7202-FREE-RIDE': 'images/DONNA/W7202/1.png',
+          'W7205-FREE-RIDE': 'images/DONNA/W7205/1.png',
+          'W6514-APEX': 'images/DONNA/W6514/1.png',
+          'W6515-APEX': 'images/DONNA/W6515/1.png',
+          'W6516-APEX': 'images/DONNA/W6516/1.png',
+          'W6517-APEX': 'images/DONNA/W6517/1.png',
+          'W6302-DRAFT': 'images/DONNA/W6302/1.png'
+        };
+        
+        if (previewMap[productCode]) {
+          img.src = previewMap[productCode];
+          img.alt = `Preview ${productCode}`;
+          img.style.cursor = 'pointer';
+          
+          // Add click event to navigate to product page
+          img.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            window.location.href = href;
+          });
+          
+          previewImg.appendChild(img);
+          card.appendChild(previewImg);
+        }
+      }
+    }
+  });
+});
+
+function extractProductCode(href) {
+  const match = href.match(/\/([^\/]+)\.html$/);
+  return match ? match[1].replace(/_(EN|FR|ES|DE)$/i, '') : null;
+}
+</script>
+
+        <!-- FOOTER -->
+<footer class="footer footer-index-clone">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <a href="https://www.bicycle-line.com/it/" target="_blank">
+            <img src="images/logo bianco.png" alt="Bicycle Line">
+          </a>
+        </div>
+        <p class="footer-tagline">Abbigliamento tecnico da ciclismo personalizzato.<br>Produzione italiana dal 1987.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Bicycle Line</h4>
+        <a href="https://www.bicycle-line.com/it/content/4-brand">Brand</a>
+        <a href="https://www.bicycle-line.com/it/content/6-storia">Storia</a>
+        <a href="https://www.bicycle-line.com/it/content/9-sostenibilita">Sostenibilità</a>
+        <a href="https://www.bicycle-line.com/it/contact">Contattaci</a>
+      </div>
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <a href="https://www.bicycle-line.com/it/947-uomo">Uomo</a>
+        <a href="https://www.bicycle-line.com/it/948-donna">Donna</a>
+        <a href="https://www.bicycle-line.com/it/949-cat-bambino">Bambino</a>
+        <a href="https://www.bicycle-line.com/it/1109-offerte">Offerte</a>
+      </div>
+      <div class="footer-col">
+        <h4>Link Utili</h4>
+        <a href="https://www.bicycle-line.com/it/content/1-spedizione">Spedizione</a>
+        <a href="https://www.bicycle-line.com/it/content/18-faq">FAQ</a>
+        <a href="https://www.bicycle-line.com/it/content/12-guida-alle-taglie">Guida alle taglie</a>
+        <a href="https://www.bicycle-line.com/it/content/13-resi">Resi</a>
+      </div>
+      <div class="footer-col">
+        <h4>Note Legali</h4>
+        <a href="https://www.bicycle-line.com/it/content/15-privacy-policy">Privacy Policy</a>
+        <a href="https://www.bicycle-line.com/it/content/16-cookie-policy">Cookie Policy</a>
+        <a href="https://www.bicycle-line.com/it/content/17-termini-e-condizioni">Termini e condizioni</a>
+        <div style="margin-top:24px;">
+          <h4>Contatti</h4>
+          <li>Bicycle Line - VAT 02027450267</li>
+          <li>Via Ferrara 2-4, 31030 Dosson TV</li>
+          <li>+39 0422 490156</li>
+          <li>custom@bicycle-line.com</li>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  </div>
+
+</body>
+</html>
