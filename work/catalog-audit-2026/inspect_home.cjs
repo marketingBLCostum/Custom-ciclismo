@@ -1,6 +1,0 @@
-const fs=require('fs'),path=require('path'),{pathToFileURL}=require('url');
-const {chromium}=require('C:/Users/Libia/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
-(async()=>{const browser=await chromium.launch({headless:true,channel:'msedge',args:['--disable-gpu']}),page=await browser.newPage({viewport:{width:390,height:900}});try{await page.route('https://**/*',r=>r.abort());await page.goto(pathToFileURL(path.join(process.cwd(),'index.html')).href,{waitUntil:'load'});
-console.log(JSON.stringify(await page.evaluate(()=>({root:document.documentElement.scrollWidth,body:document.body.scrollWidth,items:[...document.querySelectorAll('body *')].map(e=>({tag:e.tagName,cls:e.className,x:e.getBoundingClientRect().left,right:e.getBoundingClientRect().right,w:e.getBoundingClientRect().width,scroll:e.scrollWidth,client:e.clientWidth,overflow:getComputedStyle(e).overflowX,txt:e.textContent.trim().slice(0,50)})).filter(e=>e.right>391||e.x< -1||e.scroll>e.client+1).slice(0,45)})),null,2));
-await page.screenshot({path:'work/catalog-audit-2026/home-mobile-after.png',animations:'disabled',timeout:15000});console.log('Screenshot saved');
-}finally{await browser.close();}})().catch(e=>{console.error(e);process.exitCode=1});
